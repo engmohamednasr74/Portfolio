@@ -129,7 +129,7 @@ window.addEventListener("scroll", () => {
 
 // Project filtering
 const filterTabs = document.querySelectorAll(".filter-tab")
-const projectCards = document.querySelectorAll(".project-card")
+const projectCards = document.querySelectorAll("#project-card")
 
 filterTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
