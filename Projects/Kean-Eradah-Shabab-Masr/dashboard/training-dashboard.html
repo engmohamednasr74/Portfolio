@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة البرامج التدريبية - إرادة شباب مصر</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/text-css.css">
+    <link rel="stylesheet" href="css/text-css2.css">
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database-compat.js"></script>
+    <script src="js/Firebase.js"></script>
+    <!-- لتوليد PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        button[type="submit"] {
+            background-color: #000;
+        }
+
+        input,
+        textarea {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-background">
+    <header class="bg-card border-b border-golden/20 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-accent">إدارة البرامج التدريبية</h1>
+                <a href="dashboard.html" class="text-foreground/80 hover:text-accent">عودة إلى الداشبورد</a>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-12">
+        <!-- قسم تسجيل الدخول إذا مش أدمن -->
+        <div id="login-section" class="text-center my-8">
+            <button onclick="loginAsAdmin()"
+                class="bg-green-600 text-white px-10 py-5 rounded-xl text-xl font-bold hover:bg-green-700 transition shadow-lg">
+                تسجيل الدخول كأدمن
+            </button>
+        </div>
+
+        <!-- محتوى الإدارة (مخفي إلا للأدمن) -->
+        <div id="admin-content" class="hidden">
+            <!-- نموذج إضافة/تعديل تدريب -->
+            <section class="mb-8">
+                <h2 class="text-xl font-bold mb-4">إضافة/تعديل برنامج تدريبي</h2>
+                <form id="training-form">
+                    <input type="hidden" id="training-id"> <!-- ID للتعديل -->
+                    <input type="text" id="training-title" placeholder="اسم البرنامج التدريبي"
+                        class="border p-2 mb-2 w-full" required>
+                    <textarea id="training-desc" placeholder="وصف البرنامج" class="border p-2 mb-2 w-full"
+                        required></textarea>
+                    <input type="url" id="training-image" placeholder="رابط الصورة (اختياري)"
+                        class="border p-2 mb-2 w-full">
+                    <select id="training-status" class="border p-2 mb-2 w-full" required style="color:#9ca3af ;">
+                        <option value="">اختر حالة البرنامج</option>
+                        <option value="سيبدأ قريباً">سيبدأ قريباً</option>
+                        <option value="جاري">جاري</option>
+                        <option value="منتهي">منتهي</option>
+                    </select>
+                    <button type="submit" id="submit-btn"
+                        class="bg-blue-600 text-white px-4 py-2 rounded">إضافة</button>
+                    <button type="button" id="cancel-edit"
+                        class="hidden bg-gray-600 text-white px-4 py-2 rounded ml-2">إلغاء</button>
+                </form>
+            </section>
+
+            <!-- قائمة البرامج التدريبية الحالية -->
+            <section>
+                <h2 class="text-xl font-bold mb-4">البرامج التدريبية الحالية</h2>
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-muted">
+                            <th class="p-2">الاسم</th>
+                            <th class="p-2">الوصف</th>
+                            <th class="p-2">الصورة</th>
+                            <th class="p-2">الحاله</th>
+                            <th class="p-2">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="training-list"></tbody>
+                </table>
+            </section>
+
+            <!-- قسم طباعة الشهادات (مخفي إلا للتدريبات المنتهية) -->
+            <section id="certificate-section" class="mt-8 hidden">
+                <h2 class="text-xl font-bold mb-4">طباعة الشهادات للتدريب: <span id="selected-training-title"></span>
+                </h2>
+                <input type="hidden" id="selected-training-id">
+                <textarea id="attendees-names" placeholder="أدخل أسماء الحاضرين (كل اسم في سطر جديد)"
+                    class="border p-2 mb-2 w-full" rows="5" required></textarea>
+                <button onclick="generateCertificates()" class="bg-green-600 text-white px-4 py-2 rounded">توليد
+                    الشهادات</button>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // تحقق من حالة الأدمن (من Firebase.js)
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                document.getElementById('login-section').classList.add('hidden');
+                document.getElementById('admin-content').classList.remove('hidden');
+                loadTrainings(); // جلب البيانات
+            } else {
+                document.getElementById('login-section').classList.remove('hidden');
+                document.getElementById('admin-content').classList.add('hidden');
+            }
+        });
+
+        // جلب البرامج التدريبية
+        function loadTrainings() {
+            getItems('training', (items) => {
+                const list = document.getElementById('training-list');
+                list.innerHTML = '';
+                items.forEach(([id, item]) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="p-2">${item.title || ''}</td>
+                        <td class="p-2">${item.desc || ''}</td>
+                        <td class="p-2">${item.image ? '<img src="' + item.image + '" width="50">' : 'لا صورة'}</td>
+                        <td class="p-2">${item.status || ''}</td>
+                        <td class="p-2">
+                            <button onclick="editTraining('${id}', '${item.title || ''}', '${item.desc || ''}', '${item.image || ''}', '${item.status || ''}')" class="bg-yellow-600 text-white px-2 py-1 rounded">تعديل</button>
+                            <button onclick="deleteItem('training', '${id}')" class="bg-red-600 text-white px-2 py-1 rounded">حذف</button>
+                            ${item.status === 'منتهي' ? '<button onclick="window.location.href=\'certificate-generator.html?id=' + id + '&title=' + encodeURIComponent(item.title) + '\'" class="bg-green-600 text-white px-2 py-1 rounded">طباعة شهادات</button>' : ''}
+                        </td>
+                    `;
+                    list.appendChild(row);
+                });
+            });
+        }
+
+        // إضافة أو تعديل برنامج
+        const form = document.getElementById('training-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const cancelBtn = document.getElementById('cancel-edit');
+        const idInput = document.getElementById('training-id');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                title: document.getElementById('training-title').value,
+                desc: document.getElementById('training-desc').value,
+                image: document.getElementById('training-image').value,
+                status: document.getElementById('training-status').value
+            };
+            const trainingId = idInput.value;
+            if (trainingId) {
+                updateItem('training', trainingId, data);
+            } else {
+                addItem('training', data);
+            }
+            resetForm();
+            loadTrainings();
+        });
+
+        // تعديل برنامج: ملء الفورم
+        function editTraining(id, title, desc, image, status) {
+            idInput.value = id;
+            document.getElementById('training-title').value = title;
+            document.getElementById('training-desc').value = desc;
+            document.getElementById('training-image').value = image;
+            document.getElementById('training-status').value = status;
+            submitBtn.textContent = 'تحديث';
+            cancelBtn.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // إلغاء التعديل
+        cancelBtn.addEventListener('click', resetForm);
+
+        function resetForm() {
+            form.reset();
+            idInput.value = '';
+            submitBtn.textContent = 'إضافة';
+            cancelBtn.classList.add('hidden');
+        }
+
+        // عرض قسم الشهادات للتدريب المنتهي
+        function showCertificateSection(id, title) {
+            document.getElementById('certificate-section').classList.remove('hidden');
+            document.getElementById('selected-training-id').value = id;
+            document.getElementById('selected-training-title').textContent = title;
+            document.getElementById('attendees-names').value = '';
+            window.scrollTo({ top: document.getElementById('certificate-section').offsetTop, behavior: 'smooth' });
+        }
+
+        // توليد الشهادات كـ PDF
+        function generateCertificates() {
+            const namesText = document.getElementById('attendees-names').value.trim();
+            if (!namesText) {
+                alert('أدخل أسماء الحاضرين!');
+                return;
+            }
+            const names = namesText.split('\n').filter(name => name.trim());
+
+            const { jsPDF } = window.jspdf;
+            const templateUrl = 'https://your-domain.com/path/to/certificate-template.png'; // غير بالرابط الحقيقي للشهادة المرفقة
+
+            names.forEach((name, index) => {
+                const pdf = new jsPDF('landscape', 'pt', 'a4'); // A4 horizontal
+                const img = new Image();
+                img.crossOrigin = "anonymous"; // لـ CORS لو الرابط خارجي
+                img.src = templateUrl;
+                img.onload = function () {
+                    pdf.addImage(img, 'PNG', 0, 0, 842, 595); // حجم A4 pt
+                    pdf.setFont("helvetica", "bold"); // استخدم خط يدعم العربي (أضف خط عربي لو لازم)
+                    pdf.setFontSize(20);
+                    pdf.setTextColor(0, 0, 0);
+                    pdf.text(name, 421, 300, { align: 'center' }); // عدل (421, 300) لمكان الاسم في الشهادة
+                    pdf.save(`شهادة_${name}.pdf`); // حفظ PDF لكل اسم
+                };
+            });
+            alert('تم توليد الشهادات وتنزيلها!');
+        }
+    </script>
+</body>
+
+</html>
+

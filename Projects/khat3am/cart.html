@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنيو والسلة - مطعم ختعم</title>
+    <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
+
+        <meta name="description"
+        content="مطعم ختعم يقدم أشهى سندوتشات الفول والطعمية، البطاطس، والعيش السوري، بالإضافة إلى وجبات اللحوم المميزة وعلب الفول وأقراص الطعمية الساخنة. طعم زمان بجودة النهاردة.">
+    <meta name="keywords"
+        content="مطعم ختعم, فول وطعمية, سندوتشات سوري, لحوم مشوية, علب فول, طعمية سخنة, مطاعم كفر الشيخ, أكل شعبي مصري, وجبات سريعة">
+    <meta name="author" content="Developer_Engineer Eng_Mohamed_Nasr">
+    <meta property="og:title" content="مطعم ختعم - لقمة هنية تجمعنا" />
+    <meta property="og:description"
+        content="استمتع بأفضل سندوتشات الفول والطعمية واللحوم والعيش السوري. جرب علبنا المميزة وأقراص الطعمية المقرمشة الآن!" />
+       <meta property="og:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/khat3am/img/qrcode.png" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:image:height" content="523" />
+    <meta property="og:url" content="https://engmohamednasr74.github.io/Portfolio/Projects/khat3am/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="مطعم ختعم | الطعم الأصلي" />
+    <meta name="twitter:description" content="سندوتشات فول وطعمية، لحوم، وعيش سوري.. اطلب علبتك الآن من ختعم." />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/khat3am/img/qrcode.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .pattern-border {
+            height: 6px;
+            width: 100%;
+            background: repeating-linear-gradient(-45deg,
+                    hsl(145, 45%, 30%) 0px, hsl(145, 45%, 30%) 10px,
+                    hsl(24, 95%, 45%) 10px, hsl(24, 95%, 45%) 20px,
+                    hsl(0, 70%, 50%) 20px, hsl(0, 70%, 50%) 30px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn {
+            background-color: white;
+            color: #4b5563;
+            border: 1px solid #ffedd5;
+            transition: all 0.3s ease;
+        }
+
+        .active-filter {
+            background-color: #ea580c !important;
+            color: white !important;
+            border-color: #ea580c !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .imgg {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="bg-[#fdf8f3] text-gray-900 font-body">
+    <div id="mobile-sidebar" class="fixed inset-0 z-[100] invisible transition-all duration-300">
+        <div id="sidebar-overlay" class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300"></div>
+
+        <div id="sidebar-content"
+            class="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+            <div class="p-6 border-b border-orange-50 flex justify-between items-center">
+                <span class="text-xl font-bold text-green-900">القائمة</span>
+                <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-orange-600">
+                    <i data-lucide="x" class="h-7 w-7"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col p-6 gap-6 font-bold text-gray-700">
+                <a href="index.html" class="flex items-center gap-3 hover:text-orange-600 transition-colors">
+                    <i data-lucide="home" class="h-5 w-5"></i> الرئيسية
+                </a>
+                <a href="menu.html" class="flex items-center gap-3 hover:text-orange-600 transition-colors">
+                    <i data-lucide="utensils" class="h-5 w-5"></i> المنيو
+                </a>
+                <a href="branches.html" class="flex items-center gap-3 hover:text-orange-600 transition-colors">
+                    <i data-lucide="map-pin" class="h-5 w-5"></i> الفروع
+                </a>
+                <hr class="border-orange-50">
+            </nav>
+        </div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-md">
+        <div class="pattern-border"></div>
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-open" class="md:hidden p-2 text-gray-700">
+                    <i data-lucide="menu" class="h-7 w-7"></i>
+                </button>
+                <a href="cart.html"
+                    class="relative p-3 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-all shadow-lg">
+                    <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                    <span id="cart-count"
+                        class="absolute -top-1 -right-1 bg-white text-orange-600 text-[11px] font-black w-5 h-5 flex items-center justify-center rounded-full border-2 border-orange-600 shadow-sm">0</span>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-bold text-gray-700 text-sm">
+                <a href="index.html" class="hover:text-orange-600 transition-colors">الرئيسية</a>
+                <a href="menu.html" class="hover:text-orange-600 transition-colors">المنيو</a>
+                <a href="branches.html" class="hover:text-orange-600 transition-colors">الفروع</a>
+            </nav>
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-2xl font-display font-black text-green-900 tracking-tighter">ختعم</span>
+                <img src="img/logo.webp" alt="Logo" class="h-12 w-auto imgg">
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-2 pt-32 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <div class="lg:col-span-8 order-2 lg:order-1">
+                <h2 class="text-3xl font-black text-green-900 mb-8 flex items-center gap-3">
+                    <i data-lucide="utensils-crossfed" class="text-orange-600"></i> اختار وجباتك
+                </h2>
+
+                <div id="category-filters" class="flex flex-wrap justify-start gap-4 mb-10">
+                    <button onclick="filterMenu('all', this)"
+                        class="filter-btn active-filter px-6 py-2 rounded-full font-bold">الكل</button>
+                    <button onclick="filterMenu('foul', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات الفول</button>
+                    <button onclick="filterMenu('taameya', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات الطعمية</button>
+                    <button onclick="filterMenu('mashrousa', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">مهروسة وحوادق</button>
+                    <button onclick="filterMenu('farm', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات الفارم</button>
+                    <button onclick="filterMenu('grill', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات الجبنة والجريل</button>
+                    <button onclick="filterMenu('eggs', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات البيض</button>
+                    <button onclick="filterMenu('sweet', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات الحلو</button>
+                    <button onclick="filterMenu('meat', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">سندوتشات اللحوم والفراخ</button>
+                    <button onclick="filterMenu('burger', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">جرين برجر</button>
+                    <button onclick="filterMenu('roll', this)" class="filter-btn px-6 py-2 rounded-full font-bold">ختعم
+                        رول</button>
+                    <button onclick="filterMenu('taameya-disks', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">أقراص الطعمية</button>
+                    <button onclick="filterMenu('boxes', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">العلب</button>
+                    <button onclick="filterMenu('plates', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">أطباق الحادق والحلو</button>
+                    <button onclick="filterMenu('drink', this)"
+                        class="filter-btn px-6 py-2 rounded-full font-bold">المشروبات</button>
+                </div>
+
+                <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 order-1 lg:order-2">
+                <div class="sticky top-28 space-y-6">
+                    <h2 class="text-2xl font-black text-green-900 flex items-center gap-3">
+                        <i data-lucide="shopping-bag" class="text-orange-600"></i> سلة طلباتك
+                    </h2>
+
+                    <div id="cart-items-container" class="space-y-4 max-h-[53vh] overflow-y-auto pr-2">
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl shadow-xl border border-orange-100">
+                        <h2 class="text-xl font-bold mb-4 border-b pb-2">تأكيد الطلب</h2>
+                        <p class="text-sm text-gray-500 mb-6">راجع الوجبات المختارة ثم انتقل لاختيار الفرع وكتابه
+                            الملحوظه علي الاوردر.</p>
+                        <a href="branches.html"
+                            class="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all shadow-lg">
+                            اختار الفرع لإتمام الطلب
+                            <i data-lucide="map-pin" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#2d6a4f] text-white pt-16 pb-8 font-body">
+        <div class="container mx-auto px-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-right mt-16">
+                <div class="dbor">
+                    <img src="img/logo.webp" alt="Logo" class="h-16 w-16 bg-white p-1 rounded-xl mb-6 imgg">
+                    <p class="text-white/80 leading-relaxed mb-6">مطعم ختعم يقدم لكم أشهى المأكولات الشرقية والمشويات
+                        بأجود أنواع اللحوم والمكونات الطازجة. نتشرف بخدمتكم في جميع فروعنا.</p>
+                </div>
+
+                <div class="dbor">
+                    <h4 class="text-xl font-bold mb-6">روابط سريعة</h4>
+                    <ul class="space-y-4 text-white/70">
+                        <li><a href="index.html" class="hover:text-white">الرئيسية</a></li>
+                        <li><a href="menu.html" class="hover:text-white">المنيو</a></li>
+                        <li><a href="branches.html" class="hover:text-white">الفروع</a></li>
+                    </ul>
+                </div>
+
+                <div class="dbor">
+                    <h4 class="text-xl font-bold mb-6">تواصل معنا</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 justify-end text-white/70">
+                            <span>Kafr El Sheikh, Egypt</span>
+                            <i data-lucide="map-pin" class="h-5 w-5 text-orange-400"></i>
+                        </li>
+                        <li class="flex items-center gap-3 justify-end text-white/70">
+                            <a href="https://www.facebook.com/your-page-link" target="_blank"
+                                class="hover:text-white">صفحتنا على فيسبوك</a>
+                            <i data-lucide="facebook" class="h-5 w-5 text-[#1877F2]"></i>
+                        </li>
+                        <li class="flex items-center gap-3 justify-end text-white/70">
+                            <a href="https://www.instagram.com/khat3am.eg" target="_blank"
+                                class="hover:text-white">تابعنا على انستجرام</a>
+                            <i data-lucide="instagram" class="h-5 w-5 text-[#E4405F]"></i>
+                        </li>
+                        <li class="flex items-center gap-3 justify-end text-white/70">
+                            <a href="https://www.tiktok.com/@khat3m" target="_blank" class="hover:text-white">شاهدنا على
+                                تيك توك</a>
+                            <svg class="h-5 w-5 fill-current text-white" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.54.38-.89.98-1.03 1.64-.39 1.54.12 3.2 1.57 4.06.5.3 1.05.47 1.63.53 1.45.14 2.9-.57 3.65-1.81.35-.58.48-1.24.48-1.92-.02-3.64-.01-7.29-.01-10.93z" />
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dbor">
+                    <h4 class="text-xl font-bold mb-6">ساعات العمل</h4>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-3 justify-end">
+                            <div class="text-right">
+                                <p class="text-sm font-bold">كل يوم</p>
+                                <p class="text-orange-400 font-bold">من 6 صباحاً حتي 1:30 صباحاً</p>
+                            </div>
+                            <i data-lucide="clock" class="h-5 w-5 text-orange-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10 my-10">
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm">
+                <div class="flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <p>© 2026 مطعم ختعم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/menuData.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // كود تشغيل القائمة الجانبية (Sidebar Logic)
+            const openBtn = document.getElementById('mobile-menu-open');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const content = document.getElementById('sidebar-content');
+
+            function toggleMenu(isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('invisible');
+                    overlay.classList.add('opacity-100');
+                    content.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden'; // منع السكرول عند فتح المنيو
+                } else {
+                    overlay.classList.remove('opacity-100');
+                    content.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        sidebar.classList.add('invisible');
+                        document.body.style.overflow = '';
+                    }, 300);
+                }
+            }
+
+            if (openBtn) openBtn.addEventListener('click', () => toggleMenu(true));
+            if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
+            if (overlay) overlay.addEventListener('click', () => toggleMenu(false));
+
+            // قائمة الأطباق المميزة
+            const signatureItems = [
+                {
+                    id: 'p1',
+                    name: 'ختعم رول دجاج',
+                    image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500&q=80',
+                    description: 'الرول الشهير بخلطة ختعم الخاصة مع صوص الثومية والبطاطس.'
+                },
+                {
+                    id: 'p2',
+                    name: 'جرين برجر كلاسيك',
+                    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=500&q=80',
+                    description: 'طعمية بخلطة البرجر المميزة، خس، طماطم، وصوص طحينة.'
+                },
+                {
+                    id: 'p3',
+                    name: 'علبة ميكس السعادة',
+                    image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?w=500&q=80',
+                    description: 'تشكيلة من الفول والطعمية والمهروسة تكفي لشخصين.'
+                },
+                {
+                    id: 'p4',
+                    name: 'سندوتش قنبلة الحلو',
+                    image: 'https://images.unsplash.com/photo-1559591937-e62fb3d8d4bb?w=500&q=80',
+                    description: 'ميكس حلاوة، قشطة، عسل، ومربى في ساندوتش واحد.'
+                }
+            ];
+
+            const popularGrid = document.getElementById('popular-items-grid');
+            if (popularGrid) {
+                popularGrid.innerHTML = signatureItems.map(item => `
+                    <div class="group bg-[#fdf8f3] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-orange-50 relative">
+                        <div class="absolute top-4 left-4 z-10 bg-orange-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Best Seller</div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 text-right">
+                            <h3 class="font-bold text-xl text-green-900">${item.name}</h3>
+                            <p class="text-gray-500 text-xs leading-relaxed mb-4">${item.description}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // تفعيل الأيقونات
+            lucide.createIcons();
+            if (typeof updateCartCount === 'function') updateCartCount();
+        });
+
+        let cart = JSON.parse(localStorage.getItem('khtaam_cart')) || [];
+
+        // --- وظائف المنيو ---
+        function renderMenu(items) {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = items.map(item => `
+                <div class="bg-white rounded-3xl shadow-sm border border-orange-50 overflow-hidden hover:shadow-md transition-all group">
+                    <div class="h-40 overflow-hidden">
+                        <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='img/logo.webp'">
+                    </div>
+                    <div class="p-4 text-right">
+                        <h3 class="font-bold mb-4 text-gray-800">${item.name}</h3>
+                        <button onclick="addItemFromMenu(${item.id}, '${item.name}', '${item.img}')" 
+                                class="w-full bg-green-50 text-green-700 hover:bg-green-700 hover:text-white py-2 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
+                            <span>إضافة للطلب</span>
+                            <i data-lucide="plus" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        window.filterMenu = (catId, btn) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
+            btn.classList.add('active-filter');
+            if (catId === 'all') renderMenu(menuData);
+            else renderMenu(menuData.filter(i => i.cat === catId));
+        };
+
+        // --- وظائف السلة ---
+        window.addItemFromMenu = (id, name, img) => {
+            const existing = cart.find(i => i.id === id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                // تم إزالة السعر من هنا تماماً
+                cart.push({ id, name, img, quantity: 1 });
+            }
+            saveAndRender();
+        };
+
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="text-center py-10 bg-white rounded-3xl border-2 border-dashed border-gray-100">
+                    <p class="text-gray-400">السلة فارغة</p>
+                </div>`;
+                return;
+            }
+
+            container.innerHTML = cart.map((item, index) => `
+                <div class="bg-white p-3 rounded-2xl flex items-center gap-4 shadow-sm border border-orange-50">
+                    <img src="${item.img}" class="w-14 h-14 object-cover rounded-xl shadow-sm" onerror="this.src='img/logo.webp'">
+                    <div class="flex-1 text-right">
+                        <h3 class="font-bold text-sm">${item.name}</h3>
+                    </div>
+                    <div class="flex items-center gap-3 bg-gray-50 px-2 py-1 rounded-full border border-gray-100">
+                        <button onclick="updateQty(${index}, -1)" class="font-bold text-orange-600 w-5">-</button>
+                        <span class="font-bold text-sm w-4 text-center">${item.quantity}</span>
+                        <button onclick="updateQty(${index}, 1)" class="font-bold text-orange-600 w-5">+</button>
+                    </div>
+                    <button onclick="deleteItem(${index})" class="text-red-400 p-2 hover:bg-red-50 rounded-full transition-colors">
+                        <i data-lucide="trash-2" class="h-4 w-4"></i>
+                    </button>
+                </div>
+            `).join('');
+            lucide.createIcons();
+            updateHeaderBadge();
+        }
+
+        window.updateQty = (index, delta) => {
+            cart[index].quantity += delta;
+            if (cart[index].quantity < 1) return deleteItem(index);
+            saveAndRender();
+        };
+
+        window.deleteItem = (index) => {
+            cart.splice(index, 1);
+            saveAndRender();
+        };
+
+        function saveAndRender() {
+            localStorage.setItem('khtaam_cart', JSON.stringify(cart));
+            renderCart(); // تحديث القائمة في صفحة السلة
+
+            // استدعاء دالة التحديث الموجودة في main.js
+            if (typeof updateCartCount === 'function') {
+                updateCartCount();
+            }
+        }
+
+        function updateHeaderBadge() {
+            const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cart-count');
+            if (badge) badge.innerText = total;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMenu(menuData);
+            renderCart();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>
+

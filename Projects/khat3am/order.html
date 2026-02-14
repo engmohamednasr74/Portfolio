@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب - مطعم ختعم</title>
+    <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+
+        <meta name="description"
+        content="مطعم ختعم يقدم أشهى سندوتشات الفول والطعمية، البطاطس، والعيش السوري، بالإضافة إلى وجبات اللحوم المميزة وعلب الفول وأقراص الطعمية الساخنة. طعم زمان بجودة النهاردة.">
+    <meta name="keywords"
+        content="مطعم ختعم, فول وطعمية, سندوتشات سوري, لحوم مشوية, علب فول, طعمية سخنة, مطاعم كفر الشيخ, أكل شعبي مصري, وجبات سريعة">
+    <meta name="author" content="Developer_Engineer Eng_Mohamed_Nasr">
+    <meta property="og:title" content="مطعم ختعم - لقمة هنية تجمعنا" />
+    <meta property="og:description"
+        content="استمتع بأفضل سندوتشات الفول والطعمية واللحوم والعيش السوري. جرب علبنا المميزة وأقراص الطعمية المقرمشة الآن!" />
+        <meta property="og:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/khat3am/img/qrcode.png" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:image:height" content="523" />
+    <meta property="og:url" content="https://engmohamednasr74.github.io/Portfolio/Projects/khat3am/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="مطعم ختعم | الطعم الأصلي" />
+    <meta name="twitter:description" content="سندوتشات فول وطعمية، لحوم، وعيش سوري.. اطلب علبتك الآن من ختعم." />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/khat3am/img/qrcode.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .imgg {
+            border-radius: 50%;
+        }
+
+        .input-error {
+            border-color: #ef4444 !important;
+            /* لون أحمر */
+            background-color: #fef2f2 !important;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-top: 0.25rem;
+            display: none;
+            /* مخفي افتراضياً */
+        }
+
+        .pattern-border {
+            height: 6px;
+            /* سمك الشريط */
+            width: 100%;
+            background: repeating-linear-gradient(-45deg,
+                    hsl(145, 45%, 30%) 0px,
+                    hsl(145, 45%, 30%) 10px,
+                    hsl(24, 95%, 45%) 10px,
+                    hsl(24, 95%, 45%) 20px,
+                    hsl(0, 70%, 50%) 20px,
+                    hsl(0, 70%, 50%) 30px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-[#fdf8f3] text-gray-900 font-body">
+    <div id="mobile-sidebar" class="fixed inset-0 z-[100] invisible transition-all duration-300">
+        <div id="sidebar-overlay" class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300"></div>
+
+        <div id="sidebar-content"
+            class="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+            <div class="p-6 border-b border-orange-50 flex justify-between items-center">
+                <span class="text-xl font-bold text-green-900">القائمة</span>
+                <button id="mobile-menu-close" class="p-2 text-gray-500 hover:text-orange-600">
+                    <i data-lucide="x" class="h-7 w-7"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col p-6 gap-6 font-bold text-gray-700">
+                <a href="index.html" class="flex items-center gap-3 hover:text-orange-600 transition-colors">
+                    <i data-lucide="home" class="h-5 w-5"></i> الرئيسية
+                </a>
+                <a href="cart.html" class="flex items-center gap-3 hover:text-orange-600 transition-colors">
+                    <i data-lucide="utensils" class="h-5 w-5"></i> المنيو
+                </a>
+                <a href="branches.html" class="flex items-center gap-3 hover:text-orange-600 transition-colors">
+                    <i data-lucide="map-pin" class="h-5 w-5"></i> الفروع
+                </a>
+                <hr class="border-orange-50">
+            </nav>
+        </div>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-orange-100 shadow-md">
+        <div class="pattern-border"></div>
+
+        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-open" class="md:hidden p-2 text-gray-700">
+                    <i data-lucide="menu" class="h-7 w-7"></i>
+                </button>
+                <!-- <a href="branches.html"
+                    class="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-full text-sm font-bold transition-all shadow-md">
+                    <span>اطلب الآن</span>
+                    <i data-lucide="phone-call" class="h-4 w-4"></i>
+                </a> -->
+
+                <a href="cart.html"
+                    class="relative p-3 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition-all shadow-lg hover:scale-110">
+                    <i data-lucide="shopping-cart" class="h-6 w-6"></i>
+                    <span id="cart-count"
+                        class="absolute -top-1 -right-1 bg-white text-orange-600 text-[11px] font-black w-5 h-5 flex items-center justify-center rounded-full border-2 border-orange-600 shadow-sm">0</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 font-bold text-gray-700 text-sm">
+                <a href="index.html" class="hover:text-orange-600 transition-colors">الرئيسية</a>
+                <a href="menu.html" class="hover:text-orange-600 transition-colors">المنيو</a>
+                <a href="branches.html" class="hover:text-orange-600 transition-colors">الفروع</a>
+            </nav>
+
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-2xl font-display font-black text-green-900 tracking-tighter">ختعم</span>
+                <img src="img/logo.webp" alt="Logo" class="h-12 w-auto imgg">
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-12 container mx-auto px-4">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-orange-50 order-2 lg:order-1">
+                <h2 class="text-xl font-black mb-6 flex items-center gap-2">
+                    <i data-lucide="user" class="text-orange-600"></i> بيانات التوصيل
+                </h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">الأسم</label>
+                        <input type="text" id="customer-name"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-100 focus:border-orange-500 outline-none transition-all bg-gray-50"
+                            placeholder="أدخل اسمك" required>
+                        <p id="error-name" class="error-message italic">يرجى إدخال الاسم</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">رقم التلفون</label>
+                        <input type="tel" id="customer-phone"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-100 focus:border-orange-500 outline-none transition-all bg-gray-50"
+                            placeholder="01xxxxxxxxx - 040xxxxxxx" required minlength="10" maxlength="13">
+                        <p id="error-phone" class="error-message italic">يرجى إدخال رقم هاتف صحيح</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">العنوان</label>
+                        <textarea id="customer-address" rows="2"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-100 focus:border-orange-500 outline-none transition-all bg-gray-50"
+                            placeholder="المنطقة، الشارع، رقم المبنى" required></textarea>
+                        <p id="error-address" class="error-message italic">يرجى إدخال عنوان التوصيل</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">ملحوظة</label>
+                        <textarea id="customer-notes" rows="2"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-100 focus:border-orange-500 outline-none transition-all bg-gray-50"
+                            placeholder="أي ملاحظات إضافية؟"></textarea>
+                    </div>
+
+                    <div class="mt-4 p-4 bg-orange-50 rounded-2xl border border-orange-100">
+                        <label class="block text-sm font-bold mb-3 text-orange-800">يرجى تحديد رقم التلفون</label>
+                        <div class="grid grid-cols-2 gap-3" id="phone-options">
+                        </div>
+                    </div>
+
+                    <button onclick="sendOrder()"
+                        class="w-full bg-green-700 hover:bg-green-800 text-white py-4 rounded-2xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2 mt-4">
+                        إرسال الطلب عبر واتساب
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-orange-100 order-1 lg:order-2 h-fit">
+                <div class="mb-6 pb-4 border-b">
+                    <h3 id="branch-name" class="font-black text-xl text-green-900">جاري التحميل...</h3>
+                    <p id="branch-address" class="text-sm text-gray-500 flex items-center gap-1 mt-1">
+                        <i data-lucide="map-pin" class="h-3 w-3"></i> --
+                    </p>
+                </div>
+
+                <div id="order-items" class="space-y-4 mb-6">
+                </div>
+
+                <!-- <div class="border-t pt-4 space-y-3">
+                    <div class="flex justify-between text-xl font-black text-green-900 pt-2">
+                        <span>الإجمالي</span>
+                        <span id="final-total">0 ج.م</span>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </main>
+    <script src="js/menuData.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // كود تشغيل القائمة الجانبية (Sidebar Logic)
+            const openBtn = document.getElementById('mobile-menu-open');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const content = document.getElementById('sidebar-content');
+
+            function toggleMenu(isOpen) {
+                if (isOpen) {
+                    sidebar.classList.remove('invisible');
+                    overlay.classList.add('opacity-100');
+                    content.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden'; // منع السكرول عند فتح المنيو
+                } else {
+                    overlay.classList.remove('opacity-100');
+                    content.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        sidebar.classList.add('invisible');
+                        document.body.style.overflow = '';
+                    }, 300);
+                }
+            }
+
+            if (openBtn) openBtn.addEventListener('click', () => toggleMenu(true));
+            if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
+            if (overlay) overlay.addEventListener('click', () => toggleMenu(false));
+        });
+
+        // 1. جلب البيانات الأولية
+        let cart = JSON.parse(localStorage.getItem('khtaam_cart')) || [];
+        const selectedBranch = JSON.parse(localStorage.getItem('selectedBranch'));
+
+        // التحقق إذا كانت السلة فارغة (توجيه للمنيو)
+        if (cart.length === 0) {
+            window.location.href = 'cart.html';
+        }
+
+        // التحقق من وجود فرع مختار
+        if (!selectedBranch) {
+            window.location.href = 'branches.html';
+        }
+
+        /**
+         * تحديث عداد السلة في الهيدر (قراءة مباشرة من التخزين)
+         */
+        function updateCartCount() {
+            const badge = document.getElementById('cart-count');
+            if (badge) {
+                const latestCart = JSON.parse(localStorage.getItem('khtaam_cart')) || [];
+                const totalItems = latestCart.reduce((sum, item) => sum + item.quantity, 0);
+                badge.innerText = totalItems;
+                // إخفاء العداد إذا كان صفراً
+                badge.style.display = totalItems > 0 ? 'flex' : 'none';
+            }
+        }
+
+        /**
+         * تحديد الشفت الحالي
+         */
+        function getActiveShift() {
+            const now = new Date();
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+
+            if (hour >= 6 && hour < 16) return 'morning';
+            else if (hour >= 16 || hour === 0 || (hour === 1 && minute < 30)) return 'evening';
+            return 'closed';
+        }
+
+        /**
+         * عرض المنتجات في ملخص الطلب
+         */
+        function renderItems() {
+            const itemsContainer = document.getElementById('order-items');
+            const currentCart = JSON.parse(localStorage.getItem('khtaam_cart')) || [];
+
+            if (currentCart.length === 0) {
+                itemsContainer.innerHTML = '<p class="text-center text-gray-400">السلة فارغة</p>';
+                return;
+            }
+
+            itemsContainer.innerHTML = currentCart.map(item => `
+                <div class="flex justify-between items-center">
+                    <div class="text-right">
+                        <h4 class="font-bold text-gray-800">${item.quantity} x ${item.name}</h4>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /**
+         * تشغيل الصفحة
+         */
+        function initPage() {
+            // تحديث بيانات الفرع
+            document.getElementById('branch-name').innerText = selectedBranch.nameAr;
+            document.getElementById('branch-address').innerText = selectedBranch.address;
+
+            const shift = getActiveShift();
+            const phoneContainer = document.getElementById('phone-options');
+            phoneContainer.innerHTML = '';
+
+            if (shift === 'closed') {
+                phoneContainer.innerHTML = `<p class="col-span-2 text-red-600 font-bold text-center p-2">المطعم مغلق حالياً</p>`;
+            } else if (selectedBranch.shifts && selectedBranch.shifts[shift]) {
+                const availableNumbers = selectedBranch.shifts[shift];
+                phoneContainer.innerHTML = availableNumbers.map((num, idx) => `
+                    <label class="relative flex items-center justify-center p-3 border-2 border-gray-100 bg-white rounded-xl cursor-pointer hover:border-orange-500 transition-all has-[:checked]:border-green-600 has-[:checked]:bg-green-50">
+                        <input type="radio" name="target_phone" value="${num}" ${idx === 0 ? 'checked' : ''} class="absolute opacity-0">
+                        <div class="text-center">
+                            <span class="block text-xs text-gray-500">مسؤول ${idx + 1}</span>
+                            <span class="font-bold text-sm">${num}</span>
+                        </div>
+                    </label>
+                `).join('');
+            } else {
+                phoneContainer.innerHTML = `<p class="col-span-2 text-gray-500 text-center p-2">لا توجد أرقام متاحة حالياً</p>`;
+            }
+
+            renderItems();
+            updateCartCount();
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        /**
+         * إرسال الطلب
+         */
+        function sendOrder() {
+            const fields = [
+                { id: 'customer-name', errorId: 'error-name' },
+                { id: 'customer-phone', errorId: 'error-phone' },
+                { id: 'customer-address', errorId: 'error-address' }
+            ];
+
+            let isValid = true;
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const errorText = document.getElementById(field.errorId);
+                if (!input.value.trim()) {
+                    input.classList.add('input-error');
+                    errorText.style.display = 'block';
+                    isValid = false;
+                } else {
+                    input.classList.remove('input-error');
+                    errorText.style.display = 'none';
+                }
+            });
+
+            if (!isValid) return;
+
+            const selectedPhoneElement = document.querySelector('input[name="target_phone"]:checked');
+            if (!selectedPhoneElement) {
+                alert('الرجاء اختيار رقم الواتساب المتاح حالياً');
+                return;
+            }
+
+            const currentCart = JSON.parse(localStorage.getItem('khtaam_cart')) || [];
+            const name = document.getElementById('customer-name').value;
+            const phone = document.getElementById('customer-phone').value;
+            const address = document.getElementById('customer-address').value;
+            const notes = document.getElementById('customer-notes').value || "لا يوجد ملحوظه";
+            const targetWhatsApp = selectedPhoneElement.value.replace(/\D/g, '');
+
+            let message = `Order ${selectedBranch.nameAr} \n\n`;
+            currentCart.forEach(item => {
+                message += ` ${item.quantity} x ${item.name}\n`;
+            });
+            message += `\n الأسم: ${name} \n`;
+            message += `\n رقم العميل: ${phone} \n`;
+            message += `\n العنوان: ${address} \n`;
+            message += `\n ملحوظه: ${notes}`;
+
+            window.open(`https://wa.me/${targetWhatsApp}?text=${encodeURIComponent(message)}`, '_blank');
+
+            localStorage.removeItem('khtaam_cart');
+            window.location.href = 'index.html';
+        }
+
+        // مراقب التغييرات في التخزين (لمزامنة العداد إذا عدل المستخدم السلة في تبويب آخر)
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'khtaam_cart') {
+                updateCartCount();
+                renderItems();
+                // إذا أصبحت السلة فارغة من تبويب آخر، ارجع للمنيو
+                const checkCart = JSON.parse(event.newValue) || [];
+                if (checkCart.length === 0) window.location.href = 'cart.html';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+
+</html>
+

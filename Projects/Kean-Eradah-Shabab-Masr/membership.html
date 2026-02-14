@@ -1,0 +1,492 @@
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كيان إرادة شباب مصر - The entity of the will of the youth of Egypt</title>
+    <meta name="description"
+        content="كيان إرادة شباب مصر - كيان شبابي وطني تحت رعاية وزارة الشباب والرياضة وعضو في الاتحاد المصري للكيانات الشبابية. نسعى لتمكين الشباب المصري من خلال فعاليات تدريبية، مبادرات مجتمعية، وبرامج تنموية. شباب بإرادة وطنية.">
+
+    <meta name="keywords"
+        content="كيان إرادة شباب مصر, كيان شبابي مصري, وزارة الشباب والرياضة, اتحاد الكيانات الشبابية, تمكين الشباب, فعاليات شبابية, برامج تدريبية, مبادرات مجتمعية, شباب بإرادة وطنية, انضمام شباب مصر">
+
+    <meta name="author" content="Developer_Engineer Eng_Mohamed_Nasr">
+
+    <!-- ====== Open Graph - للمعاينة في فيسبوك/واتساب/لينكدإن ====== -->
+    <meta property="og:title" content="كيان إرادة شباب مصر - شباب بإرادة وطنية" />
+    <meta property="og:description"
+        content="كيان شبابي وطني يهدف إلى تمكين الشباب المصري من خلال فعاليات، تدريبات، ومبادرات مجتمعية تحت رعاية وزارة الشباب والرياضة." />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/Kean-Eradah-Shabab-Masr/img/entity-logo.jpeg" />
+    <meta property="og:image:width" content="1181" />
+    <meta property="og:image:height" content="836" />
+    <meta property="og:url"
+        content="https://engmohamednasr74.github.io/Portfolio/Projects/Kean-Eradah-Shabab-Masr/membership.html" />
+    <!-- غيرها لدومين الموقع الحقيقي -->
+    <meta property="og:type" content="website" />
+
+    <!-- ====== Twitter Card (لتويتر/X) ====== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="كيان إرادة شباب مصر - شباب بإرادة وطنية" />
+    <meta name="twitter:description"
+        content="كيان شبابي مصري يركز على تمكين الشباب وتنظيم فعاليات وطنية تحت رعاية وزارة الشباب والرياضة." />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/Kean-Eradah-Shabab-Masr/img/entity-logo.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" data-tailwind-jit="true"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/text-css.css">
+    <link rel="stylesheet" href="css/text-css2.css">
+    <style>
+        /* للـ marquee (الحركة) - تحسين rtl */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            /* ابدأ من اليسار في rtl */
+            100% {
+                transform: translateX(-100%);
+            }
+
+            /* تحرك لليسار */
+        }
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+            display: inline-block;
+            padding-left: 100%;
+            /* تكرار سلس */
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root" class="min-h-screen bg-background">
+        <div class="flex flex-col bg-background">
+        <header class="bg-primary sticky top-0 z-50 shadow-lg border-b border-golden/20">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-3">
+                    <div class="flex istems-center gap-3">
+                        <!-- زر الموبايل (الـ hamburger) -->
+                        <button id="mobile-menu-btn"
+                            class="lg:hidden p-2 text-foreground hover:text-accent transition-colors"
+                            aria-label="فتح القائمة">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-menu">
+                                <line x1="4" x2="20" y1="12" y2="12"></line>
+                                <line x1="4" x2="20" y1="6" y2="6"></line>
+                                <line x1="4" x2="20" y1="18" y2="18"></line>
+                            </svg>
+                        </button>
+
+                        <!-- القائمة الجانبية (هتظهر من اليمين للشمال) -->
+                        <div id="mobile-sidebar"
+                            class="fixed inset-y-0 right-[-100%] w-80 bg-primary z-50 transition-all duration-300 ease-in-out shadow-2xl lg:hidden">
+                            <!-- زر الإغلاق -->
+                            <button id="close-mobile-menu" class="absolute top-4 right-4 text-white text-3xl">
+                                ×
+                            </button>
+
+                            <!-- محتوى القائمة -->
+                            <div class="flex flex-col h-full pt-20 px-6 text-white">
+                                <a href="index.html"
+                                    class="py-4 text-lg hover:text-accent transition-colors">الرئيسية</a>
+                                <a href="events.html"
+                                    class="py-4 text-lg hover:text-accent transition-colors">الفعاليات</a>
+                                <a href="training.html" class="py-4 text-lg hover:text-accent transition-colors">البرامج
+                                    التدريبية</a>
+                                <a href="achievements.html"
+                                    class="py-4 text-lg hover:text-accent transition-colors">الإنجازات</a>
+                                <a href="media.html" class="py-4 text-lg hover:text-accent transition-colors">البرامج
+                                    الإعلامية</a>
+                                <a href="leadership.html"
+                                    class="py-4 text-lg hover:text-accent transition-colors">القيادات</a>
+                                <a href="about.html" class="py-4 text-lg hover:text-accent transition-colors">من
+                                    نحن</a>
+                                <a href="membership.html"
+                                    class="py-4 text-lg bg-secondary text-secondary-foreground rounded-lg px-4 py-3 mt-4 text-center">انضم
+                                    إلينا</a>
+                            </div>
+                        </div>
+
+                        <!-- Overlay خفيف لما القائمة تفتح (اختياري بس بيحسن التجربة) -->
+                        <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-40 hidden lg:hidden"></div>
+                        <a class="flex items-center gap-3" href="index.html"><img src="img/entity-logo.jpeg"
+                                alt="كيان إرادة شباب مصر" class="h-12 md:h-16 w-auto rounded-lg"></a>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-1"><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                                </path>
+                            </svg>الرئيسية</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="events.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>الفعاليات</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="training.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap">
+                                <path
+                                    d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                                </path>
+                                <path d="M22 10v6"></path>
+                                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                            </svg>البرامج التدريبية</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="achievements.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                                <path d="M4 22h16"></path>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                            </svg>الإنجازات</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="media.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv">
+                                <rect width="20" height="15" x="2" y="7" rx="2" ry="2"></rect>
+                                <polyline points="17 2 12 7 7 2"></polyline>
+                            </svg>البرامج الإعلامية</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="leadership.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="10" r="3"></circle>
+                                <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+                            </svg>القيادات</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-foreground/80 hover:text-accent hover:bg-muted"
+                            href="about.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4"></path>
+                                <path d="M12 8h.01"></path>
+                            </svg>من نحن</a><a
+                            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center gap-2 bg-secondary text-secondary-foreground"
+                            href="membership.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>انضم إلينا</a></nav>
+                    <div class="flex items-center gap-4">
+                        <img src="img/ministry-logo.png" alt="وزارة الشباب والرياضة"
+                            class="h-10 md:h-14 w-auto hidden md:block bg-foreground/90 rounded p-1"><img
+                            src="img/federation-logo.png" alt="الاتحاد المصري للكيانات الشبابية"
+                            class="h-10 md:h-14 w-auto hidden md:block">
+                    </div>
+                </div>
+            </div>
+            <div class="news-ticker bg-muted border-y border-golden/30">
+                <div class="container mx-auto relative overflow-hidden">
+                    <div class="flex items-center"><span
+                            class="bg-secondary text-secondary-foreground px-4 py-2 font-bold text-sm whitespace-nowrap z-10">أخبار
+                            هامة</span>
+                        <div id="news-ticker" class="whitespace-nowrap animate-marquee">
+                            <!-- الأخبار هتضاف هنا كـ "خبر - خبر" -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+            <main class="flex-1">
+                <section class="py-12 md:py-16">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h1 class="text-4xl md:text-5xl font-bold text-accent mb-4">انضم إلينا</h1>
+                            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">كن جزءاً من أسرة كيان إرادة شباب
+                                مصر
+                                وساهم في بناء مستقبل أفضل</p>
+                        </div>
+                        <div class="max-w-2xl mx-auto">
+                            <form class="card-golden p-8" id="membershipForm">
+                                <div class="mb-6"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+                                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>الاسم الكامل (كما في البطاقة) *</label><input type="text" name="fullName"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground"
+                                        placeholder="أدخل اسمك الكامل" id="fullName" required="" value=""></div>
+                                <div class="mb-6"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                            </path>
+                                        </svg>رقم الهاتف *</label><input type="tel" name="phone" maxlength="11"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground"
+                                        placeholder="01012345678" dir="ltr" id="phone" required="" value=""></div>
+                                <div class="mb-6"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-credit-card">
+                                            <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                            <line x1="2" x2="22" y1="10" y2="10"></line>
+                                        </svg>الرقم القومي *</label><input type="text" name="nationalId"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground"
+                                        placeholder="أدخل الرقم القومي (14 رقم)" id="nationalId" maxlength="14"
+                                        dir="ltr" required="" value=""></div>
+                                <div class="mb-6"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2">المحافظة
+                                        *</label><select name="governorate"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground"
+                                        required="" id="governorate">
+                                        <option value="">اختر المحافظة</option>
+                                        <option value="القاهرة">القاهرة</option>
+                                        <option value="الجيزة">الجيزة</option>
+                                        <option value="الإسكندرية">الإسكندرية</option>
+                                        <option value="الشرقية">الشرقية</option>
+                                        <option value="الدقهلية">الدقهلية</option>
+                                        <option value="البحيرة">البحيرة</option>
+                                        <option value="المنوفية">المنوفية</option>
+                                        <option value="الغربية">الغربية</option>
+                                        <option value="كفر الشيخ">كفر الشيخ</option>
+                                        <option value="دمياط">دمياط</option>
+                                        <option value="بورسعيد">بورسعيد</option>
+                                        <option value="الإسماعيلية">الإسماعيلية</option>
+                                        <option value="السويس">السويس</option>
+                                        <option value="شمال سيناء">شمال سيناء</option>
+                                        <option value="جنوب سيناء">جنوب سيناء</option>
+                                        <option value="البحر الأحمر">البحر الأحمر</option>
+                                        <option value="الفيوم">الفيوم</option>
+                                        <option value="بني سويف">بني سويف</option>
+                                        <option value="المنيا">المنيا</option>
+                                        <option value="أسيوط">أسيوط</option>
+                                        <option value="سوهاج">سوهاج</option>
+                                        <option value="قنا">قنا</option>
+                                        <option value="الأقصر">الأقصر</option>
+                                        <option value="أسوان">أسوان</option>
+                                        <option value="مطروح">مطروح</option>
+                                        <option value="الوادي الجديد">الوادي الجديد</option>
+                                        <option value="القليوبية">القليوبية</option>
+                                    </select></div>
+                                <div class="mb-6"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-graduation-cap">
+                                            <path
+                                                d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                                            </path>
+                                            <path d="M22 10v6"></path>
+                                            <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                                        </svg>المؤهل *</label><select name="qualification"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground"
+                                        required="" id="qualification">
+                                        <option value="">اختر المؤهل</option>
+                                        <option value="مؤهل عالي">مؤهل عالي</option>
+                                        <option value="مؤهل فوق متوسط">مؤهل فوق متوسط</option>
+                                        <option value="مؤهل متوسط">مؤهل متوسط</option>
+                                    </select></div>
+                                <div class="mb-6"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>اللجنة التي ترغب في الانضمام إليها *</label><select name="committee"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground"
+                                        required="" id="committee">
+                                        <option value="">اختر اللجنة</option>
+                                        <option value="لجنة الصحة">لجنة الصحة</option>
+                                        <option value="لجنة التدريب والتعليم">لجنة التدريب والتعليم</option>
+                                        <option value="لجنة الرياضة">لجنة الرياضة</option>
+                                        <option value="لجنة التكنولوجيا">لجنة التكنولوجيا</option>
+                                        <option value="لجنة المرأة">لجنة المرأة</option>
+                                        <option value="لجنة الإعلام">لجنة الإعلام</option>
+                                        <option value="لجنة التنظيم">لجنة التنظيم</option>
+                                        <option value="لجنة ذوي الهمم">لجنة ذوي الهمم</option>
+                                        <option value="لجنة التقييم والمتابعة">لجنة التقييم والمتابعة</option>
+                                        <option value="لجنة البيئة">لجنة البيئة</option>
+                                        <option value="لجنة السياحة">لجنة السياحة</option>
+                                        <option value="لجنة المجلس الاستشاري الأعلى">لجنة المجلس الاستشاري الأعلى
+                                        </option>
+                                        <option value="اللجنة الفنية">اللجنة الفنية</option>
+                                    </select></div>
+                                <div class="mb-8"><label
+                                        class="flex items-center gap-2 text-accent font-semibold mb-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-lightbulb">
+                                            <path
+                                                d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
+                                            </path>
+                                            <path d="M9 18h6"></path>
+                                            <path d="M10 22h4"></path>
+                                        </svg>المهارات (اختياري)</label><textarea name="skills"
+                                        class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:outline-none focus:border-secondary text-foreground resize-none"
+                                        rows="3" placeholder="اذكر مهاراتك إن وجدت..." id="skills"></textarea></div>
+                                <button type="submit"
+                                    class="w-full btn-golden flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-send">
+                                        <path
+                                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
+                                        </path>
+                                        <path d="m21.854 2.147-10.94 10.939"></path>
+                                    </svg>إرسال الطلب عبر واتساب</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="bg-muted border-t border-golden/20 mt-auto">
+                <div class="container mx-auto px-4 py-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-accent">كيان إرادة شباب مصر</h3>
+                            <p class="text-muted-foreground leading-relaxed">كيان شبابي مصري يعمل تحت مظلة وزارة الشباب
+                                والرياضة والاتحاد المصري للكيانات الشبابية. نسعى لتمكين الشباب المصري وتطوير قدراتهم.
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-accent">روابط سريعة</h3>
+                            <ul class="space-y-2">
+                                <li><a class="text-muted-foreground hover:text-accent transition-colors"
+                                        href="events.html">الفعاليات</a></li>
+                                <li><a class="text-muted-foreground hover:text-accent transition-colors"
+                                        href="training.html">البرامج التدريبية</a></li>
+                                <li><a class="text-muted-foreground hover:text-accent transition-colors"
+                                        href="membership.html">انضم إلينا</a></li>
+                                <li><a class="text-muted-foreground hover:text-accent transition-colors"
+                                        href="about.html">من نحن</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-accent">تواصل معنا</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-muted-foreground"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-phone text-secondary">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg><span dir="ltr">+20 100 004 8381</span></li>
+                                <li class="flex items-center gap-3 text-muted-foreground"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-mail text-secondary">
+                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg><span>info@eradahshabab.org</span></li>
+                                <li class="flex items-center gap-3 text-muted-foreground"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-map-pin text-secondary">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                        </path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg><span>القاهرة، مصر</span></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-accent">تابعونا</h3>
+                            <div class="flex gap-4"><a href="https://www.facebook.com/eradet.shbab.masr" target="_blank"
+                                    title="صفحتنا علي فيس" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300"
+                                    aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                        </path>
+                                    </svg></a><a href="https://whatsapp.com/channel/0029VaLtjzzHFxOv6Bf2oq3Z"
+                                    title="قناتنا علي واتس" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all duration-300"
+                                    aria-label="WhatsApp Channel">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.408.001 12.045a11.811 11.811 0 001.592 5.918L0 24l6.147-1.612a11.771 11.771 0 005.9 1.57h.005c6.634 0 12.043-5.409 12.046-12.048a11.82 11.82 0 00-3.498-8.52z" />
+                                    </svg>
+                                </a><a
+                                    href="https://www.instagram.com/eradetshbabmasr.official?igsh=MXZjanVqdTgyc2J5NQ%3D%3D&utm_source=qr"
+                                    title="صفحتنا علي انستا" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-[#E1306C] hover:text-white transition-all duration-300"
+                                    aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-instagram">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                                    </svg></a><a href="https://www.youtube.com/@EradtshbabmasrTV" target="_blank"
+                                    title="قناتنا علي يوتيوب" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-all duration-300"
+                                    aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube">
+                                        <path
+                                            d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                                        </path>
+                                        <path d="m10 15 5-3-5-3z"></path>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                    <div class="mt-12 pt-8 border-t border-golden/20 text-center">
+                        <p class="text-muted-foreground">© 2026 كيان إرادة شباب مصر - جميع الحقوق محفوظة</p>
+                        <p class="text-muted-foreground/60 text-sm mt-2">شباب بإرادة وطنية - The Will of the Youth of
+                            Egypt</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database-compat.js"></script>
+    <script src="js/Firebase-public.js"></script> <!-- لو عملته، أو Firebase.js لو مفيش auth -->
+    <script src="js/Mobile-Menu-Slide.js"></script>
+    <script src="js/membership-form.js"></script>
+    <script>
+        // جلب وعرض الأخبار كـ نص متحرك "خبر - خبر"
+        db.ref('news').on('value', (snapshot) => {
+            const container = document.getElementById('news-ticker');
+            container.innerHTML = ''; // مسح القديم
+            const data = snapshot.val() || {};
+            const titles = Object.values(data).map(item => item.title).join(' - '); // جمع العناوين بـ "-"
+            container.innerHTML = titles ? `<span>${titles}</span>` : 'لا توجد أخبار حاليًا.';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,647 @@
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ميكس كريب - وجبات سريعة في كفر الزيات | Mix Crepe</title>
+    <meta name="description"
+        content="محمد نصر - مطور ويب كامل الستاك ومصمم UI/UX محترف. خبرة 4 سنوات في الفرونت إند، 2 في الباك إند، وسنة في فيجما. بناء مواقع تفاعلية، سريعة، وجذابة باستخدام React, Laravel, Figma, Photoshop, Illustrator.">
+    <meta name="keywords"
+        content="full stack developer, frontend developer, backend developer, web developer, UI UX designer, web design, web development, JavaScript, React, Node.js, Express, MongoDB, Laravel, Figma, Photoshop, Illustrator, HTML, CSS, responsive design, Egyptian developer">
+    <meta name="author" content="ENG Mohamed Nasr - Full-Stack Developer & UI/UX Designer">
+
+    <!-- ====== Open Graph - للمعاينة الجذابة في الشات والسوشيال ====== -->
+    <meta property="og:title" content="ENG Mohamed Nasr | Full-Stack Developer & UI/UX Designer" />
+    <meta property="og:description"
+        content="مطور ويب كامل الستاك ومصمم UI/UX | React - Laravel - Figma - Photoshop - Illustrator | خبرة +4 سنوات في بناء تطبيقات ويب احترافية وتجارب مستخدم سلسة 🚀">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/mix_crepe/img/Screenshot%202026-02-02%20161246.png" />
+    <meta property="og:image:width" content="160" />
+    <meta property="og:image:height" content="40" />
+    <meta property="og:url" content="https://engmohamednasr74.github.io/Portfolio/Projects/mix_crepe/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_EG" /> <!-- لدعم اللغة العربية -->
+    <meta property="og:site_name" content="ENG Mohamed Nasr Portfolio" />
+
+    <!-- ====== Twitter Card (لتويتر/X) ====== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ENG Mohamed Nasr | Full-Stack Developer & UI/UX Designer" />
+    <meta name="twitter:description"
+        content="مطور ويب كامل الستاك ومصمم UI/UX | React - Laravel - Figma - Photoshop - Illustrator | +4 سنوات خبرة في تصميم وتطوير مواقع احترافية وتطبيقات سريعة 📱💻">
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/mix_crepe/img/Screenshot%202026-02-02%20161246.png" />
+    <meta name="twitter:creator" content="@eng_mohamed_nasr" /> <!-- لو عندك حساب Twitter، غيره هنا -->
+    <link rel="canonical" href="https://mixcrepe.com">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/Screenshot 2026-02-02 161246.png">
+    <script src="https://cdn.tailwindcss.com" data-tailwind-jit="true"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="min-h-screen">
+            <!-- استبدل جزء الـ header كامل في index.html بهذا الكود المعدل -->
+            <header class="sticky top-0 z-50 transition-all duration-300 bg-background shadow-md">
+                <div class="container mx-auto px-4">
+                    <div class="flex items-center justify-between h-16 md:h-20">
+                        <a href="#home" class="flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center shadow-lg">
+                                <span class="text-primary-foreground font-bold text-lg">MIX</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xl md:text-2xl font-bold text-primary">ميكس كريب</span>
+                                <span class="text-xs text-muted-foreground hidden sm:block">Mix Crepe</span>
+                            </div>
+                        </a>
+
+                        <!-- Desktop Menu -->
+                        <nav class="hidden md:flex items-center gap-1">
+                            <a href="#home"><button
+                                    class="px-4 py-2 text-foreground font-medium rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">الرئيسية</button></a>
+                            <a href="#menu"><button
+                                    class="px-4 py-2 text-foreground font-medium rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">المنيو</button></a>
+                            <a href="#about"><button
+                                    class="px-4 py-2 text-foreground font-medium rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">من
+                                    نحن</button></a>
+                            <a href="#contact"><button
+                                    class="px-4 py-2 text-foreground font-medium rounded-lg hover:bg-primary/10 hover:text-primary transition-colors">تواصل
+                                    معنا</button></a>
+                        </nav>
+
+                        <div class="hidden md:flex items-center gap-3">
+                            <a href="https://wa.me/+201024015334" target="_blank" rel="noopener noreferrer">
+                                <button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-gradient-brand hover:opacity-90 shadow-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 ml-2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                    اطلب الآن
+                                </button>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Menu Button (الزر اللي مش بيشتغل) -->
+                        <button id="mobile-menu-button"
+                            class="md:hidden p-3 rounded-lg hover:bg-muted transition-colors"
+                            aria-label="فتح/إغلاق القائمة">
+                            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                                <line x1="4" x2="20" y1="12" y2="12"></line>
+                                <line x1="4" x2="20" y1="6" y2="6"></line>
+                                <line x1="4" x2="20" y1="18" y2="18"></line>
+                            </svg>
+                            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu (القائمة المخفية) -->
+                <div id="mobile-menu"
+                    class="md:hidden border-t border-border overflow-hidden transition-all duration-500 max-h-0 bg-background">
+                    <nav class="container mx-auto px-4 py-6 space-y-4">
+                        <a href="#home"><button
+                                class="block w-full text-right text-lg font-medium py-3 hover:text-primary transition-colors">الرئيسية</button></a>
+                        <a href="#menu"><button
+                                class="block w-full text-right text-lg font-medium py-3 hover:text-primary transition-colors">المنيو</button></a>
+                        <a href="#about"><button
+                                class="block w-full text-right text-lg font-medium py-3 hover:text-primary transition-colors">من
+                                نحن</button>
+                            <a href="#contact"><button
+                                    class="block w-full text-right text-lg font-medium py-3 hover:text-primary transition-colors">تواصل
+                                    معنا</button></a>
+                            <a href="tel:010-240-15-334" class="block mt-6">
+                                <button
+                                    class="w-full bg-gradient-brand text-primary-foreground py-4 rounded-lg text-lg font-bold hover:opacity-90 transition-opacity">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-phone inline w-5 h-5 ml-2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                    اطلب الآن
+                                </button>
+                            </a>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <section id="home" class="relative h-[70vh] overflow-hidden">
+                    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-500 opacity-100"
+                        style="background-image: url('https://lh3.googleusercontent.com/gg/AMW1TPr9MVda9xXmx-lJCJEn6brTCcxSkPWPe4L1SL9u85xKvZeLMTHKJkX6CNMOE-ltDCNERq_Qfo_AKe6iy3LynCXAtCaGJzPmRZb2L4w0Y9sMJ-mE7A3GPchC_6z1DiTxxe0A_798qlPDNKFQNt4-VGAFLr6UWcFjH1eqbkxCNIbKVsRCEBST=s1024-rj-mp2');"
+                        aria-label="كريب شهي">
+                        <div
+                            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">أفضل الكريب في كفر الزيات</h1>
+                            <p class="text-xl mb-6">كريب حلو وحادق مع مكونات طازجة</p>
+                            <a href="#menu"
+                                class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors">عرض
+                                المنيو</a>
+                        </div>
+                    </div>
+                    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-500 opacity-0"
+                        style="background-image: url('https://lh3.googleusercontent.com/gg/AMW1TPqgmIdbcb7PgEzYXtNuaiMFk0xmLxIG-0NiagzikOL_fgYSwgUL8gNnmyHCvxKoUfouz0M42nSNAuK6ZDoIUO3-qlH3GJvWM-V6q8cSrjpMK72CU7aqpWK_adfV2wB6tJ73TdRoao26SpPYStndC0zuSoLDlKy4UNvnUUFw9L4pO8kgXBRK=s1024-rj-mp2');"
+                        aria-label="بيتزا طازجة">
+                        <div
+                            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">بيتزا طازجة يومياً</h1>
+                            <p class="text-xl mb-6">ميكس، بيبروني، سوبر سوبريم، وأكثر</p>
+                            <a href="#menu"
+                                class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors">عرض
+                                المنيو</a>
+                        </div>
+                    </div>
+                    <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-500 opacity-0"
+                        style="background-image: url('https://lh3.googleusercontent.com/gg/AMW1TPrdjR0lQMY-DswGoIpbOOHi4DBaavT1BH0ULze_4AiYoXDnD_nQrqTyKLC6ApQq6L0jHrazEqxv6a2ubLUC70u4rdVdQthcldBI-ZDrpiTIPThqRPsHr-ZbW8-admDClFcmU972Ckwa3U2ppgl1B-1OpK9RK34mliEu3Dqrg3yujFDRuAM=s1024-rj-mp2');"
+                        aria-label="برجر شهي">
+                        <div
+                            class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center text-white px-4">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">برجر شهي ولذيذ</h1>
+                            <p class="text-xl mb-6">لحم بقري، فراخ، جبن، ميكس</p>
+                            <a href="#menu"
+                                class="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors">عرض
+                                المنيو</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="menu" class="py-16 bg-white">
+                    <div class="container mx-auto px-6">
+                        <h2 class="text-4xl font-bold text-center mb-12 text-red-700">المنيو</h2>
+
+                        <!-- Loading Spinner -->
+                        <div id="loading" class="text-center text-gray-600 text-xl">جاري تحميل المنيو...</div>
+
+                        <!-- Tabs للفئات -->
+                        <div id="menu-tabs" class="flex justify-center flex-wrap gap-4 mb-10 hidden"></div>
+
+                        <!-- عرض الأصناف -->
+                        <div id="menu-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                    </div>
+                </section>
+                <section id="offers" class="py-16 bg-gray-50">
+                    <div class="container mx-auto px-6">
+                        <h2 class="text-4xl font-bold text-center mb-12 text-red-700">العروض</h2>
+
+                        <!-- Loading للعروض -->
+                        <div id="offers-loading" class="text-center text-gray-600 text-xl">جاري تحميل العروض...</div>
+
+                        <!-- عرض العروض -->
+                        <div id="offers-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                    </div>
+                </section>
+                <section id="about" class="py-16 md:py-24 bg-background">
+                    <div class="container">
+                        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                            <div class="relative">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="space-y-4">
+                                        <div class="rounded-2xl overflow-hidden shadow-lg"><img
+                                                src="https://scontent.fqtt2-1.fna.fbcdn.net/v/t39.30808-6/608277038_1419478436856004_7665883678953556801_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=1jUe6ArBABMQ7kNvwFt5mgY&_nc_oc=AdlHrkRUZ5mo-9EmxgVQzfYur4qbnGtbLU52JJZslwiKnQ54yp-cCjUPPQyrhVfqNg8&_nc_zt=23&_nc_ht=scontent.fqtt2-1.fna&_nc_gid=8wTbmUq9rrzT5E-egMeixA&oh=00_AftGJtTVMcroknotdCqwdwsH9LmfoPRfW89Npe0bPcxV8A&oe=69867A85"
+                                                alt="كريب لذيذ"
+                                                class="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-500">
+                                        </div>
+                                        <div class="rounded-2xl overflow-hidden shadow-lg"><img
+                                                src="https://scontent.fqtt2-1.fna.fbcdn.net/v/t39.30808-6/558054973_1345534477583734_1479393958354390326_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=7ARunZSCE3IQ7kNvwGqu_sb&_nc_oc=AdkyK_FtSviRRTX5-p4B64lEXAMIt_dFfLjh2UJjnDp3wraFP6CUE1yZSXqJmuOHlJU&_nc_zt=23&_nc_ht=scontent.fqtt2-1.fna&_nc_gid=ROAe6L8mK2NoXYhcF_eLVQ&oh=00_Afugn4iCMfdWDwnllK18VNlDMIM4fGp1BMxY40-ocNEP3w&oe=69868B55"
+                                                alt="بيتزا طازجة"
+                                                class="w-full h-32 md:h-40 object-cover hover:scale-105 transition-transform duration-500">
+                                        </div>
+                                    </div>
+                                    <div class="pt-8">
+                                        <div class="rounded-2xl overflow-hidden shadow-lg h-full"><img
+                                                src="https://scontent.fqtt2-1.fna.fbcdn.net/v/t39.30808-6/590395562_1394726149331233_4211067111731708435_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Z7fUYuudM4gQ7kNvwGwkUti&_nc_oc=Admg9qg1BB9ZzvSNxC7-pMuypEaLh354sSMTe1cZA73PyrMBJ9ocTNzxtLzB46FPpD4&_nc_zt=23&_nc_ht=scontent.fqtt2-1.fna&_nc_gid=7SHGMoQrcW_hWsi84h8XyQ&oh=00_AfsNly7JqdMAp-DZEO1AuEKFFDL8avzV8ddzTDQvvUkI7Q&oe=6986908C"
+                                                alt="برجر شهي"
+                                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute -bottom-6 right-4 md:right-8 bg-gradient-brand text-primary-foreground px-6 py-4 rounded-2xl shadow-lg">
+                                    <div class="text-center"><span
+                                            class="text-3xl md:text-4xl font-bold block">+10</span><span
+                                            class="text-sm">سنوات خبرة</span></div>
+                                </div>
+                            </div>
+                            <div><span class="text-accent font-semibold text-lg mb-2 block">تعرف علينا</span>
+                                <h2 class="section-title mb-6">من نحن</h2>
+                                <p class="text-lg text-muted-foreground leading-relaxed mb-8">ميكس كريب هو مطعم وجبات
+                                    سريعة متخصص في الكريب الحلو والحادق، البيتزا، البرجر، والإضافات الشهية. نستخدم
+                                    مكونات طازجة لتقديم تجربة لذيذة مع خدمة توصيل.</p>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div
+                                        class="flex items-start gap-4 p-4 rounded-xl bg-secondary hover:shadow-md transition-shadow">
+                                        <div
+                                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-circle-check-big w-6 h-6">
+                                                <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                                <path d="m9 11 3 3L22 4"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-foreground mb-1">مكونات طازجة</h3>
+                                            <p class="text-sm text-muted-foreground">نستخدم أجود المكونات الطازجة يومياً
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-4 p-4 rounded-xl bg-secondary hover:shadow-md transition-shadow">
+                                        <div
+                                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-clock w-6 h-6">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-foreground mb-1">سرعة التحضير</h3>
+                                            <p class="text-sm text-muted-foreground">طلبك جاهز في أقل من 15 دقيقة</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-4 p-4 rounded-xl bg-secondary hover:shadow-md transition-shadow">
+                                        <div
+                                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-truck w-6 h-6">
+                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2">
+                                                </path>
+                                                <path d="M15 18H9"></path>
+                                                <path
+                                                    d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14">
+                                                </path>
+                                                <circle cx="17" cy="18" r="2"></circle>
+                                                <circle cx="7" cy="18" r="2"></circle>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-foreground mb-1">توصيل سريع</h3>
+                                            <p class="text-sm text-muted-foreground">توصيل لجميع مناطق كفر الزيات</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex items-start gap-4 p-4 rounded-xl bg-secondary hover:shadow-md transition-shadow">
+                                        <div
+                                            class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-map-pin w-6 h-6">
+                                                <path
+                                                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                                </path>
+                                                <circle cx="12" cy="10" r="3"></circle>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-foreground mb-1">موقع متميز</h3>
+                                            <p class="text-sm text-muted-foreground">سهولة الوصول والجلوس المريح</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 p-6 bg-accent/10 rounded-2xl border border-accent/20">
+                                    <div class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-clock w-8 h-8 text-accent">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
+                                        <div>
+                                            <h4 class="font-bold text-foreground">مواعيد العمل</h4>
+                                            <p class="text-muted-foreground">يومياً من 12 ظهراً حتى 2 صباحاً</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="contact" class="py-16 md:py-24 bg-secondary">
+                    <div class="container">
+                        <div class="text-center mb-12"><span class="text-accent font-semibold text-lg mb-2 block">تواصل
+                                معنا</span>
+                            <h2 class="section-title mb-4">اتصل بنا</h2>
+                            <p class="section-subtitle max-w-2xl mx-auto">نحن هنا لخدمتك! تواصل معنا للطلب أو الاستفسار
+                            </p>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-12">
+                            <div class="space-y-6">
+                                <div class="bg-card rounded-2xl p-6 shadow-sm">
+                                    <h3 class="text-xl font-bold text-foreground mb-4 flex items-center gap-2"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-phone w-5 h-5 text-primary">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                            </path>
+                                        </svg>أرقام الهاتف</h3>
+                                    <div class="space-y-3"><a href="tel:0402534953"
+                                            class="flex items-center gap-3 p-3 rounded-xl bg-secondary hover:bg-primary/10 transition-colors group">
+                                            <div
+                                                class="w-10 h-10 bg-primary/10 group-hover:bg-primary text-primary group-hover:text-primary-foreground rounded-full flex items-center justify-center transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-phone w-5 h-5">
+                                                    <path
+                                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                    </path>
+                                                </svg>
+                                            </div><span class="text-lg font-medium text-foreground"
+                                                dir="ltr">040-253-49-53</span>
+                                        </a><a href="tel:01024015334"
+                                            class="flex items-center gap-3 p-3 rounded-xl bg-secondary hover:bg-primary/10 transition-colors group">
+                                            <div
+                                                class="w-10 h-10 bg-primary/10 group-hover:bg-primary text-primary group-hover:text-primary-foreground rounded-full flex items-center justify-center transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-phone w-5 h-5">
+                                                    <path
+                                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                    </path>
+                                                </svg>
+                                            </div><span class="text-lg font-medium text-foreground"
+                                                dir="ltr">010-240-15-334</span>
+                                        </a><a href="tel:01007679361"
+                                            class="flex items-center gap-3 p-3 rounded-xl bg-secondary hover:bg-primary/10 transition-colors group">
+                                            <div
+                                                class="w-10 h-10 bg-primary/10 group-hover:bg-primary text-primary group-hover:text-primary-foreground rounded-full flex items-center justify-center transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-phone w-5 h-5">
+                                                    <path
+                                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                    </path>
+                                                </svg>
+                                            </div><span class="text-lg font-medium text-foreground"
+                                                dir="ltr">010-076-79-361</span>
+                                        </a></div>
+                                </div>
+                                <div class="bg-card rounded-2xl p-6 shadow-sm">
+                                    <div class="space-y-4">
+                                        <div class="flex items-start gap-4">
+                                            <div
+                                                class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-map-pin w-6 h-6">
+                                                    <path
+                                                        d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                                    </path>
+                                                    <circle cx="12" cy="10" r="3"></circle>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-foreground mb-1">العنوان</h4>
+                                                <p class="text-muted-foreground">كفر الزيات - شارع أبو عوف - بجوار
+                                                    كازيون</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-4">
+                                            <div
+                                                class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-clock w-6 h-6">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-foreground mb-1">مواعيد العمل</h4>
+                                                <p class="text-muted-foreground">يومياً من 12 ظهراً حتى 2 صباحاً</p>
+                                            </div>
+                                        </div><a href="https://www.facebook.com/hot.crepe.pizza" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="flex items-center gap-4 p-4 rounded-xl bg-[#1877F2]/10 hover:bg-[#1877F2]/20 transition-colors">
+                                            <div
+                                                class="w-12 h-12 bg-[#1877F2] text-primary-foreground rounded-xl flex items-center justify-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-facebook w-6 h-6">
+                                                    <path
+                                                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-foreground">تابعنا على فيسبوك</h4>
+                                                <p class="text-sm text-muted-foreground">@hot.crepe.pizza</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-card rounded-2xl overflow-hidden shadow-sm">
+                                    <div class="bg-card rounded-2xl overflow-hidden shadow-sm">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d856.5440865538295!2d30.8212326!3d30.8257245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f6355e8b18a1df%3A0x7a3eedc6d8f75848!2sMiX%20Crepe!5e0!3m2!1sar!2seg!4v1770046901109!5m2!1sar!2seg"
+                                            width="100%" height="250" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                            title="موقع ميكس كريب">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- استبدل قسم الـ form كامل في #contact بهذا الكود المعدل -->
+                            <div class="bg-card rounded-2xl p-6 md:p-8 shadow-sm h-fit">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div
+                                        class="w-12 h-12 bg-gradient-brand text-primary-foreground rounded-xl flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-message-circle w-6 h-6">
+                                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-foreground">أرسل رسالة عبر واتساب</h3>
+                                        <p class="text-sm text-muted-foreground">هتفتح واتساب مباشرة مع الرسالة جاهزة
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- الحقول (بدون form حقيقي، عشان مش هنبعت على سيرفر) -->
+                                <div class="space-y-5">
+                                    <div>
+                                        <label for="name"
+                                            class="block text-sm font-medium text-foreground mb-2">الاسم</label>
+                                        <input type="text" id="name" placeholder="أدخل اسمك"
+                                            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-12"
+                                            maxlength="100">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-foreground mb-2">رقم
+                                            الهاتف</label>
+                                        <input type="tel" id="phone" placeholder="أدخل رقم هاتفك" dir="ltr"
+                                            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-12"
+                                            maxlength="20">
+                                    </div>
+                                    <div>
+                                        <label for="message"
+                                            class="block text-sm font-medium text-foreground mb-2">الرسالة</label>
+                                        <textarea id="message" placeholder="اكتب رسالتك هنا..." rows="5"
+                                            class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                            maxlength="1000"></textarea>
+                                    </div>
+
+                                    <!-- الزر دلوقتي بيفتح واتساب مباشرة -->
+                                    <button onclick="sendToWhatsApp()"
+                                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 px-4 py-2 w-full h-12 bg-gradient-brand hover:opacity-90 text-lg">
+                                        <span class="flex items-center gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-send w-5 h-5">
+                                                <path
+                                                    d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
+                                                </path>
+                                                <path d="m21.854 2.147-10.94 10.939"></path>
+                                            </svg>
+                                            إرسال عبر واتساب
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="mt-6 p-4 bg-accent/10 rounded-xl border border-accent/20 text-center">
+                                    <p class="text-sm text-foreground">🛵 خدمة توصيل متوفرة في كفر الزيات</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="bg-foreground text-background">
+                <div class="container py-12 md:py-16">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                        <div class="lg:col-span-2">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-14 h-14 bg-gradient-brand rounded-full flex items-center justify-center shadow-lg">
+                                    <span class="text-primary-foreground font-bold text-xl">MIX</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold">ميكس كريب</h3>
+                                    <p class="text-sm opacity-70">Mix Crepe</p>
+                                </div>
+                            </div>
+                            <p class="opacity-80 leading-relaxed max-w-md mb-6">أفضل الكريب والوجبات السريعة في كفر
+                                الزيات</p><a href="https://www.facebook.com/hot.crepe.pizza" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 bg-[#1877F2] hover:bg-[#1877F2]/90 text-primary-foreground px-4 py-2 rounded-full transition-colors"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-facebook w-5 h-5">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg><span>تابعنا على فيسبوك</span></a>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">روابط سريعة</h4>
+                            <ul class="space-y-3">
+                                <li><a href="#home"><button
+                                            class="opacity-80 hover:opacity-100 hover:text-accent transition-all">الرئيسية</button></a>
+                                </li>
+                                <li><a href="#menu"><button
+                                            class="opacity-80 hover:opacity-100 hover:text-accent transition-all">المنيو</button></a>
+                                </li>
+                                <li><a href="#about"><button
+                                            class="opacity-80 hover:opacity-100 hover:text-accent transition-all">من
+                                            نحن</button></a></li>
+                                <li><a href="#contact"><button
+                                            class="opacity-80 hover:opacity-100 hover:text-accent transition-all">تواصل
+                                            معنا</button></a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-4">تواصل معنا</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-phone w-5 h-5 mt-0.5 text-accent shrink-0">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                    <div class="space-y-1"><a href="tel:0402534953"
+                                            class="block opacity-80 hover:opacity-100 transition-opacity"
+                                            dir="ltr">040-253-49-53</a><a href="tel:01024015334"
+                                            class="block opacity-80 hover:opacity-100 transition-opacity"
+                                            dir="ltr">010-240-15-334</a><a href="tel:01007679361"
+                                            class="block opacity-80 hover:opacity-100 transition-opacity"
+                                            dir="ltr">010-076-79-361</a></div>
+                                </li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-map-pin w-5 h-5 mt-0.5 text-accent shrink-0">
+                                        <path
+                                            d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                                        </path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg><span class="opacity-80">كفر الزيات - شارع أبو عوف - بجوار كازيون</span></li>
+                                <li class="flex items-start gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-clock w-5 h-5 mt-0.5 text-accent shrink-0">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg><span class="opacity-80">يومياً من 12 ظهراً حتى 2 صباحاً</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-background/10">
+                    <div class="container py-6">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <p class="opacity-70 text-sm text-center md:text-right">© 2026 ميكس كريب. جميع الحقوق
+                                محفوظة.</p>
+                            <p class="flex items-center gap-1 text-sm opacity-70">صنع بـ <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-heart w-4 h-4 text-accent fill-accent">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                    </path>
+                                </svg> في كفر الزيات</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/Mobile-Menu-Toggle.js"></script>
+    <script src="js/whatsApp.js"></script>
+</body>
+
+</html>

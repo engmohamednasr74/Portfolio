@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الصفحة الرئيسية - إرادة شباب مصر</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/text-css.css">
+    <link rel="stylesheet" href="css/text-css2.css">
+    <meta name="description"
+        content="كيان إرادة شباب مصر - كيان شبابي وطني تحت رعاية وزارة الشباب والرياضة وعضو في الاتحاد المصري للكيانات الشبابية. نسعى لتمكين الشباب المصري من خلال فعاليات تدريبية، مبادرات مجتمعية، وبرامج تنموية. شباب بإرادة وطنية.">
+
+    <meta name="keywords"
+        content="كيان إرادة شباب مصر, كيان شبابي مصري, وزارة الشباب والرياضة, اتحاد الكيانات الشبابية, تمكين الشباب, فعاليات شبابية, برامج تدريبية, مبادرات مجتمعية, شباب بإرادة وطنية, انضمام شباب مصر">
+
+    <meta name="author" content="Developer_Engineer Eng_Mohamed_Nasr">
+
+    <!-- ====== Open Graph - للمعاينة في فيسبوك/واتساب/لينكدإن ====== -->
+    <meta property="og:title" content="كيان إرادة شباب مصر - شباب بإرادة وطنية" />
+    <meta property="og:description"
+        content="كيان شبابي وطني يهدف إلى تمكين الشباب المصري من خلال فعاليات، تدريبات، ومبادرات مجتمعية تحت رعاية وزارة الشباب والرياضة." />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/Kean-Eradah-Shabab-Masr/img/entity-logo.jpeg" />
+    <meta property="og:image:width" content="1181" />
+    <meta property="og:image:height" content="836" />
+    <meta property="og:url"
+        content="https://engmohamednasr74.github.io/Portfolio/Projects/Kean-Eradah-Shabab-Masr/dashboard/index-dashboard.html" />
+    <!-- غيرها لدومين الموقع الحقيقي -->
+    <meta property="og:type" content="website" />
+
+    <!-- ====== Twitter Card (لتويتر/X) ====== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="كيان إرادة شباب مصر - شباب بإرادة وطنية" />
+    <meta name="twitter:description"
+        content="كيان شبابي مصري يركز على تمكين الشباب وتنظيم فعاليات وطنية تحت رعاية وزارة الشباب والرياضة." />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/Kean-Eradah-Shabab-Masr/img/entity-logo.jpeg" />
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database-compat.js"></script>
+    <script src="js/Firebase.js"></script>
+    <style>
+        button[type="submit"] {
+            background-color: #000;
+        }
+
+        input,
+        textarea {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-background">
+    <header class="bg-card border-b border-golden/20 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-accent">إدارة الصفحة الرئيسية</h1>
+                <a href="dashboard.html" class="text-foreground/80 hover:text-accent">عودة إلى الداشبورد</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- قسم تسجيل الدخول -->
+        <div id="login-section" class="text-center my-8">
+            <button onclick="loginAsAdmin()"
+                class="bg-green-600 text-white px-10 py-5 rounded-xl text-xl font-bold hover:bg-green-700 transition shadow-lg">
+                تسجيل الدخول كأدمن
+            </button>
+        </div>
+
+        <!-- محتوى الإدارة (مخفي إلا للأدمن) -->
+        <div id="admin-content" class="hidden">
+
+            <!-- ==== إدارة أهم مشاريعنا ==== -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-6 text-accent">إدارة أهم مشاريعنا</h2>
+
+                <!-- نموذج إضافة/تعديل مشروع (عنوان + صورة فقط) -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">إضافة/تعديل مشروع</h3>
+                    <form id="project-form">
+                        <input type="hidden" id="project-id">
+                        <input type="text" id="project-title" placeholder="عنوان المشروع" class="border p-2 mb-2 w-full"
+                            >
+                        <input type="url" id="project-image" placeholder="رابط الصورة" class="border p-2 mb-2 w-full"
+                            required>
+                        <button type="submit" id="project-submit"
+                            class="bg-blue-600 text-white px-4 py-2 rounded">إضافة</button>
+                        <button type="button" id="project-cancel"
+                            class="hidden bg-gray-600 text-white px-4 py-2 rounded ml-2">إلغاء</button>
+                    </form>
+                </div>
+
+                <!-- قائمة المشاريع -->
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-muted">
+                            <th class="p-2">العنوان</th>
+                            <th class="p-2">الصورة</th>
+                            <th class="p-2">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projects-list"></tbody>
+                </table>
+            </section>
+
+            <!-- ==== إدارة معرض الصور الجماعية ==== -->
+            <section>
+                <h2 class="text-2xl font-bold mb-6 text-accent">إدارة معرض الصور الجماعية</h2>
+
+                <!-- نموذج إضافة/تعديل صورة -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">إضافة/تعديل صورة</h3>
+                    <form id="gallery-form">
+                        <input type="hidden" id="gallery-id">
+                        <input type="text" id="gallery-title" placeholder="عنوان الصورة (اختياري)"
+                            class="border p-2 mb-2 w-full">
+                        <input type="url" id="gallery-image" placeholder="رابط الصورة (إجباري)"
+                            class="border p-2 mb-2 w-full" required>
+                        <button type="submit" id="gallery-submit"
+                            class="bg-blue-600 text-white px-4 py-2 rounded">إضافة</button>
+                        <button type="button" id="gallery-cancel"
+                            class="hidden bg-gray-600 text-white px-4 py-2 rounded ml-2">إلغاء</button>
+                    </form>
+                </div>
+
+                <!-- قائمة الصور -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-list"></div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // تحقق من حالة الأدمن
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                document.getElementById('login-section').classList.add('hidden');
+                document.getElementById('admin-content').classList.remove('hidden');
+                loadProjects();
+                loadGallery();
+            } else {
+                document.getElementById('login-section').classList.remove('hidden');
+                document.getElementById('admin-content').classList.add('hidden');
+            }
+        });
+
+        // ==== إدارة المشاريع ====
+        function loadProjects() {
+            getItems('projects', (items) => {
+                const list = document.getElementById('projects-list');
+                list.innerHTML = '';
+                items.forEach(([id, item]) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                <td class="p-2">${item.title || ''}</td>
+                <td class="p-2">${item.image ? '<img src="' + item.image + '" width="80">' : 'لا صورة'}</td>
+                <td class="p-2">
+                    <button onclick="editProject('${id}', '${item.title || ''}', '${item.image || ''}')" class="bg-yellow-600 text-white px-2 py-1 rounded">تعديل</button>
+                    <button onclick="deleteItem('projects', '${id}')" class="bg-red-600 text-white px-2 py-1 rounded">حذف</button>
+                </td>
+            `;
+                    list.appendChild(row);
+                });
+            });
+        }
+
+        const projectForm = document.getElementById('project-form');
+        const projectSubmit = document.getElementById('project-submit');
+        const projectCancel = document.getElementById('project-cancel');
+        const projectId = document.getElementById('project-id');
+
+        projectForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                title: document.getElementById('project-title').value,
+                image: document.getElementById('project-image').value
+            };
+            if (projectId.value) {
+                updateItem('projects', projectId.value, data);
+            } else {
+                addItem('projects', data);
+            }
+            resetProjectForm();
+            loadProjects();
+        });
+
+        function editProject(id, title, image) {
+            projectId.value = id;
+            document.getElementById('project-title').value = title;
+            document.getElementById('project-image').value = image;
+            projectSubmit.textContent = 'تحديث';
+            projectCancel.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        projectCancel.addEventListener('click', resetProjectForm);
+        function resetProjectForm() {
+            projectForm.reset();
+            projectId.value = '';
+            projectSubmit.textContent = 'إضافة';
+            projectCancel.classList.add('hidden');
+        }
+
+        // ==== إدارة المعرض ====
+        function loadGallery() {
+            getItems('gallery', (items) => {
+                const list = document.getElementById('gallery-list');
+                list.innerHTML = '';
+                items.forEach(([id, item]) => {
+                    const div = document.createElement('div');
+                    div.className = 'relative group';
+                    div.innerHTML = `
+                        <img src="${item.image}" class="w-full h-40 object-cover rounded">
+                        ${item.title ? '<p class="text-center mt-2">' + item.title + '</p>' : ''}
+                        <div class="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+                            <button onclick="editGallery('${id}', '${item.title || ''}', '${item.image}')" class="bg-yellow-600 text-white px-3 py-1 rounded">تعديل</button>
+                            <button onclick="deleteItem('gallery', '${id}')" class="bg-red-600 text-white px-3 py-1 rounded">حذف</button>
+                        </div>
+                    `;
+                    list.appendChild(div);
+                });
+            });
+        }
+
+        const galleryForm = document.getElementById('gallery-form');
+        const gallerySubmit = document.getElementById('gallery-submit');
+        const galleryCancel = document.getElementById('gallery-cancel');
+        const galleryId = document.getElementById('gallery-id');
+
+        galleryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                title: document.getElementById('gallery-title').value,
+                image: document.getElementById('gallery-image').value
+            };
+            if (galleryId.value) {
+                updateItem('gallery', galleryId.value, data);
+            } else {
+                addItem('gallery', data);
+            }
+            resetGalleryForm();
+            loadGallery();
+        });
+
+        function editGallery(id, title, image) {
+            galleryId.value = id;
+            document.getElementById('gallery-title').value = title;
+            document.getElementById('gallery-image').value = image;
+            gallerySubmit.textContent = 'تحديث';
+            galleryCancel.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        galleryCancel.addEventListener('click', resetGalleryForm);
+        function resetGalleryForm() {
+            galleryForm.reset();
+            galleryId.value = '';
+            gallerySubmit.textContent = 'إضافة';
+            galleryCancel.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

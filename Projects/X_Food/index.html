@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Food | أكل صحي بحب الأمهات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="shortcut icon" href="img/WhatsApp_Image_2025-12-06_at_1.39.14_PM-removebg-preview.png"
+        type="image/x-icon">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a',
+                        'primary-dark': '#15803d',
+                        'primary-foreground': '#ffffff',
+                        secondary: '#f8fafc',
+                        accent: '#f1f5f9',
+                        background: '#ffffff',
+                        card: '#ffffff',
+                        border: '#e2e8f0',
+                        foreground: '#0f172a',
+                        'muted-foreground': '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        :root {
+            --primary: #22c55e;
+            /* لون افتراضي أخضر */
+            --primary-dark: #16a34a;
+            --foreground: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --bg-card: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            direction: rtl;
+            background-color: #f8fafc;
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-wrapper {
+            display: flex;
+            height: 64px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--foreground);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(34, 197, 94, 0.1);
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .desktop-nav {
+            display: none;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .desktop-nav {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+
+        /* Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cart-icon {
+            position: relative;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0.5rem;
+            display: flex;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        .hide-mobile {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .hide-mobile {
+                display: flex;
+            }
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu {
+            display: none;
+            /* مخفي افتراضياً */
+            border-top: 1px solid var(--border);
+            background-color: white;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .mobile-nav a {
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 8px;
+            font-size: 0.875rem;
+        }
+
+        .mobile-nav a:hover {
+            background-color: #f1f5f9;
+        }
+
+        .mobile-cart-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-badge-mobile {
+            margin-right: auto;
+            background-color: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        /* حالة الفتح للقائمة */
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-wrapper">
+
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">nutrition</span>
+                    </div>
+                    <span class="logo-text">X Food</span>
+                </a>
+
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link active">الرئيسية</a>
+                    <a href="menu.html" class="nav-link">قائمة الطعام</a>
+                    <a href="calorie-scanner.html" class="nav-link">ماسح السعرات</a>
+                    <a href="about.html" class="nav-link">من نحن</a>
+                    <a href="support-moms.html" class="nav-link">دعم الأمهات</a>
+                    <a href="partnerships.html" class="nav-link">شراكاتنا</a>
+                    <a href="contact.html" class="nav-link">تواصل معنا</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span id="cart-count" class="cart-badge">0</span> </a>
+
+                    <a href="menu.html" class="btn-primary hide-mobile">اطلب الآن</a>
+
+                    <button class="mobile-menu-toggle" id="menuToggle">
+                        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html">قائمة الطعام</a>
+                <a href="calorie-scanner.html">ماسح السعرات</a>
+                <a href="about.html">من نحن</a>
+                <a href="support-moms.html">دعم الأمهات</a>
+                <a href="partnerships.html">شراكاتنا</a>
+                <a href="contact.html">تواصل معنا</a>
+                <a href="cart.html" class="mobile-cart-link">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    السلة
+                    <span class="cart-badge-mobile">3</span>
+                </a>
+                <a href="menu.html" class="btn-primary">اطلب الآن</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <section class="relative bg-card py-12 lg:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-10 items-center">
+                    <div class="flex-1 flex flex-col gap-6 text-center lg:text-right">
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-foreground">
+                            أكل صحي <span class="text-primary">محضر بحب</span> الأمهات
+                        </h1>
+                        <p class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
+                            وجبات طازجة، محسوبة السعرات، وتصلك ساخنة إلى باب منزلك. استمتع بطعم البيت مع راحة التوصيل.
+                        </p>
+                        <div class="flex gap-4 justify-center lg:justify-start">
+                            <a href="menu.html"
+                                class="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white transition-all hover:bg-primary-dark shadow-lg shadow-primary/30">
+                                اطلب الآن
+                            </a>
+                            <a href="about.html"
+                                class="flex h-12 items-center justify-center rounded-lg border border-border bg-card px-6 text-base font-bold text-foreground transition-colors hover:bg-secondary">
+                                كيف نعمل؟
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 w-full relative">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-primary to-green-300 rounded-2xl blur opacity-20">
+                        </div>
+                        <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                            <img src="img/healthy-meal-bowl-with-fresh-vegetables-and-grille.jpg"
+                                alt="وجبة صحية متكاملة" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-6 left-6 bg-white p-3 rounded-xl shadow-lg flex items-center gap-3 animate-bounce"
+                            style="animation-duration: 3s;">
+                            <div class="bg-primary/20 p-2 rounded-full text-primary">
+                                <span class="material-symbols-outlined">local_fire_department</span>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs text-muted-foreground font-bold">سعرات أقل</p>
+                                <p class="text-sm font-bold text-foreground">طعم ألذ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 lg:py-24 bg-background">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col gap-4 text-center items-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                        <span class="material-symbols-outlined text-lg">favorite</span>
+                        <span class="text-sm font-bold">مميزات X Food</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-foreground">ليه الناس بتحب <span
+                            class="text-primary">X Food</span>؟</h2>
+                    <p class="text-muted-foreground text-lg max-w-2xl">مش بس أكل صحي … ده أكل معمول بحب الأمهات، طازج
+                        يومياً من بيوتهم لطبقك</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="features-grid">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-secondary">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col gap-3 mb-10 text-right">
+                    <h2 class="text-3xl font-bold text-foreground">وجباتك اليومية في موعدها</h2>
+                    <p class="text-muted-foreground">نظام غذائي متكامل يغطي يومك بالكامل</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="meal-periods-grid">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 lg:py-24 bg-background">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+                    <div class="text-right">
+                        <h2 class="text-3xl font-bold text-foreground">الوجبات الأكثر طلباً</h2>
+                        <p class="text-muted-foreground">اختيارات عملائنا المفضلة</p>
+                    </div>
+                    <a href="menu.html" class="flex items-center gap-2 text-primary font-bold hover:underline">
+                        عرض كل القائمة
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="popular-meals-grid">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-accent">
+            <div class="mx-auto max-w-3xl px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-black text-foreground mb-4">مستعد تبدأ رحلة الأكل الصحي؟</h2>
+                <p class="text-muted-foreground text-lg mb-8">صحتك تبدأ باختيارك للأكل النهاردة. جرب طعم الأكل البيتي
+                    الصحي مع X Food.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="menu.html"
+                        class="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white transition-all hover:bg-primary-dark shadow-lg shadow-primary/30">اطلب
+                        وجبتك الأولى</a>
+                    <a href="contact.html"
+                        class="flex h-12 items-center justify-center rounded-lg border border-border bg-card px-8 text-base font-bold text-foreground transition-colors hover:bg-secondary">تواصل
+                        معنا</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="bg-white border-t border-gray-100 mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="flex flex-col gap-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="flex w-10 h-10 items-center justify-center rounded-full bg-green-50 text-green-600">
+                        <span class="material-symbols-outlined text-2xl">nutrition</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">X Food</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    مشروعك للأكل الصحي في طنطا. نجمع بين حب الأمهات وخبرة الشيفات لتقديم وجبات صحية ولذيذة.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-gray-900">روابط سريعة</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">الرئيسية</a>
+                    <a href="menu.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">قائمة الطعام</a>
+                    <a href="about.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">من نحن</a>
+                    <a href="calorie-scanner.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">ماسح السعرات</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-gray-900">خدماتنا</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="support-moms.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">دعم الأمهات</a>
+                    <a href="partnerships.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">شراكاتنا</a>
+                    <a href="contact.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">تواصل معنا</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-gray-900">تواصل معنا</h4>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <span class="material-symbols-outlined text-base text-green-600">location_on</span>
+                        <span>طنطا، الغربية، مصر</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <span class="material-symbols-outlined text-base text-green-600">phone</span>
+                        <span dir="ltr">+20 101 357 4278</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <span class="material-symbols-outlined text-base text-green-600">mail</span>
+                        <span>info@xfood.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:row justify-between items-center gap-4">
+            <p class="text-sm text-gray-400">© 2025 X Food. جميع الحقوق محفوظة.</p>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-green-600 transition-colors">سياسة الخصوصية</a>
+                <a href="#" class="hover:text-green-600 transition-colors">الشروط والأحكام</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Data
+        const features = [
+            { icon: "family_restroom", title: "معمول بإيد الأمهات", description: "كل وجبة بتتعمل في بيت أم مصرية بتحب الطبخ وبتعرف تعمل أكل زي البيت بالظبط … بس صحي!", color: "bg-pink-100 text-pink-600" },
+            { icon: "spa", title: "طازج يومياً 100%", description: "مفيش مخزون ولا تجميد … الوجبة بتتعمل الصبح وبتوصلك في نفس اليوم ساخنة وطازجة.", color: "bg-emerald-100 text-emerald-600" },
+            { icon: "auto_awesome", title: "ماسح سعرات بالذكاء الاصطناعي", description: "صوّر أي طبق … هيحسبلك السعرات والبروتين والدهون في ثواني! أول خاصية من نوعها في مصر.", color: "bg-cyan-100 text-cyan-600" },
+            { icon: "volunteer_activism", title: "بندعم الأمهات", description: "كل أم بتشتغل معانا بتاخد دخل كويس وهي في بيتها مع ولادها … مشروع خير وصحة في نفس الوقت.", color: "bg-purple-100 text-purple-600" },
+            { icon: "calculate", title: "كل سعرة محسوبة", description: "كل وجبة مكتوب جنبها السعرات والبروتين والكارب … عشان تعرف بالظبط بتاكل إيه.", color: "bg-orange-100 text-orange-600" },
+            { icon: "no_meals", title: "بديل الـ Fast Food الصحي", description: "نفس السرعة والراحة … بس صحي، طازج، وطعمه أحلى بمليون مرة من أي فاست فود.", color: "bg-red-100 text-red-600" }
+        ];
+
+        const mealPeriods = [
+            { icon: "wb_twilight", title: "فطار", time: "٦ ص - ١١ ص", description: "ابدأ يومك بطاقة صحية مع فطور متوازن يمنحك النشاط طوال اليوم.", color: "bg-yellow-400" },
+            { icon: "sunny", title: "غداء", time: "١٢ م - ٥ م", description: "وجبات رئيسية مشبعة ومغذية تناسب نظامك الغذائي.", color: "bg-orange-400" },
+            { icon: "nights_stay", title: "عشاء", time: "بعد ٥ م", description: "وجبات خفيفة وصحية للمساء تساعدك على النوم بشكل أفضل.", color: "bg-indigo-400" }
+        ];
+
+        const popularMeals = [
+            { name: "دجاج مشوي مع أرز بني", description: "صدر دجاج مشوي بالأعشاب، أرز بني، خضار سوتيه", calories: 450, price: 120, image: "img/photo-1546069901-ba9599a7e63c.jpg", badge: "الأكثر طلباً" },
+            { name: "سلطة سلمون طازجة", description: "شريحة سلمون مشوي، خس، أفوكادو، طماطم كرزية", calories: 350, price: 180, image: "img/photo-1467003909585-2f8a72700288.jpg" },
+            { name: "شوفان بالفواكه", description: "شوفان عضوي، حليب لوز، توت مشكل، عسل نحل", calories: 300, price: 85, image: "img/oatmeal-bowl-with-berries-and-honey.jpg" },
+            { name: "ستيك لحم مع خضار", description: "ستيك لحم بقري، بروكلي، جزر، صوص خفيف", calories: 520, price: 200, image: "img/beef-steak-with-steamed-vegetables.jpg" }
+        ];
+
+        // Rendering Features
+        document.getElementById('features-grid').innerHTML = features.map(f => `
+            <div class="group relative bg-white rounded-2xl p-8 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 text-right">
+                <div class="size-16 rounded-2xl ${f.color} flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-4xl">${f.icon}</span>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-3">${f.title}</h3>
+                <p class="text-muted-foreground leading-relaxed">${f.description}</p>
+            </div>
+        `).join('');
+
+        // Rendering Meal Periods
+        document.getElementById('meal-periods-grid').innerHTML = mealPeriods.map(p => `
+            <div class="group flex flex-col gap-4 rounded-xl border border-border bg-white p-6 hover:border-primary transition-colors relative overflow-hidden text-right">
+                <div class="absolute top-0 right-0 w-1 h-full ${p.color}"></div>
+                <div class="flex items-center gap-4">
+                    <div class="size-12 rounded-full ${p.color} flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined">${p.icon}</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-foreground">${p.title}</h3>
+                        <p class="text-sm text-muted-foreground">${p.time}</p>
+                    </div>
+                </div>
+                <p class="text-muted-foreground">${p.description}</p>
+                <a href="menu.html" class="text-primary font-bold text-sm hover:underline mt-auto">تصفح القائمة ←</a>
+            </div>
+        `).join('');
+
+        // Rendering Popular Meals
+        document.getElementById('popular-meals-grid').innerHTML = popularMeals.map(m => `
+            <div class="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all hover:border-primary/30 hover:shadow-lg text-right">
+                <div class="relative aspect-[4/3] w-full overflow-hidden bg-secondary">
+                    <img src="${m.image}" alt="${m.name}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute left-3 top-3 rounded-full bg-white/90 px-2 py-1 text-xs font-bold text-foreground backdrop-blur">${m.calories} سعرة</div>
+                    ${m.badge ? `<div class="absolute right-3 top-3 rounded-full bg-primary px-2 py-1 text-xs font-bold text-white shadow-sm">${m.badge}</div>` : ''}
+                </div>
+                <div class="flex flex-1 flex-col p-5">
+                    <h3 class="text-lg font-bold text-foreground">${m.name}</h3>
+                    <p class="mt-2 text-sm text-muted-foreground line-clamp-2">${m.description}</p>
+                    <div class="mt-auto flex items-center justify-between pt-4">
+                        <p class="text-lg font-bold text-primary">${m.price} ج.م</p>
+                        <button onclick="addToCart(${m.id})" class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white">
+                            <span class="material-symbols-outlined text-sm">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', () => {
+            // تبديل ظهور القائمة
+            mobileMenu.classList.toggle('open');
+
+            // تغيير الأيقونة من menu إلى close
+            if (mobileMenu.classList.contains('open')) {
+                menuIcon.textContent = 'close';
+            } else {
+                menuIcon.textContent = 'menu';
+            }
+        });
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+            const countElement = document.getElementById('cart-count');
+            if (countElement) countElement.textContent = count;
+        }
+        window.addEventListener('load', updateCartCount);
+    </script>
+</body>
+
+</html>

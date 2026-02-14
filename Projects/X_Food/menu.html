@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الطعام - X Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="shortcut icon" href="img/WhatsApp_Image_2025-12-06_at_1.39.14_PM-removebg-preview.png"
+        type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-category {
+            background-color: #16a34a !important;
+            color: white !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        :root {
+            --primary: #22c55e;
+            /* لون افتراضي أخضر */
+            --primary-dark: #16a34a;
+            --foreground: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --bg-card: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            direction: rtl;
+            background-color: #f8fafc;
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-wrapper {
+            display: flex;
+            height: 64px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--foreground);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(34, 197, 94, 0.1);
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .desktop-nav {
+            display: none;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .desktop-nav {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+
+        /* Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cart-icon {
+            position: relative;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0.5rem;
+            display: flex;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        .hide-mobile {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .hide-mobile {
+                display: flex;
+            }
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu {
+            display: none;
+            /* مخفي افتراضياً */
+            border-top: 1px solid var(--border);
+            background-color: white;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .mobile-nav a {
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 8px;
+            font-size: 0.875rem;
+        }
+
+        .mobile-nav a:hover {
+            background-color: #f1f5f9;
+        }
+
+        .mobile-cart-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-badge-mobile {
+            margin-right: auto;
+            background-color: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        /* حالة الفتح للقائمة */
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-wrapper">
+
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">nutrition</span>
+                    </div>
+                    <span class="logo-text">X Food</span>
+                </a>
+
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">الرئيسية</a>
+                    <a href="menu.html" class="nav-link active">قائمة الطعام</a>
+                    <a href="calorie-scanner.html" class="nav-link">ماسح السعرات</a>
+                    <a href="about.html" class="nav-link">من نحن</a>
+                    <a href="support-moms.html" class="nav-link">دعم الأمهات</a>
+                    <a href="partnerships.html" class="nav-link">شراكاتنا</a>
+                    <a href="contact.html" class="nav-link">تواصل معنا</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span id="cart-count" class="cart-badge">0</span> </a>
+
+                    <a href="menu.html" class="btn-primary hide-mobile">اطلب الآن</a>
+
+                    <button class="mobile-menu-toggle" id="menuToggle">
+                        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html">قائمة الطعام</a>
+                <a href="calorie-scanner.html">ماسح السعرات</a>
+                <a href="about.html">من نحن</a>
+                <a href="support-moms.html">دعم الأمهات</a>
+                <a href="partnerships.html">شراكاتنا</a>
+                <a href="contact.html">تواصل معنا</a>
+                <a href="cart.html" class="mobile-cart-link">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    السلة
+                    <span class="cart-badge-mobile">3</span>
+                </a>
+                <a href="menu.html" class="btn-primary">اطلب الآن</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden">
+        <div class="bg-gray-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
+            <span class="material-symbols-outlined text-green-400">check_circle</span>
+            <span>تم إضافة المنتج إلى السلة بنجاح</span>
+        </div>
+    </div>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl">قائمة الطعام</h1>
+            <p class="mt-2 text-gray-500">اختر من وجباتنا الصحية واللذيذة</p>
+        </div>
+
+        <div id="categories-container" class="mb-8 flex flex-wrap justify-center gap-3">
+        </div>
+
+        <div id="menu-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        </div>
+
+        <div id="empty-state" class="hidden py-16 text-center">
+            <span class="material-symbols-outlined mb-4 text-6xl text-gray-300">restaurant</span>
+            <p class="text-lg text-gray-500">لا توجد وجبات في هذه الفئة حالياً</p>
+        </div>
+    </main>
+<footer class="bg-white border-t border-gray-100 mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="flex flex-col gap-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="flex w-10 h-10 items-center justify-center rounded-full bg-green-50 text-green-600">
+                        <span class="material-symbols-outlined text-2xl">nutrition</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">X Food</span>
+                </a>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    مشروعك للأكل الصحي في طنطا. نجمع بين حب الأمهات وخبرة الشيفات لتقديم وجبات صحية ولذيذة.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-gray-900">روابط سريعة</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">الرئيسية</a>
+                    <a href="menu.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">قائمة الطعام</a>
+                    <a href="about.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">من نحن</a>
+                    <a href="calorie-scanner.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">ماسح السعرات</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-gray-900">خدماتنا</h4>
+                <nav class="flex flex-col gap-2">
+                    <a href="support-moms.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">دعم الأمهات</a>
+                    <a href="partnerships.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">شراكاتنا</a>
+                    <a href="contact.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">تواصل معنا</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-gray-900">تواصل معنا</h4>
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <span class="material-symbols-outlined text-base text-green-600">location_on</span>
+                        <span>طنطا، الغربية، مصر</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <span class="material-symbols-outlined text-base text-green-600">phone</span>
+                        <span dir="ltr">+20 101 357 4278</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-500">
+                        <span class="material-symbols-outlined text-base text-green-600">mail</span>
+                        <span>info@xfood.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:row justify-between items-center gap-4">
+            <p class="text-sm text-gray-400">© 2025 X Food. جميع الحقوق محفوظة.</p>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-green-600 transition-colors">سياسة الخصوصية</a>
+                <a href="#" class="hover:text-green-600 transition-colors">الشروط والأحكام</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        // البيانات
+        const menuCategories = [
+            { id: "all", label: "الكل", icon: "restaurant_menu" },
+            { id: "breakfast", label: "فطار", icon: "wb_twilight" },
+            { id: "lunch", label: "غداء", icon: "sunny" },
+            { id: "dinner", label: "عشاء", icon: "nights_stay" },
+            { id: "salads", label: "سلطات", icon: "eco" },
+            { id: "drinks", label: "مشروبات", icon: "local_cafe" },
+        ];
+
+        const menuItems = [
+            { id: 1, name: "طبق فول مدمس بالزيت الزيتون والخضار", description: "كوباية فول مدمس مطبوخ بزيت زيتون خفيف + طماطم وخيار وبصل ولمونة + نص رغيف بلدي أسمر", calories: 280, protein: 23, carbs: 58, price: 35, category: "breakfast", image: "img/egyptian-foul-medames-with-olive-oil-and-vegetable.jpg" },
+            { id: 2, name: "طبق عجة خضار مصرية", description: "بيضتان مخفوقين مع فلفل ألوان + بصل + طماطم + شوية زعتر وكمون، مشوحة بمعلقة زيت زيتون صغيرة", calories: 220, protein: 21, carbs: 8, price: 35, category: "breakfast", image: "img/egyptian-vegetable-omelette-with-bell-peppers.jpg" },
+            { id: 3, name: "طبق شوفان بالزبادي والموز", description: "٥٠ جم شوفان مطبوخ بالماء أو الحليب قليل الدسم + علبة زبادي يوناني صغيرة + موزة واحدة أو تفاح", calories: 380, protein: 22, carbs: 58, price: 45, category: "breakfast", image: "img/oatmeal-bowl-with-yogurt-and-banana.jpg" },
+            { id: 4, name: "دجاج مشوي", description: "صدور دجاج مشويه ومتبله مع التوابل الايطاليه والاعشاب الطازجه", calories: 350, protein: 45, carbs: 12, price: 180, category: "lunch", image: "img/grilled-chicken-breast-with-herbs.jpg" },
+            { id: 5, name: "كرات اللحم", description: "كرات لحم بالفرن متبله ومنخفضه الدسم مع التوابل والاعشاب الطازجه والبقدونس والبصل", calories: 320, protein: 35, carbs: 15, price: 190, category: "lunch", image: "img/baked-meatballs-with-herbs.jpg", badge: "الأكثر طلباً" },
+            { id: 6, name: "شيش طاووق", description: "صدور دجاج مشويه ومتبله ومقطعه ومكعبات مع التوابل الايطاليه والاعشاب الطازجه والفلفل والبصل الطازج", calories: 340, protein: 42, carbs: 18, price: 185, category: "lunch", image: "img/shish-tawook-chicken-skewers-grilled.jpg" },
+            { id: 9, name: "سمك فيليه", description: "سمك فيليه مشوي متبل بالاعشاب والتوابل الايطاليه", calories: 280, protein: 42, carbs: 5, price: 220, category: "lunch", image: "img/grilled-fish-fillet-with-herbs.jpg" },
+            { id: 10, name: "سلمون مشوي", description: "سالمون مشوي ومتبل بالتوابل الايطاليه والاعشاب الطازجه", calories: 350, protein: 45, carbs: 3, price: 400, category: "lunch", image: "img/grilled-salmon-with-herbs.jpg", badge: "الأكثر طلباً" },
+            { id: 11, name: "فاهيتا فراخ", description: "شرايح صدر دجاج مشويه ومتبله مع خضار طازج وصحي وفلفل حلو", calories: 320, protein: 38, carbs: 18, price: 185, category: "lunch", image: "img/chicken-fajitas-with-bell-peppers.jpg" },
+            { id: 12, name: "بيف ستيك", description: "ستيك لحم مشوي من لحم بقري قليل الدهون وتوابل ايطاليه واعشاب طازجه", calories: 280, protein: 48, carbs: 8, price: 305, category: "lunch", image: "img/grilled-beef-steak-with-herbs.jpg" },
+            { id: 14, name: "سلطة سيزر بالدجاج", description: "سلطة خس طازجة مع قطع دجاج مشوي وصوص سيزر خفيف", calories: 280, protein: 32, carbs: 12, price: 120, category: "salads", image: "img/caesar-salad-with-grilled-chicken.jpg" },
+            { id: 15, name: "سلطة يونانية", description: "خيار وطماطم وفلفل أخضر وزيتون وجبنة فيتا مع زيت زيتون", calories: 180, protein: 8, carbs: 10, price: 85, category: "salads", image: "img/greek-salad-feta.png" },
+            { id: 16, name: "عصير برتقال طازج", description: "عصير برتقال طبيعي ١٠٠٪ بدون سكر مضاف", calories: 90, protein: 2, carbs: 22, price: 35, category: "drinks", image: "img/orange-juice.jpg" },
+            { id: 17, name: "سموذي التوت", description: "مزيج من التوت الطازج مع زبادي يوناني وعسل طبيعي", calories: 150, protein: 8, carbs: 28, price: 55, category: "drinks", image: "img/berry-smoothie-with-yogurt.jpg" },
+            { id: 18, name: "زبادي يوناني مع مكسرات وتوت/فراولة", description: "علبتين زبادي يوناني قليل الدسم + ١٠ جم لوز أو عين جمل + حفنة توت أو فراولة", calories: 320, protein: 28, carbs: 22, price: 55, category: "dinner", image: "img/oatmeal-bowl-with-berries-and-honey.jpg" },
+            { id: 19, name: "شوربة خضار بالدجاج المسلوق", description: "شوربة خضار (كوسة، جزر، بطاطس، بصل) + ١٠٠ جم دجاج مسلوق مفروم جواها", calories: 25, protein: 35, carbs: 22, price: 45, category: "dinner", image: "img/baked-meatballs-healthy2.jpg" },
+            { id: 20, name: "اومليت بيض ابيض مع خضار", description: "أومليت من ٤ بياض بيض + بيضة كاملة مع سبانخ وفلفل وبصل، بدون زيت تقريباً (تيفال)", calories: 10, protein: 32, carbs: 22, price: 25, category: "dinner", image: "img/caesar-salad-with-grilled-chicken2.jpg" },
+            { id: 21, name: "ديتوكس أخضر", description: "عصير خيار وكرفس وتفاح أخضر وزنجبيل طازج", calories: 75, protein: 2, carbs: 18, price: 45, category: "drinks", image: "img/egyptian-lentil-soup2.jpg" },
+        ];
+
+        let activeCategory = "all";
+
+        // وظائف الرندر
+        function renderCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = menuCategories.map(cat => `
+                <button onclick="filterMenu('${cat.id}')" id="cat-${cat.id}" 
+                    class="category-btn flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all bg-white text-gray-500 border border-gray-200 hover:bg-gray-100 ${activeCategory === cat.id ? 'active-category' : ''}">
+                    <span class="material-symbols-outlined text-lg">${cat.icon}</span>
+                    ${cat.label}
+                </button>
+            `).join('');
+        }
+
+        function renderMenu() {
+            const grid = document.getElementById('menu-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            const filtered = activeCategory === "all"
+                ? menuItems
+                : menuItems.filter(item => item.category === activeCategory);
+
+            if (filtered.length === 0) {
+                grid.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            grid.classList.remove('hidden');
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="group relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm transition-all hover:shadow-md">
+                    ${item.badge ? `<div class="absolute top-3 right-3 z-10 rounded-full bg-green-600 px-3 py-1 text-[10px] font-bold text-white">${item.badge}</div>` : ''}
+                    <div class="relative h-48 overflow-hidden bg-gray-100">
+                        <img src="${item.image || 'https://via.placeholder.com/300x200?text=Food'}" alt="${item.name}" class="size-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/300x200?text=Food'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="mb-1 text-lg font-bold text-gray-900 line-clamp-1">${item.name}</h3>
+                        <p class="mb-3 text-xs text-gray-500 line-clamp-2 h-8">${item.description}</p>
+                        <div class="mb-4 flex flex-wrap gap-2 text-[10px]">
+                            <div class="flex items-center gap-1 rounded-full bg-gray-50 px-2 py-1 text-gray-600">
+                                <span class="material-symbols-outlined text-xs text-green-600">local_fire_department</span> ${item.calories} سعرة
+                            </div>
+                            <div class="rounded-full bg-gray-50 px-2 py-1 text-gray-600">بروتين: ${item.protein}g</div>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-50 pt-4">
+                            <span class="text-xl font-bold text-green-600">${item.price} <small class="text-xs">ج.م</small></span>
+                            <button onclick="addToCart(${item.id})" class="flex items-center gap-2 rounded-lg bg-green-600 px-3 py-2 text-xs font-bold text-white transition-all hover:bg-green-700">
+                                <span class="material-symbols-outlined text-sm">add_shopping_cart</span> أضف للسلة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // المنطق
+        function filterMenu(id) {
+            activeCategory = id;
+            renderCategories();
+            renderMenu();
+        }
+
+        function addToCart(id) {
+            const item = menuItems.find(i => i.id === id);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const existing = cart.find(i => i.id === id);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...item, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showToast();
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 2000);
+        }
+
+        // التشغيل الأولي
+        renderCategories();
+        renderMenu();
+        updateCartCount();
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+            const countElement = document.getElementById('cart-count');
+            if (countElement) countElement.textContent = count;
+        }
+        window.addEventListener('load', updateCartCount);
+    </script>
+</body>
+
+</html>

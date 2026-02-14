@@ -1,0 +1,44 @@
+/* استيراد خطوط عربية فخمة */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Amiri:wght@700&display=swap');
+
+:root {
+    --primary-green: #2d6a4f;
+    --primary-orange: #f37022;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.font-display {
+    font-family: 'Amiri', serif; /* للأسماء والعناوين الكبيرة لتعطي طابع شرقي */
+}
+
+/* تأثيرات الكروت */
+.shadow-soft {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+/* تخصيص السكرول بار (شريط التمرير) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-green);
+    border-radius: 10px;
+}
+
+/* تحسين شكل الأزرار */
+.cat-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cat-btn:active {
+    transform: scale(0.95);
+}

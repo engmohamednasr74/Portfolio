@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منيو ختعم - طنطا شارع البحر</title>
+    <link rel="shortcut icon" href="img/logo.webp" type="image/x-icon">
+
+    <meta name="description"
+        content="مطعم ختعم يقدم أشهى سندوتشات الفول والطعمية، البطاطس، والعيش السوري، بالإضافة إلى وجبات اللحوم المميزة وعلب الفول وأقراص الطعمية الساخنة. طعم زمان بجودة النهاردة.">
+    <meta name="keywords"
+        content="مطعم ختعم, فول وطعمية, سندوتشات سوري, لحوم مشوية, علب فول, طعمية سخنة, مطاعم كفر الشيخ, أكل شعبي مصري, وجبات سريعة">
+    <meta name="author" content="Developer_Engineer Eng_Mohamed_Nasr">
+    <meta property="og:title" content="مطعم ختعم - لقمة هنية تجمعنا" />
+    <meta property="og:description"
+        content="استمتع بأفضل سندوتشات الفول والطعمية واللحوم والعيش السوري. جرب علبنا المميزة وأقراص الطعمية المقرمشة الآن!" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/khat3am/img/qrcode.png" />
+    <meta property="og:image:width" content="535" />
+    <meta property="og:image:height" content="523" />
+    <meta property="og:url" content="https://engmohamednasr74.github.io/Portfolio/Projects/khat3am/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_EG" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="مطعم ختعم | الطعم الأصلي" />
+    <meta name="twitter:description" content="سندوتشات فول وطعمية، لحوم، وعيش سوري.. اطلب علبتك الآن من ختعم." />
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/engmohamednasr74/Portfolio/refs/heads/main/Projects/khat3am/img/qrcode.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f2f5;
+            background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
+            background-size: 15px 15px;
+        }
+
+        .menu-pane {
+            border-radius: 40px;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 5px solid white;
+            height: fit-content;
+        }
+
+        .pane-green {
+            background: linear-gradient(180deg, #59b55c 0%, #3e8e41 100%);
+        }
+
+        .pane-orange {
+            background: linear-gradient(180deg, #f37022 0%, #d65a12 100%);
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+            align-items: center;
+        }
+
+        .price-bubble {
+            background: white;
+            color: #333;
+            padding: 1px 10px;
+            border-radius: 15px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+            padding: 15px 10px;
+            text-align: center;
+        }
+
+        .section-label {
+            background: white;
+            color: #333;
+            display: inline-block;
+            padding: 4px 20px;
+            border-radius: 0 0 15px 15px;
+            font-weight: 800;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body class="p-2 md:p-6 text-white">
+
+    <div class="max-w-6xl mx-auto text-center mb-10">
+        <div class="inline-block bg-[#2d6a4f] text-white px-8 py-3 rounded-full shadow-xl mb-4 border-2 border-white">
+            <h1 class="text-xl md:text-3xl font-black">منيو ختعم - طنطا شارع البحر</h1>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="menu-pane pane-green">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">الطعمية</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>س طعمية (سادة/سلطة/طحينه/عادي)</span> <span
+                        class="price-bubble">6.50 ج</span></div>
+                <div class="item-row font-black"><span>س طعمية محشيه</span> <span class="price-bubble">8.50 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية طرنشات</span> <span class="price-bubble">8.50 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية موتزريلا</span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية رومي</span> <span class="price-bubble">13.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية كيري</span> <span class="price-bubble">15.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية ليمون معصفر</span> <span class="price-bubble">11.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية فيتا</span> <span class="price-bubble">11.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية نعناع</span> <span class="price-bubble">10.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية سوسيس</span> <span class="price-bubble">13.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية خيار مخلل</span> <span class="price-bubble">10.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية رتون مخلل</span> <span class="price-bubble">10.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية داونلود</span> <span class="price-bubble">14.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية لحمه مفرومه</span> <span class="price-bubble">14.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية بسطرمه</span> <span class="price-bubble">14.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية عين كتكوت</span> <span class="price-bubble">16.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية بيض مقلي</span> <span class="price-bubble">13.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية بيض</span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية باذنجان</span> <span class="price-bubble">10.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية بابا غنوج</span> <span class="price-bubble">12.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية بيتزا</span> <span class="price-bubble">24.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية شبسي باذنجان</span> <span class="price-bubble">14.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س طعمية شيبسي</span> <span class="price-bubble">10.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س طعمية مسقعه</span> <span class="price-bubble">10.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>مكس ختعم</span> <span class="price-bubble">15.00 ج</span></div>
+                <div class="item-row font-black"><span>طعميه فارم باذنجان</span> <span class="price-bubble">16.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>طعميه فارم</span> <span class="price-bubble">15.00 ج</span></div>
+            </div>
+
+            <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                <a href="https://www.kroscloud.com/mix-5at3am/t5ab/sc"
+                    class="block transition-transform hover:scale-105">
+                    <div class="bg-white rounded-[30px] p-2 rotate-2 shadow-lg" style="max-width: 9rem;">
+                        <img src="img/Product/taameya/س_مكس_ختعم638806320019693261.webp" class="rounded-[25px]"
+                            alt="طعمية">
+                    </div>
+                </a>
+                <!-- <div class="item-row font-black"><span>3D Soon</span></div> -->
+                <div class="flex-1">
+                    <p class="desc-text font-black mb-1">
+                        ميكس ختعم.. طعم يجمع بين قرمشة الطعمية ولذاذة الإضافات، حكاية تانية في كل قطمة!
+                    </p>
+
+                    <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+                        ✨ دوس على الصورة وشوف السندوتش قدامك 3D.. كأنك ماسكه في إيدك!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-orange">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">الفول</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>س فول </span> <span class="price-bubble">6.50 ج</span></div>
+                <div class="item-row font-black"><span>س فول (زيت حار/سلطه) </span> <span class="price-bubble">7.50
+                        ج</span></div>
+                <div class="item-row font-black"><span>س فول اسكندراني </span> <span class="price-bubble">9.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول سوسيس اسكندراني </span> <span class="price-bubble">16.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س فول طعميه </span> <span class="price-bubble">10.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول (سمنه/زيت زيتون) </span> <span class="price-bubble">10.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س فول رومي سحن </span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول بيض مقلي </span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول بيض مسلوق </span> <span class="price-bubble">11.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول فارم </span> <span class="price-bubble">15.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول مسقعه </span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول باذنجان </span> <span class="price-bubble">10.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول بابا غنوج </span> <span class="price-bubble">11.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول سجق </span> <span class="price-bubble">20.00 ج</span></div>
+                <div class="item-row font-black"><span>س فول كبده </span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول صلصه </span> <span class="price-bubble">8.00 ج</span></div>
+                <div class="item-row font-black"><span>س فول ختعم </span> <span class="price-bubble">8.00 ج</span></div>
+                <div class="item-row font-black"><span>س فول داونلود </span> <span class="price-bubble">18.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول بسطرمه </span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول قشطه </span> <span class="price-bubble">13.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فول ليمون معصفر </span> <span class="price-bubble">11.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س فول نعناع </span> <span class="price-bubble">8.00 ج</span>
+                </div>
+            </div>
+
+            <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 -rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/foul/فول-إسكندراني-OIP.webp" class="rounded-[25px]" alt="فول">
+        </div>
+     </a> -->
+                <div class="item-row font-black"><span>3D Soon</span></div>
+
+                <!-- <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            فول إسكندراني بخلطة ختعم السرية.. طعم زمان المظبوط اللي يروق بالك ويشبعك بجد.
+        </p>
+        
+        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ دوس على الصورة ولف السندوتش 3D.. وشوف الدلع الإسكندراني على أصوله!
+        </p>
+    </div> -->
+            </div>
+        </div>
+
+        <div class="menu-pane pane-green">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">مهروسه وحوادق</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>س مهروسه</span> <span class="price-bubble">10.00 ج</span></div>
+                <div class="item-row font-black"><span>س مهروسه بيض مسلوق</span> <span class="price-bubble">15.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س مهروسه بيض مقلي</span> <span class="price-bubble">17.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س مهروسه كروكيت لحمه مفرومه</span> <span
+                        class="price-bubble">15.00 ج</span></div>
+                <div class="item-row font-black"><span>س مهروسه سمنه</span> <span class="price-bubble">15.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س باذنجان</span> <span class="price-bubble">7.50 ج</span></div>
+                <div class="item-row font-black"><span>س بابا غنوج</span> <span class="price-bubble">11.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س شيبسي</span> <span class="price-bubble">9.00 ج</span></div>
+                <div class="item-row font-black"><span>س شيبسي باذنجان</span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س مسقعه</span> <span class="price-bubble">9.00 ج</span></div>
+                <div class="item-row font-black"><span>س مسقعه لحمه مفرومه</span> <span class="price-bubble">15.00
+                        ج</span></div>
+            </div>
+
+            <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 -rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/mashrousa/Gemini_Generated_Image_p9e7xep9e7xep9e7.png" class="rounded-[25px]" alt="مهروسة">
+        </div>
+     </a> -->
+                <div class="item-row font-black"><span>3D Soon</span></div>
+
+                <!--  <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            مهروسة كروكيت.. ناعمة وزي الزبدة، معمولة بمزاج عشان تدوب في بقك وتديك طاقة تكمل بيها يومك بضحكة.
+        </p>
+        
+        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ اضرب ع الصورة وشوف المهروسة بتلف 3D.. شكلها يجوّع من غير كلام!
+        </p>
+    </div> -->
+            </div>
+
+        </div>
+
+        <div class="menu-pane pane-orange">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">الفارم</h2>
+            </div>
+            <div class="space-y-0 text-sm">
+                <div class="item-row font-black"><span>فارم كاتشب</span> <span class="price-bubble">13.00 ج</span></div>
+                <div class="item-row font-black"><span>فارم مايونيز</span> <span class="price-bubble">15.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم بيض مسلوق</span> <span class="price-bubble">17.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم بيض مقلي</span> <span class="price-bubble">18.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم رومي</span> <span class="price-bubble">18.00 ج</span></div>
+                <div class="item-row font-black"><span>فارم رومي سخن</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم نستو بيض مقلي</span> <span class="price-bubble">25.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>فارم نستو</span> <span class="price-bubble">18.00 ج</span></div>
+                <div class="item-row font-black"><span>فارم رومي موتزاريلا</span> <span class="price-bubble">30.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>فارم باذنجان</span> <span class="price-bubble">15.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم بابا غنوج</span> <span class="price-bubble">16.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم موتزريلا</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم مفروم</span> <span class="price-bubble">22.00 ج</span></div>
+                <div class="item-row font-black"><span>فارم سوسيس</span> <span class="price-bubble">25.00 ج</span></div>
+                <div class="item-row font-black"><span>فارم سوسيس موتزريلا</span> <span class="price-bubble">30.00
+                        ج</span></div>
+
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 -rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/farm/Gemini_Generated_Image_75jyu075jyu075jy.png" class="rounded-[25px]" alt="فارم رومي">
+        </div>
+     </a> -->
+                    <div class="item-row font-black"><span>3D Soon</span></div>
+
+                    <!-- <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            فارم رومي سخن.. البطاطس مع الرومي المدخن السخن، ميكس عالمي مش هتلاقيه غير عندنا.
+        </p>
+        
+        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ المس الصورة وشوف اختراع الفارم رومي 3D.. الرومي السايح حكاية لازم تتشاف!
+        </p>
+    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-green">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">الجبنه و الجريل</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>س جبنه سلطه</span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س جبنه رومي بارد</span> <span class="price-bubble">18.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س جبنه رومي سخن</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س رومي نستو ساده</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س رومي فارم موترزيلا</span> <span class="price-bubble">30.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س رومي فارم سخن</span> <span class="price-bubble">22.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فارم رومي نستو بارد</span> <span class="price-bubble">22.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س رومي نستو سخن</span> <span class="price-bubble">22.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س نستو دبل</span> <span class="price-bubble">15.00 ج</span></div>
+                <div class="item-row font-black"><span>س رومي سجق</span> <span class="price-bubble">25.00 ج</span></div>
+                <div class="item-row font-black"><span>س شيدر مقلي</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فارم رومي نستون سخن</span> <span class="price-bubble">25.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س مشكل جبن</span> <span class="price-bubble">28.00 ج</span></div>
+                <div class="item-row font-black"><span>س رومي قشطه</span> <span class="price-bubble">17.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س رومي سجق موتزريلا</span> <span class="price-bubble">30.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س رومي لانشون موتزريلا</span> <span class="price-bubble">30.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س هالبينو</span> <span class="price-bubble">30.00 ج</span></div>
+                <div class="item-row font-black"><span>س تشيز لافرز</span> <span class="price-bubble">30.00 / 45.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س رومي مقلي</span> <span class="price-bubble">22.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س رومي لانشون سخن</span> <span class="price-bubble">22.00
+                        ج</span></div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 -rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/grill/Gemini_Generated_Image_z9x507z9x507z9x5.png" class="rounded-[25px]" alt="مشكل جبن">
+        </div>
+    </a>
+    <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            مشكل جبن.. لعشاق المطة والطعم الغني، ميكس يخليك تنسى الدنيا وتعيش اللحظة.
+         </p> -->
+                    <div class="item-row font-black"><span>3D Soon</span></div>
+
+                    <!-- <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ دوس على الصورة وشوف مطة الجبنة 3D.. السندوتش بيتكلم عن نفسه!
+        </p>
+    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-orange">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">البيض</h2>
+            </div>
+            <div class="space-y-0 text-xs md:text-sm">
+                <div class="item-row font-black"><span>س بيض</span> <span class="price-bubble">12.00 ج</span></div>
+                <div class="item-row font-black"><span>س بيض مقلي</span> <span class="price-bubble">14.00 ج</span></div>
+                <div class="item-row font-black"><span>س بيض بسطرمه</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س شكوكه</span> <span class="price-bubble">15.00 ج</span></div>
+                <div class="item-row font-black"><span>س بيض رومي مقلي</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بيض لانشون مقلي</span> <span class="price-bubble">18.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س بيض سجق</span> <span class="price-bubble">20.00 ج</span></div>
+                <div class="item-row font-black"><span>س بيض رومي سجق</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بيض نستو سخن</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بيض مارجريتا</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بيض بيتزا</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بيض سوسيس</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بيض فيتا</span> <span class="price-bubble">15.00 ج</span></div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/eggs/س_بيض_بيتزا638806070991361857.webp" class="rounded-[25px]" alt="بيض بيتزا">
+        </div>
+    </a>
+    <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            بيض بيتزا.. اختراع ختعم اللي ملوش زي، طعم البيتزا الغني مع البيض المظبوط في ساندوتش واحد.. ملوش حل!
+         </p> -->
+                    <div class="item-row font-black"><span>3D Soon</span></div>
+
+                    <!-- <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ اضرب ع الصورة واتفرج ع الاختراع ده 3D.. "البيض بيتزا" عندنا حكاية تانية خالص!
+        </p>
+    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-green">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">اللحوم والفراخ</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>س كبده / سجق</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س كبده / سجق موتزريلا</span> <span class="price-bubble">35.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>حواوشي لحم</span> <span class="price-bubble">50.00 ج</span></div>
+                <div class="item-row font-black"><span>حواوشي لحم موتزريلا</span> <span class="price-bubble">60.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س بانيه</span> <span class="price-bubble">55.00 ج</span></div>
+                <div class="item-row font-black"><span>س كفته</span> <span class="price-bubble">55.00 ج</span></div>
+                <div class="item-row font-black"><span>س كوردن بلو</span> <span class="price-bubble">55.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س ستربس</span> <span class="price-bubble">55.00 ج</span></div>
+                <div class="item-row font-black"><span>س هوت دوج</span> <span class="price-bubble">45.00 ج</span></div>
+                <div class="item-row font-black"><span>بيف برجر</span> <span class="price-bubble">50.00 ج</span></div>
+                <div class="item-row font-black"><span>تشكن برجر</span> <span class="price-bubble">50.00 ج</span></div>
+                <div class="item-row font-black"><span>بيف دبل</span> <span class="price-bubble">70.00 ج</span></div>
+                <div class="item-row font-black"><span>تشيز برجر</span> <span class="price-bubble">60.00 ج</span></div>
+                <div class="item-row font-black"><span>بيف برجر بيض مقلي</span> <span class="price-bubble">60.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>وجبه كبده / سجق</span> <span class="price-bubble">50.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س فاهيتا</span> <span class="price-bubble">50.00 ج</span></div>
+                <div class="item-row font-black"><span>س مكس بروتين</span> <span class="price-bubble">37.00 ج</span>
+                </div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 -rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/meat/Gemini_Generated_Image_azg6kyazg6kyazg6.png" class="rounded-[25px]" alt="ميكس بروتين">
+        </div>
+     </a> -->
+                    <div class="item-row font-black"><span>3D Soon</span></div>
+
+                    <!--<div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            ميكس بروتين.. القوة والطعم في ساندوتش واحد، طاقة تكمل معاك اليوم وتدلع حواسك بجد.
+        </p>
+        
+        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ دوس على الصورة وشوف وحش البروتين 3D.. ساندوتش ملوش آخر ولازم تجربه!
+        </p>
+    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-orange">
+            <div class="text-center"><span class="section-label">سندوتشات</span>
+                <h2 class="category-title">جرين برجر</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>جرين برجر ساده</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>جرين برجر كيري</span> <span class="price-bubble">30.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>جرين برجر بيض مقلي</span> <span class="price-bubble">35.00
+                        ج</span></div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/burger/جرين_برجرجبنه_كيري638806070916755642.webp" class="rounded-[25px]" alt="جرين برجر كيري">
+        </div>
+     </a> -->
+                    <div class="item-row font-black"><span>3D Soon</span></div>
+
+                    <!-- <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            جرين برجر كيري.. القرمشة اللي بتحبها مع دلع الجبنة الكيري السايحة، ميكس معمول عشان يروق مزاجك ع الآخر!
+        </p>
+        
+        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ دوس على الصورة وشوف "الجرين برجر" 3D.. وشوف الكيري وهي غرقانة جوه القرمشة!
+        </p>
+    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-green">
+            <div class="text-center"><span class="section-label">special</span>
+                <h2 class="category-title">ختعم رول</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>سوسيس رول</span> <span class="price-bubble">25.00 ج</span></div>
+                <div class="item-row font-black"><span>سوسيس ختعم رول</span> <span class="price-bubble">35.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>بيض سوسيس رول</span> <span class="price-bubble">30.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>سوبر سوبريم بيف</span> <span class="price-bubble">45.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>سوبر سوبريم فراخ</span> <span class="price-bubble">50.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>سوبر سوبريم بسطرمه</span> <span class="price-bubble">45.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>فارم رومي سخن رول</span> <span class="price-bubble">32.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>فارم موتزريلا رول</span> <span class="price-bubble">27.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>فارم ساده رول</span> <span class="price-bubble">22.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>رومي سجق رول</span> <span class="price-bubble">37.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم نستو بيض مقلي رول</span> <span class="price-bubble">32.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>فارم رومي موتزريلا رول</span> <span class="price-bubble">38.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>رومي سجق موتزريلا رول</span> <span class="price-bubble">45.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>رومي نستو رول</span> <span class="price-bubble">32.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>رومي بسطرمه رول</span> <span class="price-bubble">37.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>بيض رومي سجق رول</span> <span class="price-bubble">40.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>بيض بيتزا رول</span> <span class="price-bubble">38.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>شيدر مقلي رول</span> <span class="price-bubble">30.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طعميه داونلود رول</span> <span class="price-bubble">30.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>طعميه فارم بيض رول</span> <span class="price-bubble">30.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>طعميه رول</span> <span class="price-bubble">20.00 ج</span></div>
+                <div class="item-row font-black"><span>بانيه رول</span> <span class="price-bubble">55.00 ج</span></div>
+                <div class="item-row font-black"><span>كفته رول</span> <span class="price-bubble">55.00 ج</span></div>
+                <div class="item-row font-black"><span>طعميه بيتزا رول</span> <span class="price-bubble">30.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>كوردن بلو رول</span> <span class="price-bubble">55.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>استربس رول</span> <span class="price-bubble">55.00 ج</span></div>
+                <div class="item-row font-black"><span>كبده رول</span> <span class="price-bubble">45.00 ج</span></div>
+                <div class="item-row font-black"><span>كبده موتزريلا رول</span> <span class="price-bubble">50.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>سجق رول</span> <span class="price-bubble">35.00 ج</span></div>
+                <div class="item-row font-black"><span>سجق موتزريلا رول</span> <span class="price-bubble">50.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>مشكل جبن رول</span> <span class="price-bubble">45.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم مفروم رول</span> <span class="price-bubble">40.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم سوسيس رول</span> <span class="price-bubble">35.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم سوسيس موتزريلا رول</span> <span class="price-bubble">40.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>رومي مقلي رول</span> <span class="price-bubble">30.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>بيض بسطرمه رول</span> <span class="price-bubble">35.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>فارم لحمه موتزريلا رول</span> <span class="price-bubble">50.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>مكس بروتين رول</span> <span class="price-bubble">60.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>مكس بروتين موتزريلا رول</span> <span class="price-bubble">65.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>بيض رومي رول</span> <span class="price-bubble">28.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>بيض لانشون رول</span> <span class="price-bubble">23.00 ج</span>
+                </div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <a href="https://www.kroscloud.com/farm-motzreala-roll/pvnc/sc"
+                        class="block transition-transform hover:scale-105">
+                        <div class="bg-white rounded-[30px] p-2 rotate-2 shadow-lg" style="max-width: 9rem;">
+                            <img src="img/Product/roll/فارم_موتزريلا_رول638806304056910125.webp" class="rounded-[25px]"
+                                alt="فارم موزاريلا رول">
+                        </div>
+                    </a>
+                    <!-- <div class="item-row font-black"><span>3D Soon</span></div> -->
+
+                    <div class="flex-1">
+                        <p class="desc-text font-black mb-1">
+                            فارم موزاريلا رول.. لما تلتقي البطاطس مع الموزاريلا السايحة في رول واحد، السعادة بتبدأ من
+                            هنا.
+                        </p>
+
+                        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+                            ✨ دوس على الصورة وشوف "الرول العملاق" 3D.. ولف السندوتش يمين وشمال وشوف المطة!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-orange">
+            <div class="text-center"><span class="section-label">تحلية ختعم</span>
+                <h2 class="category-title">الحلويات</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>س حلاوه ساده</span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س حلاوه قشطه</span> <span class="price-bubble">16.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س حلاوه قشطه رول</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س حلاوه شوكولاته</span> <span class="price-bubble">15.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س حلاوه قشطه شوكولاته</span> <span class="price-bubble">20.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س حلاوه قشطه مانجو</span> <span class="price-bubble">20.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س مربي ساده</span> <span class="price-bubble">12.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س مربي قشطه</span> <span class="price-bubble">16.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س عسل ساده</span> <span class="price-bubble">12.00 ج</span></div>
+                <div class="item-row font-black"><span>س عسل قشطه</span> <span class="price-bubble">16.00 ج</span></div>
+                <div class="item-row font-black"><span>س ديناميت حلو</span> <span class="price-bubble">18.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س بلح قشطه</span> <span class="price-bubble">20.00 ج</span></div>
+                <div class="item-row font-black"><span>س غيبوبه</span> <span class="price-bubble">20.00 ج</span></div>
+                <div class="item-row font-black"><span>س حلاوه فواكه ختعم</span> <span class="price-bubble">20.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>س حلاوه مربي</span> <span class="price-bubble">16.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>س قشطه ساده</span> <span class="price-bubble">16.00 ج</span>
+                </div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <!-- <a href="#" class="block transition-transform hover:scale-105">
+        <div class="bg-white rounded-[30px] p-2 rotate-2 shadow-lg" style="max-width: 9rem;">
+            <img src="img/Product/sweet/Gemini_Generated_Image_q83rilq83rilq83r.png" class="rounded-[25px]" alt="حلو فواكه ختعم">
+        </div>
+    </a>
+
+    <div class="flex-1">
+        <p class="desc-text font-black mb-1">
+            حلو فواكه ختعم.. مسك الختعم عندنا غير، فواكه فريش مع لمسة دلع تخلي يومك سكر وتعدل المزاج بجد!
+         </p> -->
+                    <div class="item-row font-black"><span>3D Soon</span></div>
+
+                    <!--  <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+            ✨ دوس على الصورة وشوف "الحلو" بتاعنا 3D.. السندوتش ده محتاج صورة سيلفي من كتر جماله!
+        </p>
+    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-green">
+            <div class="text-center"><span class="section-label">فرط</span>
+                <h2 class="category-title">اقراص الطعميه</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>قرص صغير</span> <span class="price-bubble">1.25 ج</span></div>
+                <div class="item-row font-black"><span>قرص ساده</span> <span class="price-bubble">3.00 ج</span></div>
+                <div class="item-row font-black"><span>قرص محشيه</span> <span class="price-bubble">4.00 ج</span></div>
+                <div class="item-row font-black"><span>قرص نعناع</span> <span class="price-bubble">4.00 ج</span></div>
+                <div class="item-row font-black"><span>قرص زتون مخلل</span> <span class="price-bubble">5.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>قرص خيار مخلل</span> <span class="price-bubble">5.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>قرص ليمون معصفر</span> <span class="price-bubble">7.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>قرص موتزريلا</span> <span class="price-bubble">8.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>قرص لحمه مفرومه</span> <span class="price-bubble">8.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>قرص سوسيس</span> <span class="price-bubble">8.00 ج</span></div>
+                <div class="item-row font-black"><span>قرص بسطرمه</span> <span class="price-bubble">8.00 ج</span></div>
+                <div class="item-row font-black"><span>قرص رومي</span> <span class="price-bubble">8.00 ج</span></div>
+                <div class="item-row font-black"><span>قرص كيري</span> <span class="price-bubble">9.00 ج</span></div>
+                <div class="p-2" style="gap: 10px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-orange">
+            <div class="text-center"><span class="section-label">اطباق</span>
+                <h2 class="category-title">اطباق الحادق والحلو</h2>
+            </div>
+            <div class="space-y-0">
+                <div class="item-row font-black"><span>طبق بيض مقلي</span> <span class="price-bubble">18.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق فارم</span> <span class="price-bubble">14.00 ج</span></div>
+                <div class="item-row font-black"><span>طبق شبسي</span> <span class="price-bubble">8.00 ج</span></div>
+                <div class="item-row font-black"><span>طبق بيض شكوكه</span> <span class="price-bubble">18.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق بيض بسرطمه</span> <span class="price-bubble">20.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق بيض لانشون</span> <span class="price-bubble">16.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق حلاوه قشطه</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق بيض رومي سجق</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق بيض رومي مقلي</span> <span class="price-bubble">20.00
+                        ج</span></div>
+                <div class="item-row font-black"><span>طبق بلح قشطه</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق عسل قشطه</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق مربي قشطه</span> <span class="price-bubble">25.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق مخلل</span> <span class="price-bubble">6.00 ج</span></div>
+                <div class="item-row font-black"><span>بيض مسلوق</span> <span class="price-bubble">7.00 ج</span></div>
+                <div class="item-row font-black"><span>طبق ديناميت</span> <span class="price-bubble">30.00 ج</span>
+                </div>
+                <div class="item-row font-black"><span>طبق ليمون معصفر</span> <span class="price-bubble">6.00 ج</span>
+                </div>
+                <div class="p-4" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 10px;">
+                    <a href="https://www.kroscloud.com/super-soprem-fra5/kyiu/sc" class="block transition-transform hover:scale-105">
+                        <div class="bg-white rounded-[30px] p-2 rotate-2 shadow-lg" style="max-width: 9rem;">
+                            <img src="img/Product/roll/c9cc82c8-8e20-403e-9f76-084537d2d88a_original.webp" class="rounded-[25px]"
+                                alt="سوبر سبريم فراخ">
+                        </div>
+                    </a>
+
+                    <div class="flex-1">
+                        <p class="desc-text font-black mb-1 text-white">
+                            سوبر سبريم فراخ.. ميكس الأساطير! فراخ متبلة صح مع خضار فريش وجبنة سايحة، الطعم اللي هيخطف
+                            قلبك من أول قطمة.
+                        </p>
+
+                        <p class="text-[11px] text-yellow-200 font-bold leading-tight animate-pulse">
+                            ✨ دوس على الصورة وشوف "العظمة" 3D.. لف البيتزا يمين وشمال وشوف غرقان الجبنة وتفاصيل الفراخ!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-pane pane-green lg:col-span-3 alab">
+            <div class="text-center"><span class="section-label">توفير</span>
+                <h2 class="category-title">علب ختعم</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 pb-4">
+                <div class="item-row font-black"><span>علبة فول</span> <span class="price-bubble">12 / 18 / 23 ج</span>
+                </div>
+                <div class="item-row font-black"><span>علبة فول حار</span> <span class="price-bubble">13 / 20 / 25
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة فول زيت زيتون</span> <span class="price-bubble">15 / 25 / 30
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة فول سمنه</span> <span class="price-bubble">15 / 25 / 30
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة فول اسكندراني</span> <span class="price-bubble">25 / 35
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة عجينه طعميه</span> <span class="price-bubble">10 ج</span>
+                </div>
+                <div class="item-row font-black"><span>علبة فول كبده / سجق</span> <span class="price-bubble">20 / 30 /
+                        35 ج</span></div>
+                <div class="item-row font-black"><span>علبة مهروسه</span> <span class="price-bubble">15 / 25 / 30
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة بابا غنوج</span> <span class="price-bubble">20 / 25 / 35
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة جبنه سلطه</span> <span class="price-bubble">20 / 25 / 35
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة مسقعه</span> <span class="price-bubble">15 / 20 / 25
+                        ج</span></div>
+                <div class="item-row font-black"><span>علبة مسقعه لحمه مفرومه</span> <span class="price-bubble">20 / 30
+                        / 35 ج</span></div>
+                <div class="item-row font-black"><span>علبة كبده / سجق</span> <span class="price-bubble">30 / 45 / 55
+                        ج</span></div>
+                <div class="item-row font-black"><span>طبق بتنجان</span> <span class="price-bubble">6 ج</span></div>
+                <div class="item-row font-black"><span>طبق طرنشات</span> <span class="price-bubble">6 ج</span></div>
+                <div class="item-row font-black"><span>مخلل</span> <span class="price-bubble">2 / 3 / 6 ج</span></div>
+                <div class="item-row font-black"><span>كاتشب</span> <span class="price-bubble">1 / 3 ج</span></div>
+                <div class="item-row font-black"><span>علبه طحينه</span> <span class="price-bubble">10 / 15 ج</span>
+                </div>
+                <div class="item-row font-black"><span>عيش</span> <span class="price-bubble">4 ج</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="max-w-4xl mx-auto mt-12 bg-white rounded-[40px] p-6 text-center shadow-lg border-2 border-dashed border-orange-500 text-gray-800">
+        <p class="font-black text-xl mb-2">للتوصيل في طنطا</p>
+        <p class="text-orange-600 font-black text-2xl">01080730915 | 01080730916</p>
+    </div> -->
+
+</body>
+
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعم الأمهات - X Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="img/WhatsApp_Image_2025-12-06_at_1.39.14_PM-removebg-preview.png"
+        type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a',
+                        'primary-dark': '#15803d',
+                        secondary: '#f8fafc',
+                        background: '#ffffff',
+                        card: '#ffffff',
+                        border: '#e2e8f0',
+                        foreground: '#0f172a',
+                        'muted-foreground': '#64748b',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        :root {
+            --primary: #22c55e;
+            /* لون افتراضي أخضر */
+            --primary-dark: #16a34a;
+            --foreground: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --bg-card: rgba(255, 255, 255, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            direction: rtl;
+            background-color: #f8fafc;
+        }
+
+        /* Header Styles */
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-wrapper {
+            display: flex;
+            height: 64px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--foreground);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(34, 197, 94, 0.1);
+            color: var(--primary);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .desktop-nav {
+            display: none;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .desktop-nav {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+
+        /* Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cart-icon {
+            position: relative;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0.5rem;
+            display: flex;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-toggle {
+                display: none;
+            }
+        }
+
+        .hide-mobile {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .hide-mobile {
+                display: flex;
+            }
+        }
+
+        /* Mobile Menu Panel */
+        .mobile-menu {
+            display: none;
+            /* مخفي افتراضياً */
+            border-top: 1px solid var(--border);
+            background-color: white;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            gap: 0.5rem;
+        }
+
+        .mobile-nav a {
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 8px;
+            font-size: 0.875rem;
+        }
+
+        .mobile-nav a:hover {
+            background-color: #f1f5f9;
+        }
+
+        .mobile-cart-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-badge-mobile {
+            margin-right: auto;
+            background-color: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        /* حالة الفتح للقائمة */
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground min-h-screen flex flex-col">
+
+    <header class="main-header">
+        <div class="container">
+            <div class="header-wrapper">
+
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <span class="material-symbols-outlined">nutrition</span>
+                    </div>
+                    <span class="logo-text">X Food</span>
+                </a>
+
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">الرئيسية</a>
+                    <a href="menu.html" class="nav-link">قائمة الطعام</a>
+                    <a href="calorie-scanner.html" class="nav-link">ماسح السعرات</a>
+                    <a href="about.html" class="nav-link active">من نحن</a>
+                    <a href="support-moms.html" class="nav-link">دعم الأمهات</a>
+                    <a href="partnerships.html" class="nav-link">شراكاتنا</a>
+                    <a href="contact.html" class="nav-link">تواصل معنا</a>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span id="cart-count" class="cart-badge">0</span> </a>
+
+                    <a href="menu.html" class="btn-primary hide-mobile">اطلب الآن</a>
+
+                    <button class="mobile-menu-toggle" id="menuToggle">
+                        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html">قائمة الطعام</a>
+                <a href="calorie-scanner.html">ماسح السعرات</a>
+                <a href="about.html">من نحن</a>
+                <a href="support-moms.html">دعم الأمهات</a>
+                <a href="partnerships.html">شراكاتنا</a>
+                <a href="contact.html">تواصل معنا</a>
+                <a href="cart.html" class="mobile-cart-link">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    السلة
+                    <span class="cart-badge-mobile">3</span>
+                </a>
+                <a href="menu.html" class="btn-primary">اطلب الآن</a>
+            </nav>
+        </div>
+    </header <main class="flex-1">
+    <section class="relative w-full bg-secondary py-12 lg:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
+                <div class="flex-1 flex flex-col gap-6 text-center md:text-right items-center md:items-start">
+                    <span
+                        class="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-bold text-primary">
+                        مبادرة مجتمعية
+                    </span>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-foreground">
+                        تمكين الأمهات، <br />
+                        <span class="text-primary">تقديم الصحة</span>
+                    </h1>
+                    <p class="text-muted-foreground text-lg leading-relaxed max-w-xl">
+                        نحن أكثر من مجرد مطعم، نحن منصة تمكّن الأمهات الموهوبات من مشاركة طبخهن البيتي مع المجتمع
+                        وكسب دخل مستدام، مع ضمان أعلى معايير الجودة والنظافة.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contact.html"
+                            class="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-dark transition-all">
+                            انضمي لعائلتنا
+                        </a>
+                        <a href="about.html"
+                            class="flex h-12 items-center justify-center rounded-lg border border-border bg-card px-8 text-base font-bold text-foreground hover:bg-secondary transition-all">
+                            تعرف على المزيد
+                        </a>
+                    </div>
+                    <div class="flex gap-8 mt-4 pt-6 border-t border-border w-full justify-center md:justify-start">
+                        <div>
+                            <p class="text-2xl font-bold text-foreground">٥٠+</p>
+                            <p class="text-sm text-muted-foreground">أم منتجة</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-foreground">١٠,٠٠٠+</p>
+                            <p class="text-sm text-muted-foreground">وجبة صحية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 w-full relative">
+                    <div class="relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="img/f443e3dd-eb30-45bd-a07d-da60c34bfcd0.jpeg" alt="أم تحضر طعاماً صحياً"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-6 right-6 text-white text-right">
+                            <p class="font-bold text-lg">نكهة البيت الأصيلة</p>
+                            <p class="text-sm opacity-90">بأيادي أمهاتنا المبدعات</p>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -left-2 md:-left-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce-slow">
+                        <div class="bg-primary/10 p-2 rounded-full text-primary">
+                            <span class="material-symbols-outlined">verified</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs text-muted-foreground">معايير جودة</p>
+                            <p class="text-sm font-bold text-foreground">١٠٠٪ صحي</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full py-16 lg:py-24 bg-card">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-primary font-bold mb-2">لماذا المبادرة؟</h2>
+                <h3 class="text-3xl md:text-4xl font-black text-foreground mb-4">تأثير يتجاوز حدود المطبخ</h3>
+                <p class="text-muted-foreground">
+                    مبادرة تهدف إلى خلق تأثير إيجابي في المجتمع من خلال دعم الأسر المنتجة وتقديم طعام صحي وموثوق.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="features-container">
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full py-16 lg:py-24 bg-secondary">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-foreground mb-4">كيف يعمل النظام للأمهات؟</h2>
+                <p class="text-muted-foreground">رحلة مبسطة من التسجيل حتى تحقيق الدخل</p>
+            </div>
+            <div class="flex flex-col" id="steps-container">
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full py-16 lg:py-24 bg-card">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-foreground mb-4">قصص نجاح أمهاتنا</h2>
+                <p class="text-muted-foreground">تجارب حقيقية من أمهات غيرت حياتهن مع X Food</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="testimonials-container">
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full py-20 bg-primary">
+        <div class="mx-auto max-w-2xl px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">هل أنتِ أم وترغبين في الانضمام؟</h2>
+            <p class="text-white/80 text-lg mb-8">انضمي لعائلة X Food وابدأي رحلتك نحو الاستقلال المالي من راحة
+                منزلك</p>
+            <a href="contact.html"
+                class="inline-flex h-12 items-center justify-center rounded-lg bg-white px-8 text-base font-bold text-foreground hover:bg-gray-100 transition-colors">
+                سجلي الآن
+            </a>
+        </div>
+    </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 mt-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <div class="flex w-10 h-10 items-center justify-center rounded-full bg-green-50 text-green-600">
+                            <span class="material-symbols-outlined text-2xl">nutrition</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">X Food</span>
+                    </a>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        مشروعك للأكل الصحي في طنطا. نجمع بين حب الأمهات وخبرة الشيفات لتقديم وجبات صحية ولذيذة.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-gray-900">روابط سريعة</h4>
+                    <nav class="flex flex-col gap-2">
+                        <a href="index.html"
+                            class="text-sm text-gray-500 hover:text-green-600 transition-colors">الرئيسية</a>
+                        <a href="menu.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">قائمة
+                            الطعام</a>
+                        <a href="about.html" class="text-sm text-gray-500 hover:text-green-600 transition-colors">من
+                            نحن</a>
+                        <a href="calorie-scanner.html"
+                            class="text-sm text-gray-500 hover:text-green-600 transition-colors">ماسح السعرات</a>
+                    </nav>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-gray-900">خدماتنا</h4>
+                    <nav class="flex flex-col gap-2">
+                        <a href="support-moms.html"
+                            class="text-sm text-gray-500 hover:text-green-600 transition-colors">دعم الأمهات</a>
+                        <a href="partnerships.html"
+                            class="text-sm text-gray-500 hover:text-green-600 transition-colors">شراكاتنا</a>
+                        <a href="contact.html"
+                            class="text-sm text-gray-500 hover:text-green-600 transition-colors">تواصل معنا</a>
+                    </nav>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h4 class="font-bold text-gray-900">تواصل معنا</h4>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="material-symbols-outlined text-base text-green-600">location_on</span>
+                            <span>طنطا، الغربية، مصر</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="material-symbols-outlined text-base text-green-600">phone</span>
+                            <span dir="ltr">+20 101 357 4278</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <span class="material-symbols-outlined text-base text-green-600">mail</span>
+                            <span>info@xfood.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2025 X Food. جميع الحقوق محفوظة.</p>
+                <div class="flex gap-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-green-600 transition-colors">سياسة الخصوصية</a>
+                    <a href="#" class="hover:text-green-600 transition-colors">الشروط والأحكام</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // البيانات
+        const features = [
+            { icon: "currency_lira", title: "استقلال مالي", description: "نساعد الأمهات على تحقيق دخل إضافي ومستقل من خلال مهاراتهن في الطبخ، مما يعزز استقرارهن المالي." },
+            { icon: "schedule", title: "ساعات عمل مرنة", description: "تعمل الأمهات من راحة منازلهن وفي الأوقات التي تناسب جداولهن العائلية." },
+            { icon: "diversity_1", title: "تأثير مجتمعي", description: "كل وجبة تطلبها تدعم أسرة محلية وتساهم في نشر ثقافة الأكل الصحي." }
+        ];
+
+        const steps = [
+            { icon: "app_registration", title: "التسجيل في المنصة", description: "قومي بتعبئة نموذج الانضمام البسيط. سنقوم بمراجعة طلبك والتواصل معك.", active: true },
+            { icon: "safety_check", title: "التدريب ومعايير الجودة", description: "نقدم لك تدريباً شاملاً حول معايير سلامة الغذاء والنظافة." },
+            { icon: "skillet", title: "بدء الطهي وتجهيز الطلبات", description: "استقبلي الطلبات وابدأي بإعداد وجباتك الشهية. نحن نوفر لك كل الدعم." },
+            { icon: "payments", title: "تحقيق الدخل", description: "احصلي على أرباحك بشكل دوري ومضمون، وتابعي نمو مشروعك." }
+        ];
+
+        const testimonials = [
+            { name: "أم أحمد", role: "أم منتجة منذ 6 أشهر", quote: "X Food غير حياتي. قدرت أشتغل وأنا في بيتي مع ولادي، وبقى عندي دخل خاص بيا. شكراً ليكم!", image: "https://i.pravatar.cc/150?u=mom1" },
+            { name: "أم يوسف", role: "أم منتجة منذ سنة", quote: "الدعم اللي بحصل عليه من فريق X Food مش عادي. بيساعدوني في كل حاجة وبيطوروني كل يوم.", image: "https://i.pravatar.cc/150?u=mom2" }
+        ];
+
+        // حقن البيانات
+        document.getElementById('features-container').innerHTML = features.map(f => `
+            <div class="flex flex-col gap-4 rounded-2xl border border-border bg-secondary p-8 hover:shadow-lg transition-shadow text-right">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-3xl">${f.icon}</span>
+                </div>
+                <h4 class="text-xl font-bold text-foreground">${f.title}</h4>
+                <p class="text-muted-foreground leading-relaxed">${f.description}</p>
+            </div>
+        `).join('');
+
+        document.getElementById('steps-container').innerHTML = steps.map((s, idx) => `
+            <div class="flex gap-6 text-right">
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-full z-10 shadow-md ${s.active ? 'bg-primary text-white' : 'bg-white border-2 border-primary text-primary'}">
+                        <span class="material-symbols-outlined">${s.icon}</span>
+                    </div>
+                    ${idx < steps.length - 1 ? '<div class="w-0.5 bg-border h-full min-h-[80px]"></div>' : ''}
+                </div>
+                <div class="flex flex-col pb-10">
+                    <h3 class="text-xl font-bold text-foreground mb-2">${s.title}</h3>
+                    <p class="text-muted-foreground">${s.description}</p>
+                </div>
+            </div>
+        `).join('');
+
+        document.getElementById('testimonials-container').innerHTML = testimonials.map(t => `
+            <div class="bg-secondary rounded-2xl p-8 border border-border text-right">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="${t.image}" alt="${t.name}" class="w-16 h-16 rounded-full object-cover">
+                    <div>
+                        <h4 class="font-bold text-foreground">${t.name}</h4>
+                        <p class="text-sm text-muted-foreground">${t.role}</p>
+                    </div>
+                </div>
+                <p class="text-muted-foreground leading-relaxed italic">"${t.quote}"</p>
+            </div>
+        `).join('');
+
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', () => {
+            // تبديل ظهور القائمة
+            mobileMenu.classList.toggle('open');
+
+            // تغيير الأيقونة من menu إلى close
+            if (mobileMenu.classList.contains('open')) {
+                menuIcon.textContent = 'close';
+            } else {
+                menuIcon.textContent = 'menu';
+            }
+        });
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+            const countElement = document.getElementById('cart-count');
+            if (countElement) countElement.textContent = count;
+        }
+        window.addEventListener('load', updateCartCount);
+    </script>
+</body>
+
+</html>

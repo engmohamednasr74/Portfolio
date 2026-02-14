@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Nasr | Full-Stack Developer & UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Mohamed Nasr - Full-Stack Web Developer and UI/UX Designer with 4 years of front-end experience, 2 years of back-end, and 1 year in Figma.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: #121212;
+      --foreground: #fafafa;
+      --card: #1f1f1f;
+      --card-foreground: #fafafa;
+      --primary: #8b5cf6;
+      --primary-foreground: #fafafa;
+      --secondary: #262626;
+      --muted: #333333;
+      --muted-foreground: #999999;
+      --border: #404040;
+      --radius: 0.625rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 6rem;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-glow { animation: glow 2s ease-in-out infinite; }
+    .animate-marquee { animation: marquee 30s linear infinite; }
+    .fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+    .fade-in-left { animation: fadeInLeft 0.8s ease forwards; }
+    .fade-in-right { animation: fadeInRight 0.8s ease forwards; }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .container { padding: 0 1.5rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .container { padding: 0 2rem; }
+    }
+
+    /* Bottom Navbar */
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      color: var(--muted-foreground);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: var(--foreground);
+      transform: scale(1.1);
+    }
+
+    .nav-link.active {
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .nav-link svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .nav-tooltip {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.25rem 0.5rem;
+      background: #2a2a2a;
+      color: var(--foreground);
+      font-size: 0.75rem;
+      border-radius: 0.375rem;
+      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: opacity 0.15s;
+      pointer-events: none;
+    }
+
+    .nav-item:hover .nav-tooltip,
+    .nav-link.active + .nav-tooltip {
+      opacity: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      min-height: calc(100vh - 200px);
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* Profile Section */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .profile { align-items: flex-start; }
+    }
+
+    .profile-image {
+      position: relative;
+    }
+
+    .profile-ring {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: linear-gradient(to bottom right, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @media (min-width: 640px) {
+      .profile-ring { width: 16rem; height: 16rem; }
+    }
+
+    .profile-inner {
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+      background: var(--card);
+      border: 4px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 640px) {
+      .profile-inner { width: 15rem; height: 15rem; }
+    }
+
+    .profile-initials {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    @media (min-width: 640px) {
+      .profile-initials { font-size: 3.75rem; }
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: -0.5rem;
+      right: -0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: #22c55e;
+      border-radius: 50%;
+      border: 4px solid var(--background);
+    }
+
+    .profile-info {
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) {
+      .profile-info { text-align: left; }
+    }
+
+    .profile-name {
+      font-size: 1.875rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .profile-name { font-size: 2.25rem; }
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .badges { justify-content: flex-start; }
+    }
+
+    .badge {
+      padding: 0.375rem 0.75rem;
+      background: rgba(139, 92, 246, 0.1);
+      color: var(--primary);
+      font-size: 0.875rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    /* Center Content */
+    .hero-center {
+      text-align: center;
+    }
+
+    .hero-greeting {
+      color: var(--muted-foreground);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      min-height: 2.5em;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title { font-size: 1.875rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title { font-size: 2.25rem; }
+    }
+
+    .typewriter {
+      color: var(--primary);
+    }
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .hero-description {
+      color: var(--muted-foreground);
+      max-width: 28rem;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 2rem;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border-radius: 9999px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .cta-button:hover {
+      background: rgba(139, 92, 246, 0.9);
+      transform: scale(1.05);
+    }
+
+    .cta-button svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .stats { flex-direction: column; }
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    @media (min-width: 640px) {
+      .stat-card { padding: 1.5rem; }
+    }
+
+    .stat-card:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      transform: scale(1.05) translateY(-5px);
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    @media (min-width: 640px) {
+      .stat-value { font-size: 1.875rem; }
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      margin-top: 0.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .stat-label { font-size: 0.875rem; }
+    }
+
+    /* Tech Marquee */
+    .marquee-container {
+      margin-top: 3rem;
+      overflow: hidden;
+    }
+
+    .marquee-label {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+    }
+
+    .marquee-wrapper {
+      position: relative;
+    }
+
+    .marquee-fade-left,
+    .marquee-fade-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 5rem;
+      z-index: 10;
+    }
+
+    .marquee-fade-left {
+      left: 0;
+      background: linear-gradient(to right, var(--background), transparent);
+    }
+
+    .marquee-fade-right {
+      right: 0;
+      background: linear-gradient(to left, var(--background), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      animation: marquee 30s linear infinite;
+    }
+
+    .tech-item {
+      flex-shrink: 0;
+      margin: 0 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(31, 31, 31, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: border-color 0.3s;
+    }
+
+    .tech-item:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+    }
+
+    .tech-item img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .tech-item span {
+      color: var(--muted-foreground);
+      font-weight: 500;
+      font-size: 0.875rem;
+      white-space: nowrap;
+    }
+
+    /* Tech Stack Grid */
+    .tech-stack {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .tech-grid { gap: 1rem; }
+    }
+
+    .tech-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    @media (min-width: 640px) {
+      .tech-badge { padding: 0.5rem 1rem; }
+    }
+
+    .tech-badge:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.1);
+    }
+
+    .tech-badge span:first-child {
+      font-size: 1.125rem;
+    }
+
+    .tech-badge span:last-child {
+      font-size: 0.75rem;
+      color: var(--foreground);
+    }
+
+    @media (min-width: 640px) {
+      .tech-badge span:last-child { font-size: 0.875rem; }
+    }
+
+    /* Services Section */
+    .services {
+      padding: 5rem 0;
+      background: rgba(31, 31, 31, 0.3);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 1.875rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .section-title { font-size: 2.25rem; }
+    }
+
+    .section-title.primary {
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      color: var(--muted-foreground);
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    @media (min-width: 1024px) {
+      .service-card { padding: 2rem; }
+    }
+
+    .service-card:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      transform: scale(1.02) translateY(-10px);
+      box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.05);
+    }
+
+    .service-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: background 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(139, 92, 246, 0.2);
+    }
+
+    .service-icon svg {
+      width: 1.75rem;
+      height: 1.75rem;
+      color: var(--primary);
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-description {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-example {
+      padding: 0.75rem;
+      background: rgba(139, 92, 246, 0.05);
+      border-radius: 0.5rem;
+      border: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .service-example p {
+      font-size: 0.75rem;
+      color: rgba(139, 92, 246, 0.8);
+      font-style: italic;
+    }
+
+    .service-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .service-link:hover {
+      transform: translateX(5px);
+    }
+
+    .service-link svg {
+      width: 1rem;
+      height: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .service-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 5rem 0;
+      background: var(--background);
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-tab {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted-foreground);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    @media (min-width: 640px) {
+      .filter-tab { padding: 0.5rem 1.5rem; }
+    }
+
+    .filter-tab:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      color: var(--foreground);
+    }
+
+    .filter-tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      transform: translateY(-10px);
+    }
+
+    .project-card.hidden {
+      display: none;
+    }
+
+    .project-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(139, 92, 246, 0.8), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1rem;
+      gap: 0.75rem;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-link {
+      padding: 0.5rem;
+      background: rgba(250, 250, 250, 0.9);
+      border-radius: 9999px;
+      color: var(--foreground);
+      transition: background 0.2s;
+    }
+
+    .project-link:hover {
+      background: var(--foreground);
+    }
+
+    .project-link svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--background);
+    }
+
+    .project-content {
+      padding: 1.25rem;
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-description {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-bottom: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-tag {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      background: rgba(139, 92, 246, 0.1);
+      color: var(--primary);
+      border-radius: 0.375rem;
+    }
+
+    /* Certifications Section */
+    .certifications {
+      padding: 5rem 0;
+      background: linear-gradient(to bottom, rgba(139, 92, 246, 0.05), var(--background));
+    }
+
+    .certs-marquee {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certs-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    .certs-marquee:hover .certs-track {
+      animation-play-state: paused;
+    }
+
+    .cert-card {
+      flex-shrink: 0;
+      width: 16rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    @media (min-width: 640px) {
+      .cert-card { width: 18rem; }
+    }
+
+    .cert-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+      transform: scale(1.05);
+    }
+
+    .cert-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cert-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--primary);
+    }
+
+    .cert-info {
+      min-width: 0;
+    }
+
+    .cert-title {
+      font-weight: 600;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cert-issuer {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+    }
+
+    .cert-date {
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      max-width: 28rem;
+      width: 100%;
+      transform: scale(0.9);
+      transition: transform 0.3s;
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .modal-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .modal-icon {
+      width: 3rem;
+      height: 3rem;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--primary);
+    }
+
+    .modal-title {
+      font-weight: 600;
+    }
+
+    .modal-subtitle {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .modal-close {
+      padding: 0.25rem;
+      background: transparent;
+      border: none;
+      color: var(--muted-foreground);
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--muted);
+    }
+
+    .modal-close svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .modal-description {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 0;
+      background: rgba(31, 31, 31, 0.3);
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      color: var(--foreground);
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .form-group textarea {
+      resize: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: rgba(139, 92, 246, 0.9);
+      transform: scale(1.02);
+    }
+
+    .submit-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Contact Card */
+    .contact-card-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-card-wrapper { justify-content: flex-end; }
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      max-width: 20rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .contact-avatar {
+      position: relative;
+      width: 12rem;
+      height: 12rem;
+      margin: 0 auto 1.5rem;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .contact-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-avatar-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(139, 92, 246, 0.2);
+      mix-blend-mode: overlay;
+    }
+
+    .contact-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-title {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-location {
+      color: var(--muted-foreground);
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      color: var(--foreground);
+      transform: scale(1.1);
+    }
+
+    .social-link svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .contact-cta {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border-radius: 9999px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .contact-cta:hover {
+      background: rgba(139, 92, 246, 0.9);
+      transform: scale(1.02);
+    }
+
+    /* Success Modal */
+    .success-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    .success-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .success-content {
+      background: var(--card);
+      border: 1px solid var(--primary);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transform: scale(0.8);
+      transition: transform 0.3s;
+    }
+
+    .success-modal.active .success-content {
+      transform: scale(1);
+    }
+
+    .success-icon {
+      width: 4rem;
+      height: 4rem;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .success-icon svg {
+      width: 2rem;
+      height: 2rem;
+      color: var(--primary);
+    }
+
+    .success-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-text {
+      color: var(--muted-foreground);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 2rem 0;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-logo {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.875rem;
+      color: var(--primary-foreground);
+    }
+
+    .footer-copyright {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-made {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .footer-made svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--primary);
+      fill: var(--primary);
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-social a {
+      padding: 0.5rem;
+      color: var(--muted-foreground);
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--primary);
+    }
+
+    .footer-social svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    /* Particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(139, 92, 246, 0.3);
+      border-radius: 9999px;
+      animation: particle-float 5s ease-in-out infinite;
+    }
+
+    @keyframes particle-float {
+      0%, 100% { opacity: 0.2; transform: translateY(0); }
+      50% { opacity: 0.8; transform: translateY(-100px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Bottom Navbar -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-item">
+        <a href="#home" class="nav-link active" data-section="Home">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </a>
+        <span class="nav-tooltip">Home</span>
+      </div>
+      <div class="nav-item">
+        <a href="#services" class="nav-link" data-section="Services">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <span class="nav-tooltip">Services</span>
+      </div>
+      <div class="nav-item">
+        <a href="#projects" class="nav-link" data-section="Projects">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+        </a>
+        <span class="nav-tooltip">Projects</span>
+      </div>
+      <div class="nav-item">
+        <a href="#certifications" class="nav-link" data-section="Certifications">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </a>
+        <span class="nav-tooltip">Certifications</span>
+      </div>
+      <div class="nav-item">
+        <a href="#contact" class="nav-link" data-section="Contact">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <span class="nav-tooltip">Contact</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="particles" id="particles"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Profile -->
+        <div class="profile fade-in-left">
+          <div class="profile-image">
+            <div class="profile-ring">
+              <div class="profile-inner">
+                <span class="profile-initials">MN</span>
+              </div>
+            </div>
+            <div class="status-dot"></div>
+          </div>
+          <div class="profile-info">
+            <h1 class="profile-name">Mohamed Nasr</h1>
+            <div class="badges">
+              <span class="badge">4 Years Front-End</span>
+              <span class="badge">2 Years Back-End</span>
+              <span class="badge">1 Year Figma</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Content -->
+        <div class="hero-center fade-in-up">
+          <p class="hero-greeting">Hi, I am Mohamed Nasr</p>
+          <h2 class="hero-title">
+            <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+          </h2>
+          <p class="hero-description">Transforming ideas into pixel-perfect digital experiences with passion and precision.</p>
+          <a href="#contact" class="cta-button">
+            Let's Talk
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats fade-in-right">
+          <div class="stat-card">
+            <p class="stat-value">+<span class="counter" data-target="4">0</span></p>
+            <p class="stat-label">Years Experience</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-value">+<span class="counter" data-target="15">0</span></p>
+            <p class="stat-label">Projects Completed</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-value">+<span class="counter" data-target="10">0</span></p>
+            <p class="stat-label">Clients Worldwide</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Marquee -->
+      <div class="marquee-container">
+        <p class="marquee-label">Technologies I Work With</p>
+        <div class="marquee-wrapper">
+          <div class="marquee-fade-left"></div>
+          <div class="marquee-fade-right"></div>
+          <div class="marquee-track">
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"><span>TypeScript</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span>Figma</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"><span>Next.js</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"><span>TypeScript</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"><span>Tailwind CSS</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span>Figma</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-stack">
+        <p class="marquee-label">Technologies I Work With</p>
+        <div class="tech-grid">
+          <div class="tech-badge"><span>🌐</span><span>HTML5</span></div>
+          <div class="tech-badge"><span>🎨</span><span>CSS3</span></div>
+          <div class="tech-badge"><span>⚡</span><span>JavaScript</span></div>
+          <div class="tech-badge"><span>⚛️</span><span>React</span></div>
+          <div class="tech-badge"><span>🐘</span><span>PHP</span></div>
+          <div class="tech-badge"><span>📦</span><span>Bootstrap</span></div>
+          <div class="tech-badge"><span>🗄️</span><span>MySQL</span></div>
+          <div class="tech-badge"><span>🔺</span><span>Laravel</span></div>
+          <div class="tech-badge"><span>📸</span><span>Photoshop</span></div>
+          <div class="tech-badge"><span>✏️</span><span>Illustrator</span></div>
+          <div class="tech-badge"><span>💜</span><span>Adobe XD</span></div>
+          <div class="tech-badge"><span>🎯</span><span>Figma</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title primary">What I Provide</h2>
+        <p class="section-subtitle">Comprehensive solutions tailored to bring your digital vision to life</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 class="service-title">Full-Stack Web Development</h3>
+          <p class="service-description">End-to-end web solutions from UI design to secure back-end integration using React, PHP, Laravel, and MySQL.</p>
+          <div class="service-example">
+            <p>"Built a scalable e-commerce site for a startup, handling 10k+ users."</p>
+          </div>
+          <button class="service-link">
+            Learn More
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+          </div>
+          <h3 class="service-title">UI/UX Web Design</h3>
+          <p class="service-description">Crafting intuitive interfaces with Figma, Adobe XD, Photoshop, and Illustrator. Focus on user-centered design for seamless experiences.</p>
+          <div class="service-example">
+            <p>"Redesigned a mobile app dashboard, boosting engagement by 40%."</p>
+          </div>
+          <button class="service-link">
+            Learn More
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+          </div>
+          <h3 class="service-title">Back-End Development</h3>
+          <p class="service-description">Robust server-side logic with PHP, Laravel, and databases like MySQL. Ensure scalability and security.</p>
+          <div class="service-example">
+            <p>"Developed API for a fintech app, processing secure transactions."</p>
+          </div>
+          <button class="service-link">
+            Learn More
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">My Work</h2>
+        <p class="section-subtitle">A showcase of my recent projects and creative endeavors</p>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="All">All</button>
+        <button class="filter-tab" data-filter="Full-Stack">Full-Stack</button>
+        <button class="filter-tab" data-filter="UI/UX">UI/UX</button>
+        <button class="filter-tab" data-filter="Back-End">Back-End</button>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <div class="project-card" data-category="Full-Stack">
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=400" alt="E-Commerce Platform">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-description">A full-featured online shopping platform with payment integration</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="Full-Stack">
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=400" alt="Restaurant Management">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Restaurant Management</h3>
+            <p class="project-description">Complete restaurant management system with POS integration</p>
+            <div class="project-tags">
+              <span class="project-tag">PHP</span>
+              <span class="project-tag">Bootstrap</span>
+              <span class="project-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="UI/UX">
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=400" alt="Dashboard Redesign">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Dashboard Redesign</h3>
+            <p class="project-description">Modern dashboard interface redesign for analytics platform</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Adobe XD</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="UI/UX">
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=400" alt="Mobile App Interface">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Mobile App Interface</h3>
+            <p class="project-description">Clean and intuitive mobile app design for fitness tracking</p>
+            <div class="project-tags">
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">Illustrator</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="Back-End">
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=400" alt="API Builder">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">API Builder</h3>
+            <p class="project-description">RESTful API service for third-party integrations</p>
+            <div class="project-tags">
+              <span class="project-tag">Laravel</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">Redis</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="Full-Stack">
+          <div class="project-image">
+            <img src="/placeholder.svg?height=200&width=400" alt="Portfolio Website">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+              <a href="#" class="project-link"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-description">Creative portfolio website for a design agency</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">My Certifications</h2>
+        <p class="section-subtitle">Professional credentials that validate my expertise and commitment to continuous learning</p>
+      </div>
+      <div class="certs-marquee">
+        <div class="marquee-fade-left"></div>
+        <div class="marquee-fade-right"></div>
+        <div class="certs-track">
+          <div class="cert-card" data-cert="0">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">React Certified Developer</h3><p class="cert-issuer">Coursera</p></div>
+            </div>
+            <p class="cert-date">2023</p>
+          </div>
+          <div class="cert-card" data-cert="1">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Laravel Expert</h3><p class="cert-issuer">Laracasts</p></div>
+            </div>
+            <p class="cert-date">2024</p>
+          </div>
+          <div class="cert-card" data-cert="2">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Figma UI Design</h3><p class="cert-issuer">Udemy</p></div>
+            </div>
+            <p class="cert-date">2025</p>
+          </div>
+          <div class="cert-card" data-cert="3">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Full-Stack Bootcamp</h3><p class="cert-issuer">freeCodeCamp</p></div>
+            </div>
+            <p class="cert-date">2022</p>
+          </div>
+          <div class="cert-card" data-cert="4">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">MySQL Database Administration</h3><p class="cert-issuer">Oracle</p></div>
+            </div>
+            <p class="cert-date">2023</p>
+          </div>
+          <div class="cert-card" data-cert="5">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Adobe Creative Suite</h3><p class="cert-issuer">Adobe</p></div>
+            </div>
+            <p class="cert-date">2024</p>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="cert-card" data-cert="0">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">React Certified Developer</h3><p class="cert-issuer">Coursera</p></div>
+            </div>
+            <p class="cert-date">2023</p>
+          </div>
+          <div class="cert-card" data-cert="1">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Laravel Expert</h3><p class="cert-issuer">Laracasts</p></div>
+            </div>
+            <p class="cert-date">2024</p>
+          </div>
+          <div class="cert-card" data-cert="2">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Figma UI Design</h3><p class="cert-issuer">Udemy</p></div>
+            </div>
+            <p class="cert-date">2025</p>
+          </div>
+          <div class="cert-card" data-cert="3">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Full-Stack Bootcamp</h3><p class="cert-issuer">freeCodeCamp</p></div>
+            </div>
+            <p class="cert-date">2022</p>
+          </div>
+          <div class="cert-card" data-cert="4">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">MySQL Database Administration</h3><p class="cert-issuer">Oracle</p></div>
+            </div>
+            <p class="cert-date">2023</p>
+          </div>
+          <div class="cert-card" data-cert="5">
+            <div class="cert-header">
+              <div class="cert-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+              <div class="cert-info"><h3 class="cert-title">Adobe Creative Suite</h3><p class="cert-issuer">Adobe</p></div>
+            </div>
+            <p class="cert-date">2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Modal -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-left">
+          <div class="modal-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div>
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+          </div>
+        </div>
+        <button class="modal-close" id="modal-close">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <p class="modal-description" id="modal-description"></p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title primary">Get in Touch</h2>
+        <p class="section-subtitle">Have a project in mind? Let's discuss how we can work together</p>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            Send Message
+          </button>
+        </form>
+        <div class="contact-card-wrapper">
+          <div class="contact-card">
+            <div class="contact-avatar">
+              <img src="/placeholder.svg?height=200&width=200" alt="Mohamed Nasr">
+              <div class="contact-avatar-overlay"></div>
+            </div>
+            <h3 class="contact-name">Mohamed Nasr</h3>
+            <p class="contact-title">Full-Stack Web Developer & UI/UX Designer</p>
+            <p class="contact-location">Egypt</p>
+            <div class="social-links">
+              <a href="#linkedin" class="social-link" aria-label="LinkedIn">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="#instagram" class="social-link" aria-label="Instagram">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="#facebook" class="social-link" aria-label="Facebook">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="mailto:eng.mohamed.nasr.74@gmail.com" class="social-link" aria-label="Email">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </a>
+            </div>
+            <a href="mailto:eng.mohamed.nasr.74@gmail.com" class="contact-cta">Let's Talk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Modal -->
+  <div class="success-modal" id="success-modal">
+    <div class="success-content">
+      <div class="success-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3 class="success-title">Message Sent!</h3>
+      <p class="success-text">I'll get back to you soon.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">MN</div>
+          <span class="footer-copyright">© 2025 Mohamed Nasr. All rights reserved.</span>
+        </div>
+        <div class="footer-right">
+          <span class="footer-made">
+            Made with <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> in Egypt
+          </span>
+          <div class="footer-social">
+            <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Certifications data
+    const certifications = [
+      { id: 0, title: "React Certified Developer", issuer: "Coursera", date: "2023", description: "Earned after 100+ hours of intensive training covering React fundamentals, hooks, state management, and building production-ready applications." },
+      { id: 1, title: "Laravel Expert", issuer: "Laracasts", date: "2024", description: "Advanced certification demonstrating proficiency in Laravel framework, including Eloquent ORM, API development, and testing strategies." },
+      { id: 2, title: "Figma UI Design", issuer: "Udemy", date: "2025", description: "Comprehensive certification covering UI design principles, prototyping, design systems, and collaboration workflows in Figma." },
+      { id: 3, title: "Full-Stack Bootcamp", issuer: "freeCodeCamp", date: "2022", description: "Intensive full-stack development program covering front-end, back-end, databases, and deployment strategies." },
+      { id: 4, title: "MySQL Database Administration", issuer: "Oracle", date: "2023", description: "Professional certification for database design, optimization, and administration using MySQL." },
+      { id: 5, title: "Adobe Creative Suite", issuer: "Adobe", date: "2024", description: "Proficiency certification for Photoshop, Illustrator, and XD creative tools." }
+    ];
+
+    // Typewriter effect
+    const roles = ["Full-Stack Developer", "Back-End Developer", "UI/UX Web Designer"];
+    let currentRole = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typewriterEl = document.getElementById('typewriter');
+
+    function typewriter() {
+      const currentText = roles[currentRole];
+      
+      if (!isDeleting) {
+        typewriterEl.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentText.length) {
+          setTimeout(() => { isDeleting = true; }, 2000);
+        }
+      } else {
+        typewriterEl.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+          isDeleting = false;
+          currentRole = (currentRole + 1) % roles.length;
+        }
+      }
+      
+      setTimeout(typewriter, isDeleting ? 50 : 100);
+    }
+    
+    typewriter();
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      
+      counters.forEach(counter => {
+        const target = parseInt(counter.dataset.target);
+        const duration = 2000;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target;
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current);
+          }
+        }, duration / steps);
+      });
+    }
+
+    // Intersection Observer for counter animation
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stats').forEach(el => statsObserver.observe(el));
+
+    // Active nav link on scroll
+    const sections = ['home', 'services', 'projects', 'certifications', 'contact'];
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && scrollPos >= section.offsetTop) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          document.querySelector(`[data-section="${sections[i].charAt(0).toUpperCase() + sections[i].slice(1)}"]`).classList.add('active');
+          break;
+        }
+      }
+    });
+
+    // Project filtering
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        const filter = tab.dataset.filter;
+        
+        projectCards.forEach(card => {
+          if (filter === 'All' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Certification modal
+    const certModal = document.getElementById('cert-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalSubtitle = document.getElementById('modal-subtitle');
+    const modalDescription = document.getElementById('modal-description');
+    const modalClose = document.getElementById('modal-close');
+
+    document.querySelectorAll('.cert-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const certId = parseInt(card.dataset.cert);
+        const cert = certifications[certId];
+        
+        modalTitle.textContent = cert.title;
+        modalSubtitle.textContent = `${cert.issuer} • ${cert.date}`;
+        modalDescription.textContent = cert.description;
+        
+        certModal.classList.add('active');
+      });
+    });
+
+    modalClose.addEventListener('click', () => certModal.classList.remove('active'));
+    certModal.addEventListener('click', (e) => {
+      if (e.target === certModal) certModal.classList.remove('active');
+    });
+
+    // Contact form
+    const contactForm = document.getElementById('contact-form');
+    const successModal = document.getElementById('success-modal');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      successModal.classList.add('active');
+      
+      setTimeout(() => {
+        successModal.classList.remove('active');
+        contactForm.reset();
+      }, 3000);
+    });
+
+    // Create particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      particle.style.animationDuration = (3 + Math.random() * 4) + 's';
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
+</html>

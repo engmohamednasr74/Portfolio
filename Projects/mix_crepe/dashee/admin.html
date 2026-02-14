@@ -1,0 +1,104 @@
+<!-- admin.html (الكود الكامل المعدل بدون أي alert/prompt/confirm) -->
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم ميكس كريب</title>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">لوحة تحكم المنيو</h1>
+
+        <!-- Login Form -->
+        <div id="login-form" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold mb-4">تسجيل الدخول</h2>
+            <input type="email" id="email" placeholder="البريد الإلكتروني" class="w-full p-2 mb-4 border rounded"
+                value="mix-crepe-zayat@gmail.com">
+            <input type="password" id="password" placeholder="كلمة المرور" class="w-full p-2 mb-4 border rounded"
+                value="mix-crepe-zayat">
+            <button onclick="login()" class="bg-blue-500 text-white p-2 rounded">دخول</button>
+            <button onclick="signup()" class="bg-green-500 text-white p-2 rounded ml-2">إنشاء حساب</button>
+            <p id="auth-error" class="text-red-500 mt-2"></p>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="admin-panel" class="hidden">
+            <button onclick="logout()" class="bg-red-500 text-white p-2 rounded mb-4">تسجيل الخروج</button>
+
+            <!-- Categories Management -->
+            <div id="categories-section" class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-2xl font-bold mb-4">إدارة الأصناف</h2>
+                <input type="text" id="new-category" placeholder="اسم الصنف الجديد"
+                    class="w-full p-2 mb-4 border rounded">
+                <button onclick="addCategory()" class="bg-green-500 text-white p-2 rounded">إضافة صنف</button>
+                <p id="categories-message" class="mt-2 font-medium"></p>
+                <ul id="categories-list" class="mt-4 space-y-2"></ul>
+            </div>
+
+            <!-- Items Management -->
+            <div id="items-section" class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-2xl font-bold mb-4">إدارة العناصر</h2>
+                <select id="select-category" class="w-full p-2 mb-4 border rounded" onchange="loadItems()">
+                    <option value="">اختر صنف</option>
+                </select>
+                <input type="text" id="item-name" placeholder="اسم العنصر" class="w-full p-2 mb-2 border rounded">
+                <textarea id="item-desc" placeholder="الوصف" class="w-full p-2 mb-2 border rounded"></textarea>
+                <input type="number" id="item-price" placeholder="السعر (جنيه)" class="w-full p-2 mb-2 border rounded">
+                <input type="url" id="item-image-url" placeholder="لينك الصورة الخارجي (اختياري)"
+                    class="w-full p-2 mb-2 border rounded">
+                <button onclick="addItem()" class="bg-green-500 text-white p-2 rounded">إضافة عنصر</button>
+                <p id="items-message" class="mt-2 font-medium"></p>
+                <ul id="items-list" class="mt-4 space-y-4"></ul>
+            </div>
+
+            <!-- Offers Management -->
+            <div id="offers-section" class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-4">إدارة العروض</h2>
+                <input type="text" id="offer-name" placeholder="اسم العرض" class="w-full p-2 mb-2 border rounded">
+                <textarea id="offer-desc" placeholder="وصف العرض" class="w-full p-2 mb-2 border rounded"></textarea>
+                <input type="url" id="offer-image-url" placeholder="لينك الصورة الخارجي (اجباري)"
+                    class="w-full p-2 mb-4 border rounded">
+                <button onclick="addOffer()" class="bg-green-500 text-white p-2 rounded">إضافة عرض</button>
+                <p id="offers-message" class="mt-2 font-medium"></p>
+                <ul id="offers-list" class="mt-4 space-y-4"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal للتعديل (عام لكل الأنواع) -->
+    <div id="edit-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <h3 id="modal-title" class="text-xl font-bold mb-4"></h3>
+            <div id="modal-fields"></div>
+            <div class="flex gap-3 mt-6">
+                <button onclick="saveEdit()" class="bg-green-500 text-white px-4 py-2 rounded">حفظ</button>
+                <button onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded">إلغاء</button>
+            </div>
+            <p id="modal-message" class="mt-2 font-medium"></p>
+        </div>
+    </div>
+
+    <!-- Modal لتأكيد الحذف -->
+    <div id="delete-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md text-center">
+            <h3 class="text-xl font-bold mb-4">تأكيد الحذف</h3>
+            <p>هل أنت متأكد من حذف هذا العنصر؟ هذا الإجراء لا يمكن التراجع عنه.</p>
+            <div class="flex gap-3 mt-6 justify-center">
+                <button onclick="confirmDelete()" class="bg-red-500 text-white px-4 py-2 rounded">نعم، احذف</button>
+                <button onclick="closeDeleteModal()" class="bg-gray-500 text-white px-4 py-2 rounded">إلغاء</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
