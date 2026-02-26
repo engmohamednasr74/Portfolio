@@ -34,8 +34,7 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- conaction gmail with form contact -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript" src="mail.js">
 
   </script>
@@ -183,6 +182,16 @@
           <h2 class="hero-title">
             <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
           </h2>
+          <!-- <header class="hero-roles-sticky">
+            <h2 class="fixed-text">I am a</h2>
+            <ul class="roles-list">
+              <li>Front-End Developer</li>
+              <li>Back-End Developer</li>
+              <li>Full-Stack Web Developer</li>
+              <li>UI/UX Web Designer</li>
+              <li>Google Technical Support Specialist</li>
+            </ul>
+          </header> -->
           <p class="hero-description">Passionate about creating intuitive and engaging user experiences. Specialize in
             transforming ideas into beautifully crafted products.</p>
 
@@ -493,15 +502,6 @@
               <div class="stat-card">
                 <p class="stat-value">Personal Skills</p>
                 <div class="content-skills personal-skills">
-                  <p class="stat-label stat-cards">Responsive Web Design</p>
-                  <p class="stat-label stat-cards">Saas PreProcessor</p>
-                  <p class="stat-label stat-cards">DOM Manipulation</p>
-                  <p class="stat-label stat-cards">JSON Handling</p>
-                  <p class="stat-label stat-cards">Front End Optimisation</p>
-                  <p class="stat-label stat-cards">Version Control With Git</p>
-                  <p class="stat-label stat-cards">SEo Best Practices</p>
-                  <p class="stat-label stat-cards">Photoshop for Web</p>
-                  <p class="stat-label stat-cards">Illustrator for icon</p>
                   <p class="stat-label stat-cards">Porblem-Solving Skills</p>
                   <p class="stat-label stat-cards">Time Mangement</p>
                   <p class="stat-label stat-cards">Team Collaboration</p>
@@ -542,12 +542,12 @@
           <div class="service-example">
             <p>"Developed a full e-commerce platform tailored for fast growth and high traffic."</p>
           </div>
-          <button class="service-link">
+          <!-- <button class="service-link">
             Learn More
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </button> -->
         </div>
         <div class="service-card">
           <div class="service-icon">
@@ -563,12 +563,12 @@
           <div class="service-example">
             <p>"Revamped a mobile dashboard, resulting in a significant increase in user interaction."</p>
           </div>
-          <button class="service-link">
+          <!-- <button class="service-link">
             Learn More
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </button> -->
         </div>
         <div class="service-card">
           <div class="service-icon">
@@ -583,12 +583,12 @@
           <div class="service-example">
             <p>"Engineered a secure API system for a financial service handling sensitive operations."</p>
           </div>
-          <button class="service-link">
+          <!-- <button class="service-link">
             Learn More
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
@@ -623,11 +623,23 @@
               <!-- <span class="project-tag">Laravel</span> -->
               <span class="project-tag">Figma</span>
             </div>
-            <a href="https://learn-with-me.vercel.app/" class="project-link" target="_blank"><svg fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/learn-with-me" class="project-link github" target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://learn-with-me.vercel.app/" class="project-link" target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <!-- projects 2-->
@@ -643,12 +655,25 @@
               connects you to home kitchens with seamless ordering via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
+              <span class="project-tag">tailwind css</span>
             </div>
-            <a href="https://engmohamednasr74.github.io/X_Food/" class="project-link" target="_blank"><svg fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/X_Food" class="project-link github" target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://engmohamednasr74.github.io/X_Food/" class="project-link" target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <!-- projects 3-->
@@ -664,12 +689,25 @@
               Menu. Visualize dishes in 3D and order seamlessly via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
+              <span class="project-tag">tailwind css</span>
             </div>
-            <a href="https://engmohamednasr74.github.io/Khat3am/" class="project-link" target="_blank"><svg fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/Khat3am" class="project-link github" target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://engmohamednasr74.github.io/Khat3am/" class="project-link" target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <!-- projects 4-->
@@ -685,12 +723,27 @@
               youth and driving community development through accessible learning.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
+              <span class="project-tag">tailwind css</span>
             </div>
-            <a href="https://engmohamednasr74.github.io/Kean-Eradah-Shabab-Masr/" class="project-link"
-              target="_blank"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/Kean-Eradah-Shabab-Masr" class="project-link github"
+                target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://engmohamednasr74.github.io/Kean-Eradah-Shabab-Masr/" class="project-link"
+                target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <!-- projects 5-->
@@ -708,12 +761,25 @@
               teaching faith, values, and goodness in the most delightful way.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
+              <span class="project-tag">tailwind css</span>
             </div>
-            <a href="https://engmohamednasr74.github.io/lamet_el_kesas/" class="project-link" target="_blank"><svg
-                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/lamet_el_kesas" class="project-link github" target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://engmohamednasr74.github.io/lamet_el_kesas/" class="project-link" target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -730,12 +796,25 @@
               Menu. Visualize dishes in 3D and order seamlessly via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
+              <span class="project-tag">tailwind css</span>
             </div>
-            <a href="https://engmohamednasr74.github.io/karmasha/" class="project-link" target="_blank"><svg fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/karmasha" class="project-link github" target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://engmohamednasr74.github.io/karmasha/" class="project-link" target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -746,18 +825,31 @@
             </div>
           </div>
           <div class="project-content">
-            <h3 class="project-title">mix_crepe_pizaa</h3>
-            <p class="project-description">mix_crepe_pizaa: Experience authentic healthy food made by moms. A platform
+            <h3 class="project-title">mix crepe pizaa</h3>
+            <p class="project-description">mix crepe pizaa: Experience authentic healthy food made by moms. A platform
               that
               connects you to home kitchens with seamless ordering via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
+              <span class="project-tag">tailwind css</span>
             </div>
-            <a href="https://engmohamednasr74.github.io/mix_crepe_pizaa/" class="project-link" target="_blank"><svg
-                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg></a>
+            <div class="links">
+              <a href="https://github.com/engmohamednasr74/mix_crepe_pizaa" class="project-link github" target="_blank">
+                <span>Source Code</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+
+              <a href="https://engmohamednasr74.github.io/mix_crepe_pizaa/" class="project-link" target="_blank">
+                <span>View Website</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -862,7 +954,7 @@
           <img class="cert-img" src="img/My_Certifications/Mohamed-Nasr's-Certificate.jpg" alt="Certificate 13">
           <img class="cert-img" src="img/My_Certifications/Mohamed_Nasr_Mohamed_Ali_YUT.jpg" alt="Certificate 14">
           <img class="cert-img" src="img/My_Certifications/Mohamed_Nasr_Mohamed_Ali_YUT.jpg" alt="Certificate 14">
-          <img class="cert-img" src="img/My_Certifications/Pre-Pre-Incubation_Program.jpg" alt="Certificate 15">
+          <img class="cert-img" src="img/My_Certifications/Pre-Incubation_Program.jpg" alt="Certificate 15">
         </div>
       </div>
     </div>

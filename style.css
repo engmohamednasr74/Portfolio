@@ -521,6 +521,8 @@ body {
 }
 .personal-skills {
   width: 66vw;
+  display: flex;
+  gap: 5px;
 }
 .stat-label {
   font-size: 0.75rem;
@@ -569,7 +571,10 @@ body {
 
 .marquee-track {
   display: flex;
-  animation: marquee 30s linear infinite;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee 60s linear infinite; /* بطيء شوية عشان الصور كتير */
+  height: 400px;
 }
 
 .tech-item {
@@ -890,13 +895,19 @@ body {
 
 .project-link {
   padding: 0.5rem;
-  background: rgba(250, 250, 250, 0.9);
+  background: rgba(250, 250, 250, 0.671);
   border-radius: 9999px;
-  color: var(--foreground);
   transition: background 0.2s;
   position: relative;
-  bottom: 49px;
-  right: -86%;
+  /* bottom: 49px; */
+  right: -55%;
+  color: #000;
+  text-decoration-line: none;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 9rem;
+  line-height: normal;
 }
 
 .project-link:hover {
@@ -944,12 +955,25 @@ body {
 }
 
 .project-card {
-  height: auto;
+  height: fit-content;
 }
 
 .project-link {
   inset-block-end: auto;
 }
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 11rem;
+  gap: 5px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
 /* Certifications Section */
 .certifications {
   padding: 5rem 0;
@@ -1853,6 +1877,13 @@ div > h2 {
 
   .hero-center {
     width: 70%;
+  }
+}
+
+/* 355 */
+@media (max-width: 366px) {
+  .links {
+    right: 7rem;
   }
 }
 
