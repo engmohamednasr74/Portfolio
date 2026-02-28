@@ -45,7 +45,7 @@ body {
   animation: glow 2s ease-in-out infinite;
   z-index: -1;
   width: 30.5rem;
-  height: 632px;
+  height: 659px;
 
   /* position: absolute;
     top: -1.7rem;
@@ -388,6 +388,8 @@ body {
 .hero-greeting {
   color: var(--muted-foreground);
   margin-bottom: 0.5rem;
+  position: relative;
+  bottom: 6.5rem;
 }
 
 .hero-title {
@@ -395,6 +397,12 @@ body {
   font-weight: bold;
   margin-bottom: 1.5rem;
   min-height: 2.5em;
+}
+
+.work {
+  position: relative;
+  top: -11rem;
+  left: 4rem;
 }
 
 .view-pdf {
@@ -451,15 +459,17 @@ body {
   align-items: start;
   flex-direction: column;
   position: relative;
-  left: 0;
-  right: -17%;
-  bottom: 0;
+  /* left: 0; */
+  right: -1%;
+  bottom: -6rem;
   user-select: none;
 }
 .hero-description {
   color: var(--muted-foreground);
   max-width: 48rem;
   /* margin: 0 auto 2rem; */
+  position: relative;
+  top: -4rem;
 }
 
 .cta-button {
@@ -969,7 +979,7 @@ body {
   align-items: center;
   position: relative;
   right: 11rem;
-  gap: 5px;
+  gap: 10px;
   margin-top: 1rem;
   flex-wrap: wrap;
 }
@@ -1288,6 +1298,7 @@ body {
   width: 30rem;
   position: relative;
   left: 30%;
+  height: 41rem;
 }
 
 .contact-card {
@@ -1581,436 +1592,12 @@ div > h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: -5rem;
 }
 
 .stat-value {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary);
-}
-
-/* 1872 */
-@media (max-width: 1872px) {
-  /* .contact-card {
-    position: absolute;
-    right: -5rem;
-    bottom: -19rem;
-  } */
-}
-
-/* 1428 */
-@media (max-width: 1428px) {
-  .contact-card {
-    max-width: 25rem;
-  }
-  .contact-avatar .profile-ring {
-    left: -56%;
-    height: 46.3rem;
-    width: 25.5rem;
-  }
-}
-
-/* 1288 */
-@media (max-width: 1428px) {
-  .contact-card {
-    position: relative;
-    left: -46px;
-  }
-}
-
-/* 1180 */
-@media (max-width: 1180px) {
-  .contact-card {
-    position: absolute;
-    left: -5rem;
-    bottom: -26rem;
-    width: 78%;
-  }
-
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    /* top: -1.7rem !important; */
-    /* right: 27% !important; */
-    left: -95px !important;
-    /* bottom: auto !important; */
-    width: 23.8rem !important;
-    height: 43.8rem !important;
-  }
-}
-
-/* 886 */
-@media (max-width: 886px) {
-  .contact-card {
-    left: -8rem;
-    width: 74%;
-  }
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    /* top: -1.7rem !important; */
-    /* right: 27% !important; */
-    left: -86px !important;
-    /* bottom: auto !important; */
-    width: 22.8rem !important;
-    height: 43.6rem !important;
-  }
-
-  .hero-center {
-    left: -22%;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* 788 */
-@media (max-width: 788px) {
-  .hero-grid {
-    height: 76rem;
-    grid-template-columns: 1fr;
-  }
-
-  .contact-card {
-    left: -3rem;
-    width: 118%;
-    top: -10rem;
-    height: 46rem;
-  }
-
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    /* top: -1.7rem !important; */
-    /* right: 27% !important; */
-    left: -109px !important;
-    /* bottom: auto !important; */
-    width: 25.5rem !important;
-    height: 46.1rem !important;
-  }
-
-  .hero-center {
-    left: 4rem;
-    bottom: -13rem;
-  }
-
-  .hero-description {
-    max-width: 43rem !important;
-  }
-
-  .contet {
-    position: relative;
-    left: 6%;
-  }
-}
-
-/* 726 */
-@media (max-width: 726px) {
-  .hero-center {
-    left: 1rem;
-    bottom: -13rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .contact-info {
-    height: 95%;
-  }
-}
-
-/* 582 */
-@media (max-width: 582px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-card {
-    left: -8rem;
-  }
-  .certs-track .cert-img {
-    width: 27rem;
-    height: 17rem;
-  }
-
-  .certs-track {
-    height: 281px;
-  }
-}
-
-/* 514 */
-@media (max-width: 514px) {
-  .contact-card {
-    left: -6rem;
-    width: 82%;
-  }
-
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    /* top: -1.7rem !important; */
-    /* right: 27% !important; */
-    left: -102px !important;
-    /* bottom: auto !important; */
-    width: 24.9rem !important;
-    height: 43.1rem !important;
-  }
-
-  .contet {
-    left: -4%;
-  }
-}
-
-/* 496 */
-@media (max-width: 496px) {
-  .hero-description {
-    max-width: 26rem !important;
-  }
-
-  .contact-card {
-    left: -7rem;
-  }
-}
-
-/* 466 */
-@media (max-width: 466px) {
-  .contact-card {
-    left: -6rem;
-    width: 74%;
-  }
-
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    /* top: -1.7rem !important; */
-    /* right: 27% !important; */
-    left: -84px !important;
-    /* bottom: auto !important; */
-    width: 22.5rem !important;
-    height: 43.1rem !important;
-  }
-
-  .contet .text h2 {
-    font-size: xx-large;
-  }
-  .contet .text span {
-    font-size: smaller;
-  }
-  .hero-greeting {
-    font-size: x-large;
-  }
-  .hero-title {
-    font-size: 1.3rem;
-  }
-}
-
-/* 444 */
-@media (max-width: 444px) {
-  .hero-description {
-    max-width: 22rem !important;
-  }
-
-  .contact-card {
-    left: -7rem;
-  }
-
-  .certs-track .cert-img {
-    width: 18rem;
-    height: 13rem;
-  }
-
-  .certs-track {
-    height: 213px;
-  }
-}
-
-/* 432 */
-@media (max-width: 432px) {
-  .hero-grid {
-    height: 75rem;
-  }
-
-  .contact-card {
-    left: -6rem;
-    width: 67%;
-    height: 48rem;
-    top: -175px;
-  }
-
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    top: -1.7rem !important;
-    /* right: 27% !important; */
-    left: -68px !important;
-    /* bottom: -30rem !important; */
-    width: 20.7rem !important;
-    height: 48.4rem !important;
-  }
-
-  .hero-center {
-    width: 78%;
-  }
-}
-
-/* 414 */
-@media (max-width: 414px) {
-  .navbar {
-    top: unset;
-    bottom: 20px;
-  }
-  .contact-card {
-    top: -262px !important;
-    height: 48.4rem !important;
-    left: -7rem !important;
-  }
-}
-/* 392 */
-@media (max-width: 392px) {
-  .contact-card {
-    left: -8rem !important;
-    width: 66%;
-  }
-
-  .hero-center {
-    width: 70%;
-  }
-}
-
-/* 355 */
-@media (max-width: 366px) {
-  .links {
-    right: 7rem;
-  }
-}
-
-/* 358 */
-@media (max-width: 358px) {
-  .contact-card {
-    left: -7rem;
-    width: 59%;
-    height: 49rem;
-  }
-
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    top: -1.7rem !important;
-    /* right: 27% !important; */
-    left: -51px !important;
-    /* bottom: -30rem !important; */
-    width: 18.4rem !important;
-    height: 49.4rem !important;
-  }
-
-  .hero-grid {
-    height: 77rem;
-  }
-
-  .hero-center {
-    bottom: -14rem;
-    width: 61%;
-  }
-
-  .hero-greeting {
-    font-size: xx-large;
-  }
-
-  .contet {
-    left: 1%;
-  }
-}
-
-/* 344 */
-@media (max-width: 344px) {
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    top: -1.7rem !important;
-    /* right: 27% !important; */
-    left: -51px !important;
-    /* bottom: -30rem !important; */
-    width: 18.4rem !important;
-    height: 49.4rem !important;
-  }
-  .contact-card {
-    left: -8.5rem;
-  }
-  .hero-center {
-    left: 0rem;
-  }
-}
-
-/* 328 */
-@media (max-width: 328px) {
-  .hero-grid {
-    height: 82rem;
-  }
-  .contact-card-wrapper {
-    width: 25rem;
-    left: 35%;
-  }
-  .contact-avatar .profile-ring {
-    position: absolute !important;
-    top: -1.7rem !important;
-    /* right: 27% !important; */
-    left: -28px !important;
-    /* bottom: -30rem !important; */
-    width: 15.4rem !important;
-    height: 52.9rem !important;
-  }
-  .hero-center {
-    left: 1rem;
-  }
-  .nav-link svg {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .nav-link {
-    padding: 0.5rem;
-  }
-
-  .navbar-inner {
-    padding: 0.4rem;
-    gap: 0.2rem;
-  }
-
-  .nav-tooltip {
-    font-size: 0.65rem;
-    bottom: -1.8rem;
-    user-select: none;
-  }
-  .nav-link svg {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .nav-link {
-    padding: 0.5rem;
-  }
-
-  .navbar-inner {
-    padding: 0.4rem;
-    gap: 0.2rem;
-  }
-
-  .nav-tooltip {
-    font-size: 0.65rem;
-    bottom: -1.8rem;
-  }
-  .contact-card {
-    height: 52.6rem !important;
-  }
-}
-
-/* 315 */
-@media (max-width: 315px) {
-  .contet .text h2 {
-    font-size: x-large;
-  }
-  .contet .text:nth-child(2) {
-    font-size: small;
-  }
 }

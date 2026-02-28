@@ -49,44 +49,44 @@
 // ]
 
 // Typewriter effect
-const roles = [
-  "Front-End Developer",
-  "Back-End Developer",
-  "UI/UX Web Designer",
-  "Google Technical Support Specialist",
-  "Full-Stack Web Developer",
-];
-let currentRole = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typewriterEl = document.getElementById("typewriter");
+// const roles = [
+//   "Front-End Developer",
+//   "Back-End Developer",
+//   "UI/UX Web Designer",
+//   "Google Technical Support Specialist",
+//   "Full-Stack Web Developer",
+// ];
+// let currentRole = 0;
+// let charIndex = 0;
+// let isDeleting = false;
+// const typewriterEl = document.getElementById("typewriter");
 
-function typewriter() {
-  const currentText = roles[currentRole];
+// function typewriter() {
+//   const currentText = roles[currentRole];
 
-  if (!isDeleting) {
-    typewriterEl.textContent = currentText.substring(0, charIndex + 1);
-    charIndex++;
+//   if (!isDeleting) {
+//     typewriterEl.textContent = currentText.substring(0, charIndex + 1);
+//     charIndex++;
 
-    if (charIndex === currentText.length) {
-      setTimeout(() => {
-        isDeleting = true;
-      }, 750);
-    }
-  } else {
-    typewriterEl.textContent = currentText.substring(0, charIndex - 1);
-    charIndex--;
+//     if (charIndex === currentText.length) {
+//       setTimeout(() => {
+//         isDeleting = true;
+//       }, 750);
+//     }
+//   } else {
+//     typewriterEl.textContent = currentText.substring(0, charIndex - 1);
+//     charIndex--;
 
-    if (charIndex === 0) {
-      isDeleting = false;
-      currentRole = (currentRole + 1) % roles.length;
-    }
-  }
+//     if (charIndex === 0) {
+//       isDeleting = false;
+//       currentRole = (currentRole + 1) % roles.length;
+//     }
+//   }
 
-  setTimeout(typewriter, isDeleting ? 50 : 100);
-}
+//   setTimeout(typewriter, isDeleting ? 50 : 100);
+// }
 
-typewriter();
+// typewriter();
 
 // Counter animation
 function animateCounters() {
