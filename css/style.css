@@ -157,7 +157,8 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* top Navbar */
@@ -370,7 +371,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .hero-badges {
   margin-top: 10px;
@@ -462,7 +464,8 @@ body {
   /* left: 0; */
   right: -1%;
   bottom: -6rem;
-  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .hero-description {
   color: var(--muted-foreground);
@@ -563,7 +566,8 @@ body {
 .marquee-container {
   margin-top: 3rem;
   overflow: hidden;
-  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .marquee-label {
@@ -1337,7 +1341,8 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .contact-title {
@@ -1355,7 +1360,8 @@ body {
   justify-self: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  user-select: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .social-links {
