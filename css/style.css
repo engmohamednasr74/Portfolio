@@ -954,7 +954,13 @@ body {
   color: var(--primary);
   border-radius: 0.375rem;
 }
-
+.cert-lightbox > .lightbox-content > img {
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 .over-img {
   overflow: hidden;
   transition: all 0.3s;
