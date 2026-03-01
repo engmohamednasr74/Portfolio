@@ -339,7 +339,7 @@
   .contact-card {
     left: -3rem;
     width: 118%;
-    top: -10rem;
+    top: -1rem;
     height: 46rem;
   }
 
@@ -375,6 +375,9 @@
     font-size: 1.7rem;
     top: -1.4rem;
     left: -3rem;
+  }
+  .hero-greeting {
+    bottom: 6.5rem;
   }
 }
 
@@ -457,6 +460,9 @@
   .you-can-hero {
     font-size: 1.4rem;
     top: -3rem;
+  }
+  .hero-greeting {
+    bottom: 7.2rem;
   }
 }
 
@@ -613,7 +619,7 @@
 @media (max-width: 414px) {
   .navbar {
     top: unset;
-    bottom: 20px;
+    bottom: -5px;
   }
   .contact-card {
     top: -262px !important;
@@ -628,6 +634,10 @@
   .you-can-hero {
     font-size: 0.9rem;
     top: -4.4rem;
+  }
+  .nav-tooltip {
+    top: -2.5rem;
+    bottom: unset;
   }
 }
 
