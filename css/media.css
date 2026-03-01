@@ -755,8 +755,6 @@
   .nav-tooltip {
     font-size: 0.65rem;
     bottom: -1.8rem;
-    cursor: not-allowed;
-    pointer-events: none;
   }
   .nav-link svg {
     width: 1rem;
