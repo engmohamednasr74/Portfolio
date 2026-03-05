@@ -34,6 +34,10 @@
   .hero-grid {
     min-height: calc(108vh - 200px);
   }
+
+  .contact-card-wrapper {
+    left: 25%;
+  }
 }
 
 /* 1484 */
@@ -63,6 +67,21 @@
   .you-can-hero {
     position: relative;
     right: 1rem;
+  }
+}
+
+/* 1442 */
+@media (max-width: 1442px) {
+  .you-can-hero {
+    right: unset;
+    left: -12%;
+  }
+}
+
+/* 1429 */
+@media (max-width: 1429px) {
+  .contact-card-wrapper {
+    left: 22%;
   }
 }
 
@@ -204,7 +223,7 @@
   }
 
   .hero-center {
-    right: 15%;
+    right: 16%;
   }
 
   /* .marquee-label {
@@ -212,6 +231,9 @@
   } */
   .you-can-hero {
     top: -3.5rem;
+  }
+  .contact-card-wrapper {
+    left: 25%;
   }
 }
 
@@ -297,6 +319,9 @@
   .you-can-hero {
     top: -4.1rem;
   }
+  .contact-card-wrapper {
+    left: 30%;
+  }
 }
 
 /* 864 */
@@ -379,6 +404,9 @@
   .hero-greeting {
     bottom: 6.5rem;
   }
+  #you-can-list {
+    left: 3.9rem;
+  }
 }
 
 /* 726 */
@@ -404,8 +432,8 @@
   }
 }
 
-/* 609 */
-@media (max-width: 609px) {
+/* 666 */
+@media (max-width: 666px) {
   #you-can-list li {
     font-size: 1.6rem;
   }
@@ -416,19 +444,34 @@
   }
 }
 
-/* 573 */
-@media (max-width: 573px) {
+/* 630 */
+@media (max-width: 630px) {
   #you-can-list li {
     font-size: 1.5rem;
   }
 
   .you-can-hero {
     font-size: 1.5rem;
-    top: -2.8rem;
+    top: -2.5rem;
   }
 
   .contet {
     left: -5%;
+  }
+}
+
+/* 600 */
+@media (max-width: 600px) {
+  #you-can-list li {
+    font-size: 1.4rem;
+  }
+
+  .you-can-hero {
+    font-size: 1.4rem;
+    top: -2.6rem;
+  }
+  .hero-greeting {
+    bottom: 7.2rem;
   }
 }
 
@@ -451,30 +494,45 @@
   }
 }
 
-/* 544 */
-@media (max-width: 544px) {
+/* 576 */
+@media (max-width: 576px) {
   #you-can-list li {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .you-can-hero {
-    font-size: 1.4rem;
-    top: -3rem;
-  }
-  .hero-greeting {
-    bottom: 7.2rem;
+    font-size: 1.3rem;
+    top: -2.8rem;
+    left: -1rem;
   }
 }
 
-/* 508 */
-@media (max-width: 508px) {
+/* 550 */
+@media (max-width: 550px) {
   #you-can-list li {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .you-can-hero {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     top: -3.2rem;
+    left: -1.3rem;
+  }
+}
+
+/* 520 */
+@media (max-width: 520px) {
+  #you-can-list li {
+    font-size: 1.1rem;
+  }
+
+  .you-can-hero {
+    font-size: 1.1rem;
+    top: -3.3rem;
+  }
+
+  #you-can-list {
+    left: 3rem;
   }
 }
 
@@ -497,31 +555,6 @@
 
   .contet {
     left: -4%;
-  }
-}
-
-/* 478 */
-@media (max-width: 478px) {
-  #you-can-list li {
-    font-size: 1.2rem;
-  }
-
-  .you-can-hero {
-    font-size: 1.2rem;
-    top: -3.4rem;
-    left: -1.3rem;
-  }
-}
-
-/* 450 */
-@media (max-width: 450px) {
-  #you-can-list li {
-    font-size: 1.1rem;
-  }
-
-  .you-can-hero {
-    font-size: 1.1rem;
-    top: -3.3rem;
   }
 }
 
@@ -597,7 +630,7 @@
     left: -6rem;
     width: 67%;
     height: 48rem;
-    top: -175px;
+    top: -14px;
   }
 
   .contact-avatar .profile-ring {
@@ -612,6 +645,50 @@
 
   .hero-center {
     width: 78%;
+    top: 11rem;
+  }
+  .marquee-label {
+    position: relative;
+    top: 1rem;
+  }
+  .you-can-hero {
+    top: -4.1rem;
+  }
+}
+
+/* 470 */
+@media (max-width: 470px) {
+  #you-can-list li {
+    font-size: 1.1rem;
+  }
+
+  .you-can-hero {
+    font-size: 1.1rem;
+    top: -3.6rem;
+  }
+
+  #you-can-list {
+    left: 2rem;
+  }
+}
+
+/* 456 */
+@media (max-width: 456px) {
+  #you-can-list li {
+    font-size: 0.8rem;
+  }
+
+  .you-can-hero {
+    font-size: 1rem;
+    top: -3.6rem;
+  }
+}
+
+/* 426 */
+@media (max-width: 426px) {
+  .you-can-hero {
+    font-size: 0.8rem;
+    top: -4.2rem;
   }
 }
 
@@ -627,22 +704,18 @@
     left: -7rem !important;
   }
 
-  #you-can-list li {
-    font-size: 0.9rem;
-  }
-
-  .you-can-hero {
-    font-size: 0.9rem;
-    top: -4.4rem;
-  }
   .nav-tooltip {
     top: -2.5rem;
     bottom: unset;
   }
+
+  .contact-card-wrapper {
+    top: 13rem;
+  }
 }
 
-/* 358 */
-@media (max-width: 392px) {
+/* 360 */
+@media (max-width: 360px) {
   #you-can-list li {
     font-size: 0.8rem;
   }
@@ -650,6 +723,10 @@
   .you-can-hero {
     font-size: 0.8rem;
     top: -4.6rem;
+  }
+
+  #you-can-list {
+    left: 0.5rem;
   }
 }
 
