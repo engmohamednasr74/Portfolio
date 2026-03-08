@@ -7,30 +7,15 @@
   } */
 }
 
-/* 1790 */
-@media (max-width: 1790px) {
-  .you-can-hero {
-    top: -0.5rem;
-  }
-}
-
 /* 1666 */
 @media (max-width: 1666px) {
   .you-can-hero {
-    top: -0.8rem;
-  }
-
-  .hero-greeting {
-    bottom: 7.5rem;
+    top: -2.8rem;
   }
 }
 
 /* 1534 */
 @media (max-width: 1534px) {
-  .you-can-hero {
-    top: -1.1rem;
-  }
-
   .hero-grid {
     min-height: calc(108vh - 200px);
   }
@@ -42,12 +27,8 @@
 
 /* 1484 */
 @media (max-width: 1484px) {
-  .you-can-hero {
-    top: -1.3rem;
-  }
-
   .hero-greeting {
-    bottom: 8.5rem;
+    bottom: 10.5rem;
   }
 
   .hero-center {
@@ -57,9 +38,13 @@
 
 /* 1462 */
 @media (max-width: 1462px) {
+  .contact-card-wrapper {
+    left: 20%;
+  }
+
   .you-can-hero {
     font-size: 1.8rem;
-    top: -1.4rem;
+    top: -3.4rem;
   }
   #you-can-list li {
     font-size: 1.8rem;
@@ -90,61 +75,43 @@
   .contact-card {
     position: relative;
     left: -46px;
-    max-width: 25rem;
+    width: 25rem;
     height: 46.2rem;
     top: 1em;
   }
+
   .contact-avatar .profile-ring {
     left: -56%;
     height: 46.3rem;
     width: 25.5rem;
   }
+
   .hero-center {
-    bottom: -8rem;
+    bottom: -11rem;
   }
+
   .you-can-hero {
     position: relative;
     right: 2rem;
-    top: -1.5rem;
   }
+
   .marquee-label {
     position: relative;
     top: 1rem;
   }
 }
 
-/* 1380 */
-@media (max-width: 1380px) {
-  .you-can-hero {
-    top: -1.8rem;
-  }
-}
-
-/* 1289 */
-@media (max-width: 1289px) {
-  .you-can-hero {
-    top: -2rem;
-  }
-}
-
 /* 1288 */
 @media (max-width: 1288px) {
   .hero-greeting {
-    bottom: 9.5rem;
+    bottom: 11.5rem;
   }
   .you-can-hero {
     font-size: 1.6rem;
-    top: -2.2rem;
+    top: -3.8rem;
   }
   #you-can-list li {
     font-size: 1.6rem;
-  }
-}
-
-/* 1181 */
-@media (max-width: 1181px) {
-  .you-can-hero {
-    top: -2.4rem;
   }
 }
 
@@ -180,27 +147,21 @@
   }
 }
 
-/* 1080 */
-@media (max-width: 1080px) {
-  .you-can-hero {
-    top: -2.9rem;
-  }
-}
-
 /* 1060 */
 @media (max-width: 1060px) {
   .you-can-hero {
     font-size: 1.4rem;
+    top: -4.2rem;
   }
   #you-can-list li {
     font-size: 1.4rem;
   }
 }
 
-/* 1006 */
-@media (max-width: 1006px) {
-  .you-can-hero {
-    top: -3.3rem;
+/* 1138 */
+@media (max-width: 1138px) {
+  .hero-center {
+    right: 10%;
   }
 }
 
@@ -208,6 +169,7 @@
 @media (max-width: 988px) {
   .you-can-hero {
     font-size: 1.3rem;
+    top: -4.8rem;
   }
   #you-can-list li {
     font-size: 1.3rem;
@@ -215,23 +177,11 @@
   .work {
     left: 3rem;
   }
-}
-/* 964 */
-@media (max-width: 964px) {
-  .contact-card {
-    left: -7rem;
-  }
 
   .hero-center {
-    right: 16%;
+    right: 9%;
   }
 
-  /* .marquee-label {
-    top: 3rem;
-  } */
-  .you-can-hero {
-    top: -3.5rem;
-  }
   .contact-card-wrapper {
     left: 25%;
   }
@@ -244,13 +194,6 @@
   }
   #you-can-list li {
     font-size: 1.2rem;
-  }
-}
-
-/* 930 */
-@media (max-width: 916px) {
-  .you-can-hero {
-    top: -3.8rem;
   }
 }
 
@@ -267,11 +210,15 @@
 /* 911 */
 @media (max-width: 911px) {
   .you-can-hero {
-    top: -3.9rem;
+    top: -4.7rem;
   }
 
   .hero-center {
     right: 17%;
+  }
+
+  .contact-card-wrapper {
+    left: 22%;
   }
 }
 
@@ -302,7 +249,7 @@
     left: -86px !important;
     /* bottom: auto !important; */
     width: 22.8rem !important;
-    height: 43.6rem !important;
+    height: 46.4rem !important;
   }
 
   .hero-center {
@@ -316,11 +263,13 @@
   .projects-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .you-can-hero {
-    top: -4.1rem;
-  }
+
   .contact-card-wrapper {
     left: 30%;
+  }
+
+  .hero-greeting {
+    bottom: 10.5rem;
   }
 }
 
@@ -332,7 +281,7 @@
 
   .you-can-hero {
     font-size: 1rem;
-    top: -4.4rem;
+    top: -5.1rem;
   }
   #you-can-list li {
     font-size: 1rem;
@@ -356,6 +305,10 @@
 
 /* 788 */
 @media (max-width: 788px) {
+  .contact-card-wrapper {
+    left: 29%;
+  }
+
   .hero-grid {
     height: 76rem;
     grid-template-columns: 1fr;
@@ -363,19 +316,19 @@
 
   .contact-card {
     left: -3rem;
-    width: 118%;
-    top: -1rem;
-    height: 46rem;
+    width: 30rem;
+    top: -0rem;
+    height: 41rem;
   }
 
   .contact-avatar .profile-ring {
     position: absolute !important;
     /* top: -1.7rem !important; */
     /* right: 27% !important; */
-    left: -109px !important;
+    left: -147px !important;
     /* bottom: auto !important; */
-    width: 25.5rem !important;
-    height: 46.1rem !important;
+    width: 30.5rem !important;
+    height: 41.1rem !important;
   }
 
   .hero-center {
@@ -398,11 +351,11 @@
 
   .you-can-hero {
     font-size: 1.7rem;
-    top: -1.4rem;
+    top: -3rem;
     left: -3rem;
   }
   .hero-greeting {
-    bottom: 6.5rem;
+    bottom: 10.5rem;
   }
   #you-can-list {
     left: 3.9rem;
@@ -425,10 +378,11 @@
   }
   .contact-info {
     height: 95%;
+    left: -10px;
   }
   .you-can-hero {
     font-size: 1.7rem;
-    top: -1.7rem;
+    top: -3.3rem;
   }
 }
 
@@ -440,7 +394,11 @@
 
   .you-can-hero {
     font-size: 1.6rem;
-    top: -2.6rem;
+    top: -3.7rem;
+  }
+
+  .contact-card {
+    left: -6rem;
   }
 }
 
@@ -452,11 +410,15 @@
 
   .you-can-hero {
     font-size: 1.5rem;
-    top: -2.5rem;
+    /* top: -2.5rem; */
   }
 
   .contet {
     left: -5%;
+  }
+
+  .contact-card {
+    left: -7rem;
   }
 }
 
@@ -468,10 +430,10 @@
 
   .you-can-hero {
     font-size: 1.4rem;
-    top: -2.6rem;
+    top: -4.2rem;
   }
   .hero-greeting {
-    bottom: 7.2rem;
+    bottom: 10.2rem;
   }
 }
 
@@ -502,7 +464,7 @@
 
   .you-can-hero {
     font-size: 1.3rem;
-    top: -2.8rem;
+    top: -4.2rem;
     left: -1rem;
   }
 }
@@ -515,7 +477,7 @@
 
   .you-can-hero {
     font-size: 1.2rem;
-    top: -3.2rem;
+    top: -4.2rem;
     left: -1.3rem;
   }
 }
@@ -528,29 +490,32 @@
 
   .you-can-hero {
     font-size: 1.1rem;
-    top: -3.3rem;
+    top: -4.3rem;
   }
 
   #you-can-list {
     left: 3rem;
   }
-}
 
-/* 514 */
-@media (max-width: 514px) {
   .contact-card {
-    left: -6rem;
-    width: 82%;
+    width: 27rem;
   }
 
   .contact-avatar .profile-ring {
     position: absolute !important;
     /* top: -1.7rem !important; */
     /* right: 27% !important; */
-    left: -102px !important;
+    left: -122px !important;
     /* bottom: auto !important; */
-    width: 24.9rem !important;
-    height: 43.1rem !important;
+    width: 27.4rem !important;
+    height: 41.1rem !important;
+  }
+}
+
+/* 514 */
+@media (max-width: 514px) {
+  .contact-card {
+    left: -8rem;
   }
 
   .contet {
@@ -565,7 +530,7 @@
   }
 
   .contact-card {
-    left: -7rem;
+    left: -8rem;
   }
 }
 
@@ -574,6 +539,8 @@
   .contact-card {
     left: -6rem;
     width: 74%;
+    top: -1rem;
+    height: 45rem;
   }
 
   .contact-avatar .profile-ring {
@@ -583,7 +550,7 @@
     left: -84px !important;
     /* bottom: auto !important; */
     width: 22.5rem !important;
-    height: 43.1rem !important;
+    height: 45.1rem !important;
   }
 
   .contet .text h2 {
@@ -597,6 +564,10 @@
   }
   .hero-title {
     font-size: 1.3rem;
+  }
+
+  .hero-greeting {
+    top: -9rem;
   }
 }
 
@@ -664,7 +635,7 @@
 
   .you-can-hero {
     font-size: 1.1rem;
-    top: -3.6rem;
+    top: -4.4rem;
   }
 
   #you-can-list {
@@ -675,12 +646,16 @@
 /* 456 */
 @media (max-width: 456px) {
   #you-can-list li {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .you-can-hero {
-    font-size: 1rem;
+    font-size: 1.1rem;
     top: -3.6rem;
+  }
+
+  .work {
+    top: -10rem;
   }
 }
 
@@ -688,7 +663,15 @@
 @media (max-width: 426px) {
   .you-can-hero {
     font-size: 0.8rem;
-    top: -4.2rem;
+    top: -4rem;
+  }
+
+  #you-can-list li {
+    font-size: 0.9rem;
+  }
+
+  .hero-greeting {
+    top: -8rem;
   }
 }
 
@@ -712,6 +695,10 @@
   .contact-card-wrapper {
     top: 13rem;
   }
+
+  #you-can-list {
+    left: 0.5rem;
+  }
 }
 
 /* 360 */
@@ -722,11 +709,7 @@
 
   .you-can-hero {
     font-size: 0.8rem;
-    top: -4.6rem;
-  }
-
-  #you-can-list {
-    left: 0.5rem;
+    top: -4.2rem;
   }
 }
 
@@ -764,7 +747,7 @@
     left: -51px !important;
     /* bottom: -30rem !important; */
     width: 18.4rem !important;
-    height: 49.4rem !important;
+    height: 48.9rem !important;
   }
 
   .hero-grid {
@@ -842,6 +825,7 @@
   .nav-tooltip {
     font-size: 0.65rem;
     bottom: -1.8rem;
+    height: fit-content;
   }
   .nav-link svg {
     width: 1rem;
@@ -872,10 +856,15 @@
 
   .you-can-hero {
     font-size: 0.7rem;
-    top: -5rem;
+    top: -4.6rem;
   }
+
   .contet {
     top: -5rem;
+  }
+
+  .hero-greeting {
+    font-size: x-large;
   }
 }
 
@@ -886,5 +875,12 @@
   }
   .contet .text:nth-child(2) {
     font-size: small;
+  }
+}
+
+/* 310 */
+@media (max-width: 310px) {
+  body {
+    min-width: 100vw;
   }
 }

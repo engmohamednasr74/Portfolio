@@ -31,8 +31,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon/Asset-1.png" type="image/x-icon">
   <title>Mohamed Nasr | Full-Stack Developer & UI/UX Designer</title>
+  <!-- CSS Style Files -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/work.css">
+  <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/media.css">
 
   <!-- conaction gmail with form contact -->
@@ -100,14 +102,14 @@
       </div>
     </div>
   </nav>
+  <div class="particles" id="particles"></div>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="particles" id="particles"></div>
     <div class="container">
       <div class="hero-grid">
         <!-- Profile -->
-        <div class="contact-card-wrapper fade-in-left">
+        <div class="contact-card-wrapper">
           <div class="contact-card">
             <div class="contact-avatar">
               <img src="img/My_Profile/514349591_1947928819365059_2706778220844794560_n.jpg" alt="Mohamed Nasr"
@@ -178,7 +180,7 @@
         </div>
 
         <!-- Center Content -->
-        <div class="hero-center fade-in-up">
+        <div class="hero-center">
           <h1 class="hero-greeting">Hi, I am Developer Engineer</h1>
           <h2 class="hero-title you-can-hero">
             And I'm a &nbsp;
@@ -222,8 +224,8 @@
       <div class="marquee-container">
         <p class="marquee-label">Technologies I Work With</p>
         <div class="marquee-wrapper">
-          <div class="marquee-fade-left"></div>
-          <div class="marquee-fade-right"></div>
+          <!-- <div class="marquee-fade-left"></div>
+          <div class="marquee-fade-right"></div> -->
           <div class="marquee-track">
             <div class="tech-items">
 
@@ -461,7 +463,7 @@
           <p class="marquee-label" id="skills">Skills</p>
           <div class="contaner-skills">
             <!-- Font-End Developer -->
-            <div class="stats fade-in-right">
+            <div class="stats">
               <div class="stat-card">
                 <p class="stat-value">Front-End Developer</p>
                 <div class="content-skills">
@@ -479,7 +481,7 @@
             </div>
 
             <!-- Back-End Developer -->
-            <div class="stats fade-in-right">
+            <div class="stats">
               <div class="stat-card">
                 <p class="stat-value">Back-End Developer</p>
                 <div class="content-skills">
@@ -494,7 +496,7 @@
             </div>
 
             <!-- UI/UX Web Designer -->
-            <div class="stats fade-in-right">
+            <div class="stats">
               <div class="stat-card">
                 <p class="stat-value">UI/UX Web Designer</p>
                 <div class="content-skills">
@@ -507,7 +509,7 @@
             </div>
 
             <!-- Personal Skills -->
-            <div class="stats fade-in-right">
+            <div class="stats">
               <div class="stat-card">
                 <p class="stat-value">Personal Skills</p>
                 <div class="content-skills personal-skills">
@@ -537,7 +539,7 @@
         <p class="section-subtitle">Comprehensive solutions tailored to bring your digital vision to life</p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card left-card">
           <div class="service-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -558,7 +560,7 @@
             </svg>
           </button> -->
         </div>
-        <div class="service-card">
+        <div class="service-card center-card">
           <div class="service-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -567,7 +569,8 @@
           </div>
           <h3 class="service-title">UI/UX Web Design</h3>
           <p class="service-description">Designing clean, modern, and intuitive experiences using Figma, Adobe XD,
-            Photoshop, and Illustrator. Dedicated to crafting user-focused designs that look great and feel effortless.
+            Photoshop, and Illustrator. Dedicated to crafting user-focused designs that look great and feel
+            effortless.
           </p>
           <div class="service-example">
             <p>"Revamped a mobile dashboard, resulting in a significant increase in user interaction."</p>
@@ -579,7 +582,7 @@
             </svg>
           </button> -->
         </div>
-        <div class="service-card">
+        <div class="service-card right-card">
           <div class="service-icon">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -587,7 +590,8 @@
             </svg>
           </div>
           <h3 class="service-title">Back-End Development</h3>
-          <p class="service-description">Building reliable and secure server-side architectures using PHP, Laravel, and
+          <p class="service-description">Building reliable and secure server-side architectures using PHP, Laravel,
+            and
             MySQL. Focused on performance, data safety, and scalable logic that supports complex applications.</p>
           <div class="service-example">
             <p>"Engineered a secure API system for a financial service handling sensitive operations."</p>
@@ -618,7 +622,7 @@
       </div>
       <div class="projects-grid" id="projects-grid">
         <!-- projects 1-->
-        <div class="project-card" id="project-card" data-category="Website">
+        <!-- <div class="project-card" id="project-card" data-category="Website">
           <div class="project-image">
             <img src="img/Screenshot_Projects/Screenshot 2025-12-09 234103.png" alt="Education Website"
               draggable="false" oncontextmenu="return false;">
@@ -630,28 +634,30 @@
             <p class="project-description">A prototype of a full-featured online Education Website</p>
             <div class="project-tags">
               <span class="project-tag">React</span>
-              <!-- <span class="project-tag">Laravel</span> -->
+              <span class="project-tag">Laravel</span>
               <span class="project-tag">Figma</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/engmohamednasr74/learn-with-me" class="project-link github" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-                <span>Source Code</span>
-              </a>
+              <div class="links">
+                <a href="https://github.com/engmohamednasr74/learn-with-me" class="project-link github" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  <span>Source Code</span>
+                </a>
 
-              <a href="https://learn-with-me.vercel.app/" class="project-link" target="_blank">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                <span>View Website</span>
-              </a>
+                <a href="https://learn-with-me.vercel.app/" class="project-link" target="_blank">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  <span>View Website</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </div> -->
+
         <!-- projects 2-->
         <div class="project-card" id="project-card" data-category="Website">
           <div class="project-image">
@@ -666,7 +672,7 @@
               connects you to home kitchens with seamless ordering via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
-              <span class="project-tag">tailwind css</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
             <div class="links">
               <a href="https://github.com/engmohamednasr74/X_Food" class="project-link github" target="_blank">
@@ -701,7 +707,7 @@
               Menu. Visualize dishes in 3D and order seamlessly via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
-              <span class="project-tag">tailwind css</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
             <div class="links">
               <a href="https://github.com/engmohamednasr74/Khat3am" class="project-link github" target="_blank">
@@ -736,11 +742,11 @@
               youth and driving community development through accessible learning.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
-              <span class="project-tag">tailwind css</span>
+              <span class="project-tag">Tailwind CSS</span>
+              <span class="project-tag">Firebase</span>
             </div>
             <div class="links">
-              <a href="https://github.com/engmohamednasr74/Kean-Eradah-Shabab-Masr" class="project-link github"
-                target="_blank">
+              <a href="https://kean-eradah-shabab-masr.web.app/" class="project-link github" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.044-.015-2.049-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.652 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.604-.015 2.896-.015 3.286 0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -775,7 +781,7 @@
               teaching faith, values, and goodness in the most delightful way.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
-              <span class="project-tag">tailwind css</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
             <div class="links">
               <a href="https://github.com/engmohamednasr74/lamet_el_kesas" class="project-link github" target="_blank">
@@ -811,7 +817,7 @@
               Menu. Visualize dishes in 3D and order seamlessly via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
-              <span class="project-tag">tailwind css</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
             <div class="links">
               <a href="https://github.com/engmohamednasr74/karmasha" class="project-link github" target="_blank">
@@ -833,7 +839,7 @@
           </div>
         </div>
 
-        <div class="project-card" id="project-card" data-category="Website">
+        <div class="project-card id=" project-card" data-category="Website">
           <div class="project-image">
             <img src="img/Screenshot_Projects/Screenshot-2026-02-14-190347.png" alt="mix_crepe_pizaa Website"
               draggable="false" oncontextmenu="return false;">
@@ -847,7 +853,7 @@
               connects you to home kitchens with seamless ordering via WhatsApp.</p>
             <div class="project-tags">
               <span class="project-tag">Front end native</span>
-              <span class="project-tag">tailwind css</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
             <div class="links">
               <a href="https://github.com/engmohamednasr74/mix_crepe_pizaa" class="project-link github" target="_blank">
@@ -953,7 +959,7 @@
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/IMG-20250409-WA0033.jpg" alt="Certificate 2"
             draggable="false" oncontextmenu="return false;">
-          <img class="cert-img" src="img/My_Certifications/Meshwary_Certificate (1).png" alt="Certificate 3"
+          <img class="cert-img" src="img/My_Certifications/Meshwary_Certificate-(1).png" alt="Certificate 3"
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Meshwary_Certificate.png" alt="Certificate 4"
             draggable="false" oncontextmenu="return false;">
@@ -979,16 +985,14 @@
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Pre-Incubation_Program.jpg" alt="Certificate 15"
             draggable="false" oncontextmenu="return false;">
-          <img class="cert-img" src="img/My_Certifications/Pre-Incubation_Program.jpg" alt="Certificate 16"
-            draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Certificate-Mohamed_Nasr_Mohamed_Ail_Younes.jpg"
-            alt="Certificate 17" draggable="false" oncontextmenu="return false;">
+            alt="Certificate 16" draggable="false" oncontextmenu="return false;">
           <!-- Duplicate for seamless loop -->
           <img class="cert-img" src="img/My_Certifications/Certificates-1_page-1864.jpg" alt="Certificate 1"
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/IMG-20250409-WA0033.jpg" alt="Certificate 2"
             draggable="false" oncontextmenu="return false;">
-          <img class="cert-img" src="img/My_Certifications/Meshwary_Certificate (1).png" alt="Certificate 3"
+          <img class="cert-img" src="img/My_Certifications/Meshwary_Certificate-(1).png" alt="Certificate 3"
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Meshwary_Certificate.png" alt="Certificate 4"
             draggable="false" oncontextmenu="return false;">
@@ -1006,18 +1010,16 @@
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/My-Certifications7.jpg" alt="Certificate 11"
             draggable="false" oncontextmenu="return false;">
-          <img class="cert-img" src="img/My_Certifications/Recommendation-Letter-for-Volunteer.jpg"
-            alt="Certificate 12">
+          <img class="cert-img" src="img/My_Certifications/Recommendation-Letter-for-Volunteer.jpg" alt="Certificate 12"
+            draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Mohamed-Nasr's-Certificate.jpg" alt="Certificate 13"
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Mohamed_Nasr_Mohamed_Ali_YUT.jpg" alt="Certificate 14"
             draggable="false" oncontextmenu="return false;">
-          <img class="cert-img" src="img/My_Certifications/Mohamed_Nasr_Mohamed_Ali_YUT.jpg" alt="Certificate 15"
-            draggable="false" oncontextmenu="return false;">
-          <img class="cert-img" src="img/My_Certifications/Pre-Incubation_Program.jpg" alt="Certificate 16"
+          <img class="cert-img" src="img/My_Certifications/Pre-Incubation_Program.jpg" alt="Certificate 15"
             draggable="false" oncontextmenu="return false;">
           <img class="cert-img" src="img/My_Certifications/Certificate-Mohamed_Nasr_Mohamed_Ail_Younes.jpg"
-            alt="Certificate 17" draggable="false" oncontextmenu="return false;">
+            alt="Certificate 16" draggable="false" oncontextmenu="return false;">
         </div>
       </div>
     </div>
@@ -1091,7 +1093,7 @@
         </form>
 
         <!-- Right side content (contact info) -->
-        <div class="contact-info">
+        <div class="contact-info right-card">
           <h3>Contact Information</h3>
           <p>I'm always open to new opportunities, projects, or just a quick chat about web development and design!</p>
           <p>Available for calls or messages from 10 AM to 12 PM (Egypt time)</p>

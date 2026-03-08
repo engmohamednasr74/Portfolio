@@ -29,6 +29,7 @@ body {
   color: var(--foreground);
   line-height: 1.6;
   min-height: 100vh;
+  position: relative;
 }
 
 .contact-avatar .profile-ring {
@@ -57,99 +58,6 @@ body {
     z-index: -1;
     width: 30.5rem;
     height: 42rem; */
-}
-
-/* Animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(164, 19, 60, 0.2);
-  }
-
-  50% {
-    box-shadow: 0 0 40px rgba(164, 19, 60, 0.05);
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.fade-in-left {
-  animation: fadeInLeft 0.8s ease forwards;
-}
-
-.fade-in-right {
-  animation: fadeInRight 0.8s ease forwards;
 }
 
 /* Container */
@@ -387,7 +295,7 @@ body {
   color: var(--muted-foreground);
   margin-bottom: 0.5rem;
   position: relative;
-  bottom: 6.5rem;
+  bottom: 9.5rem;
 }
 
 .hero-title {
@@ -553,9 +461,11 @@ body {
   text-align: center;
   margin-left: 10px;
 }
+
 .stat-cards:hover {
   border: 1px solid #e8d5b7;
 }
+
 /* Tech Marquee */
 .marquee-container {
   margin-top: 3rem;
@@ -695,6 +605,8 @@ body {
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
+  position: relative;
+  top: -4px;
 }
 
 .section-title {
@@ -717,6 +629,9 @@ body {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr 1fr 1fr;
+  overflow: clip;
+  position: relative;
+  top: -4px;
 }
 
 .service-card {
@@ -724,12 +639,12 @@ body {
   border: 1px solid var(--border);
   border-radius: 1rem;
   padding: 1.5rem;
-  transition: all 0.3s;
+  transition: all 1s ease;
 }
 
 .service-card:hover {
   border-color: rgba(164, 19, 60, 0.5);
-  transform: scale(1.02) translateY(-10px);
+  /* transform: scale(1.02) translateY(-10px); */
   box-shadow: 0 25px 50px -12px rgba(164, 19, 60, 0.05);
 }
 
@@ -848,6 +763,7 @@ body {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr 1fr 1fr;
+  overflow: clip;
 }
 
 .project-card {
@@ -1207,6 +1123,7 @@ body {
   gap: 3rem;
   align-items: flex-start;
   grid-template-columns: 1fr 1fr;
+  overflow: clip;
 }
 
 .contact-form {
@@ -1301,6 +1218,7 @@ body {
   position: relative;
   left: 30%;
   height: 41rem;
+  animation: float 2.5s ease-in-out infinite;
 }
 
 .contact-card {
@@ -1578,7 +1496,7 @@ body {
 
 div > h2 {
   font-size: xxx-large;
-  padding: 5%;
+  padding: 3%;
 }
 .text {
   padding: 5%;
@@ -1601,3 +1519,43 @@ div > h2 {
   font-weight: bold;
   color: var(--primary);
 }
+
+.particle {
+  background: #f5f0e8;
+  width: 5px;
+  height: 5px;
+  overflow: hidden;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+form {
+  animation: fadeInLeft 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% exit -50%;
+}
+
+/* .filter-tabs,
+footer {
+  position: relative;
+}
+
+.project-card,
+.filter-tabs,
+.tech-item,
+.hero-center,
+footer {
+  z-index: 12;
+}
+.navbar-inner,
+.cert-lightbox {
+  z-index: 13;
+} */

@@ -180,7 +180,7 @@ contactForm.addEventListener("submit", (e) => {
 
 // Create particles
 const particlesContainer = document.getElementById("particles");
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 300; i++) {
   const particle = document.createElement("div");
   particle.className = "particle";
   particle.style.left = Math.random() * 100 + "%";

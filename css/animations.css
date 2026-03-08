@@ -1,0 +1,182 @@
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.box {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------- */
+.box {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 1000px rgba(209, 26, 78, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 400px rgba(164, 19, 60, 0.05);
+  }
+}
+
+/* ----------------------------------------------------- */
+.box {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ----------------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.center-card {
+  animation: fadeInUp 1s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% exit 30%;
+}
+
+/* ----------------------------------------------------- */
+.left-card {
+  animation: fadeInLeft 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% exit 30%;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ----------------------------------------------------- */
+.right-card {
+  animation: fadeInRight 0.8s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% exit 10%;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ----------------------------------------------------- */
+.box {
+  animation: scrolling linear;
+  animation-timeline: view();
+  animation-range: entry 60% exit 20%;
+}
+
+@keyframes scrolling {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* My Projects animation */
+
+/* 887 */
+@media (min-width: 887px) {
+  .project-card:nth-child(3n + 1) {
+    animation: fadeInLeft 0.8s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 30%;
+  }
+
+  .project-card:nth-child(3n + 2) {
+    animation: fadeInUp 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 30%;
+  }
+
+  .project-card:nth-child(3n + 3) {
+    animation: fadeInRight 0.8s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 10%;
+  }
+}
+
+/* 886 */
+@media (max-width: 886px) and (min-width: 583px) {
+  .project-card:nth-child(odd) {
+    animation: fadeInLeft 0.8s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 30%;
+  }
+
+  .project-card:nth-child(even) {
+    animation: fadeInRight 0.8s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 10%;
+  }
+}
+
+/* 726 */
+@media (max-width: 726px) {
+  .contact-grid {
+    overflow: visible;
+  }
+
+  form,
+  .contact-info {
+    animation: fadeInUp 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit -50%;
+  }
+}
+
+/* 582 */
+@media (max-width: 582px) {
+  .project-card {
+    animation: fadeInUp 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 30%;
+  }
+}
