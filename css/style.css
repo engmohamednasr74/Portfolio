@@ -916,6 +916,9 @@ body {
   max-width: 117rem;
   position: relative;
   overflow: clip;
+  animation: fadeInUp 1s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% exit -145%;
 }
 
 .certificates-marquee:hover .certs-track {
