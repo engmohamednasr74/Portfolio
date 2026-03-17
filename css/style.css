@@ -140,6 +140,10 @@ body {
   pointer-events: none;
 }
 
+.nav-item:hover {
+  z-index: 10;
+}
+
 .nav-item:hover .nav-tooltip,
 .nav-link.active + .nav-tooltip {
   opacity: 1;
