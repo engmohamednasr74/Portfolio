@@ -4,7 +4,7 @@ gsap.fromTo(
   {
     opacity: 0,
     duration: 1.5,
-    delay: 3.5,
+    delay: 2.5,
     display: "none",
   },
 );
@@ -32,7 +32,7 @@ gsap.fromTo(
   {
     opacity: 1,
     duration: 1.5,
-    delay: 4,
+    delay: 3,
     // display: "block",
   },
 );
@@ -46,7 +46,7 @@ gsap.fromTo(
   {
     opacity: 1,
     duration: 1.5,
-    delay: 4,
+    delay: 3,
     // display: "flex",
   },
 );
