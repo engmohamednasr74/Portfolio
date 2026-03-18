@@ -27,13 +27,13 @@ gsap.fromTo(
   ".particles,.hero,.services,.projects,.certifications,.contact",
   {
     opacity: 0,
-    // display: "none",
+    display: "none",
   },
   {
     opacity: 1,
     duration: 1.5,
     delay: 3,
-    // display: "block",
+    display: "block",
   },
 );
 
@@ -41,12 +41,12 @@ gsap.fromTo(
   ".navbar,.modal-overlay,.success-modal,.footer",
   {
     opacity: 0,
-    // display: "none",
+    display: "none",
   },
   {
     opacity: 1,
     duration: 1.5,
     delay: 3,
-    // display: "flex",
+    display: "flex",
   },
 );
