@@ -657,6 +657,14 @@
   .work {
     top: -10rem;
   }
+
+  .name-container {
+    font-size: 10px;
+    height: 60px;
+    position: absolute;
+    left: 20vw;
+    bottom: 32%;
+  }
 }
 
 /* 426 */
@@ -699,18 +707,10 @@
   #you-can-list {
     left: 0.5rem;
   }
-}
 
-/* 360 */
-@media (max-width: 360px) {
-  #you-can-list li {
-    font-size: 0.8rem;
-  }
-
-  .you-can-hero {
-    font-size: 0.8rem;
-    top: -4.2rem;
-  }
+  /* .logo-name {
+    font-size: 10px;
+  } */
 }
 
 /* 392 */
@@ -722,6 +722,18 @@
 
   .hero-center {
     width: 70%;
+  }
+}
+
+/* 360 */
+@media (max-width: 360px) {
+  #you-can-list li {
+    font-size: 0.8rem;
+  }
+
+  .you-can-hero {
+    font-size: 0.8rem;
+    top: -4.2rem;
   }
 }
 
@@ -784,6 +796,13 @@
   }
   .hero-center {
     left: 0rem;
+  }
+
+  .name-container {
+    position: fixed;
+    left: 15vw;
+    bottom: 32%;
+    /* height: 60px; */
   }
 }
 
@@ -882,5 +901,13 @@
 @media (max-width: 310px) {
   body {
     min-width: 100vw;
+  }
+}
+
+/* 296 */
+@media (max-width: 296px) {
+  .name-container {
+    left: 5vw;
+    /* height: 60px; */
   }
 }
