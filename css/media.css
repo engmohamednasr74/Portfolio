@@ -659,7 +659,7 @@
   }
 
   .name-container {
-    font-size: 10px;
+    /* font-size: 10px; */
     height: 60px;
     position: absolute;
     left: 20vw;
@@ -708,9 +708,13 @@
     left: 0.5rem;
   }
 
-  /* .logo-name {
-    font-size: 10px;
-  } */
+  .name-container {
+    /* font-size: 10px; */
+    height: 60px;
+    position: absolute;
+    left: 20vw;
+    bottom: 30%;
+  }
 }
 
 /* 392 */
@@ -801,7 +805,7 @@
   .name-container {
     position: fixed;
     left: 15vw;
-    bottom: 32%;
+    /* bottom: 32%; */
     /* height: 60px; */
   }
 }
